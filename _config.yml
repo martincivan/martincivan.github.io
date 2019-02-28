@@ -1,3 +1,6 @@
-name: Martin Civan, Horrible Cop
+name: Martin Civan
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink: /blogy/:year/:month/:day/:title
+collections:
+  - blogy
+  - zadania

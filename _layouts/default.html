@@ -1,29 +1,38 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-	    		</ul>
-			</nav>
-			<div class="container">
-			
-			{{ content }}
-			
-			</div><!-- /.container -->
-			<footer>
-	    		<ul>
-	        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-	        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-				</ul>
-			</footer>
-		</body>
-	</html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Martin Civáň</a>
+    <ul class="navbar-nav mr-auto">
+        {% assign sorted_pages = site.pages | sort:"order" %}
+        {% for node in sorted_pages %}
+            {% if node.order != null %}
+                {% if page.url == node.url %}
+                    <li class="nav-item active"><a href="{{node.url}}" class="nav-link">{{node.title}}</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{{node.url}}">{{node.title}}</a></li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+<div class="container mt-5">
+
+    {{ content }}
+
+</div><!-- /.container -->
+<footer class="page-footer font-small blue position-absolute w-100" style="bottom: 0px;">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+        Pätička, aby sa nepovedalo
+    </div>
+    <!-- Copyright -->
+
+</footer>
+</body>
+</html>
