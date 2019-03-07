@@ -7,3 +7,18 @@ layout: default
 <div class="post">
   {{ content }}
 </div>
+<div>
+  [
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>
+  {% endfor %}
+]</div>
+<h2>Galéria</h2>
+{% for obrazok in page.obrazky %}
+<div>
+<img src="{{ obrazok.src }}" alt="{{ obrazok.text }}">
+  <br>
+{{ obrazok.text }}
+</div>
+{% endfor %}
