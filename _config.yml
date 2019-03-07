@@ -1,6 +1,10 @@
 name: Martin Civan
 markdown: kramdown
-permalink: /blogy/:year/:month/:day/:title
+#permalink: /blogy/:title
 collections:
-  - blogy
-  - zadania
+  blogy:
+    permalink: /blogy/:title
+    output: true
+  zadania:
+    output: true
+    permalink: /zadania/:title
