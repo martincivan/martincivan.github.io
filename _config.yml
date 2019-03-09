@@ -8,3 +8,6 @@ collections:
   zadania:
     output: true
     permalink: /zadania/:title
+plugins:
+  - jekyll-sitemap
+  - liquid_reading_time

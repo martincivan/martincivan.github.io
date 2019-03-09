@@ -41,3 +41,9 @@ Filtre a tagy
 - `if` na zistenie, či sa má stránka zobraziť v hlavnom menu
 - `date_to_string` na formátovanie dátumu
 - `relative_url` na vyskladanie relatívnych odkazov
+- `reverse` na preusporiadanie článkov blogu
+
+Plugin
+---
+- `jekyll-sitemap` - na generovanie `sitemap.xml`
+- [`liquid_reading_time`](https://github.com/bdesham/reading_time) - na zrátanie slov článkov a odhad doby čítania

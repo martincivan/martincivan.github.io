@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Víkend Londýne."
-date: 2019-01-01
+date: 2019-02-23
 obrazky:
   - obrazok:
     src: /obrazky/londyn1.jpg
