@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Profesné záujmy
+title: Moje povolanie
 order: 2
 ---
 Niečo o mojom povolaní
@@ -19,7 +19,5 @@ Taktiež som si vyskúšal viacero frameworkov, od Java EE, cez Laravel, .NET a�
 Z databáz a úložísk som mal tú česť zoznámiť sa s MySQL - PostgreSQL, ElasticSearchom, Redisom, či Cassandrou.
 
 Moje obľubené IDE je Idea od Jetbrains.
-
-Zvyknem pracovať na Linuxe, takže sa kamarátim aj s nim, o Windowse to moc povedať nemôžem.
 
 [Sekcia webové publikovanie]({{ "/profesne/wp" | relative_url}})

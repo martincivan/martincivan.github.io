@@ -15,10 +15,29 @@ layout: default
   {% endfor %}
 ]</div>
 <h2>Galéria</h2>
+
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    {% for obrazok in page.obrazky %}
+    <li data-target="#carousel" data-slide-to="{{ forloop.index0 }}" {% if forloop.first == true %} class="active"{% endif %}></li>
+    {% endfor %}
+  </ol>
+  <div class="carousel-inner">
 {% for obrazok in page.obrazky %}
-<div>
-<img src="{{ obrazok.src }}" alt="{{ obrazok.text }}">
-  <br>
-{{ obrazok.text }}
+<div class="carousel-item {% if forloop.first == true %} active{% endif %}">
+  <img src="{{ obrazok.src | relative_url }}" class="d-block w-100" alt="{{ obrazok.text }}">
+  <div class="carousel-caption d-none d-md-block">
+    <p>{{ obrazok.text }}</p>
+  </div>
 </div>
 {% endfor %}
+</div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
