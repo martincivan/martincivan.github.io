@@ -17,5 +17,14 @@ Text je členený na kapitoly `<chapter>` a sekcie `<section>`. Taktiež obsahuj
 
 Z pôvodnej šablóny bolo odstránené logo školy na prvej strane a následne bolo opravené jej formátovanie.
 Tiež bolo zakázané rozdeľovanie slov v hlavičke a opravené kapitalizovanie nadpisov pomocou tipu zo stránky predmetu.
- 
- Nakoniec bolo pridané generovanie zoznamu obrázkov a tabuliek.
+Nakoniec bolo pridané generovanie zoznamu obrázkov a tabuliek.
+
+Bibliografia bola vytvorená značkami `<bibliography>` a `<bibliomixed>`, citovaná značkou `<citation>`.
+
+Obrázky boli vložené ako `<figure>` s `<mediaoobject>` a `<imageobject>` a odkazovaný bol pomocou značky `<xref>`.
+
+Text bol zvýrazneny pomocou `<emphasis>`.
+
+Zoznam pojmov bol vložený ako `<index>` a pojmy doň boli pridané ako `<indexterm>` s `<primary>` a `<secondary>`.
+
+Poznámky pod čiarou boli pridané ako `<footnote>`.
