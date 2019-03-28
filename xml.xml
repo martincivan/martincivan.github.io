@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE objednavky
+        [
+                <!ELEMENT objednavky (objednavka)+>
+                <!ELEMENT objednavka  (zakaznik, adresa?, polozky, poznamka)>
+                <!ATTLIST objednavka datum CDATA #REQUIRED>
+                <!ATTLIST objednavka stav CDATA #REQUIRED>
+                <!ELEMENT zakaznik (cislo|udaje)>
+                <!ELEMENT cislo (#PCDATA)>
+                <!ELEMENT udaje (adresa?)>
+                <!ATTLIST udaje meno CDATA #REQUIRED>
+                <!ATTLIST udaje email CDATA #REQUIRED>
+                <!ATTLIST udaje telefon CDATA #REQUIRED>
+                <!ELEMENT adresa (#PCDATA)>
+                <!ATTLIST adresa ulica CDATA #REQUIRED>
+                <!ATTLIST adresa cislo CDATA #REQUIRED>
+                <!ATTLIST adresa psc CDATA #REQUIRED>
+                <!ATTLIST adresa mesto CDATA #REQUIRED>
+                <!ELEMENT polozky (polozka+)>
+                <!ELEMENT polozka EMPTY>
+                <!ATTLIST polozka id ID #REQUIRED>
+                <!ATTLIST polozka nazov CDATA #REQUIRED>
+                <!ATTLIST polozka cena CDATA #REQUIRED>
+                <!ATTLIST polozka pocet CDATA #REQUIRED>
+                <!ELEMENT odkaz EMPTY>
+                <!ATTLIST odkaz polozkaId IDREF #IMPLIED>
+                <!ELEMENT poznamka (#PCDATA | odkaz)*>
+                ]>
+<objednavky>
+    <objednavka datum="" stav="">
+        <zakaznik>
+            <!--<cislo>12345</cislo>-->
+            <udaje meno="" email="" telefon="">
+                <adresa ulica="" cislo="" psc="" mesto=""/>
+            </udaje>
+        </zakaznik>
+        <adresa ulica="" cislo="" psc="" mesto=""/>
+        <polozky>
+            <polozka id="ASD" nazov="aaa" cena="9.99" pocet="1"/>
+        </polozky>
+        <poznamka>Toto je poznamka <odkaz polozkaId="ASD" /> </poznamka>
+    </objednavka>
+</objednavky>

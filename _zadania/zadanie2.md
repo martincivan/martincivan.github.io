@@ -17,7 +17,7 @@ Text je členený na kapitoly `<chapter>` a sekcie `<section>`. Taktiež obsahuj
 
 Z pôvodnej šablóny bolo odstránené logo školy na prvej strane a následne bolo opravené jej formátovanie.
 Tiež bolo zakázané rozdeľovanie slov v hlavičke a opravené kapitalizovanie nadpisov pomocou tipu zo stránky predmetu.
-Nakoniec bolo pridané generovanie zoznamu obrázkov a tabuliek.
+Nakoniec bolo pridané generovanie zoznamu obrázkov a tabuliek. Taktiež bol preložený pojem `Vedoucí` na `Vedúci`.
 
 Bibliografia bola vytvorená značkami `<bibliography>` a `<bibliomixed>`, citovaná značkou `<citation>`.
 
@@ -27,4 +27,6 @@ Text bol zvýrazneny pomocou `<emphasis>`.
 
 Zoznam pojmov bol vložený ako `<index>` a pojmy doň boli pridané ako `<indexterm>` s `<primary>` a `<secondary>`.
 
-Poznámky pod čiarou boli pridané ako `<footnote>`.
+Oproti pôvodnému dokumentu boli pridané poznámky pod čiarou boli pridané ako `<footnote>` a tabuľka `<table>`.
+
+Na zoznamy bol použitý `<itemizedlist>` s `<listitem>`.
