@@ -2,7 +2,7 @@
 layout: zadanie
 title: "Transformácia vybraného dokumentu do formátu DocBook"
 date: 2019-03-24
-cislo: 1
+cislo: 2
 stahuj: https://github.com/martincivan/docbook/archive/master.zip
 
 ---
