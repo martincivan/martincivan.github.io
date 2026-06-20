@@ -1,0 +1,10 @@
+{
+  "targetRole": "AI / ML Engineer",
+  "summary": "Engineer with hands-on deep-learning experience — a master's thesis training 3D CNNs for medical image segmentation, and current work fine-tuning generative models for production. Pairs ML with the platform skills to actually ship and operate it: Kubernetes, GPUs, pipelines and all.",
+  "emphasize": ["PyTorch", "Deep learning", "3D CNNs / segmentation", "Model fine-tuning", "OmniSVG", "Python", "Kubernetes"],
+  "skillGroups": ["AI / ML", "Languages", "Platform & Infrastructure", "Data & Messaging"],
+  "roles": ["NASES", "Lapz", "QualityUnit"],
+  "maxBulletsPerRole": 3,
+  "projects": ["Brain MRI Segmentation", "Logram.ai", "NASES — National e-Government Platform"],
+  "accent": "#7c3aed"
+}

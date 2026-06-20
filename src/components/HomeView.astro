@@ -1,0 +1,22 @@
+---
+import type { Lang } from '../i18n/utils';
+import { localePath } from '../i18n/utils';
+import { useTranslations } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang).home;
+const base = localePath('/', lang);
+---
+<section class="flex min-h-[88vh] flex-col justify-center py-20">
+  <p class="mb-5 font-mono text-sm text-[--color-accent]">{t.kicker}</p>
+  <h1 class="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
+    {t.h1a}
+    <span class="text-gradient">{t.h1accent}</span>
+  </h1>
+  <p class="mt-7 max-w-2xl text-lg leading-relaxed text-[--color-muted]">{t.lead}</p>
+  <div class="mt-10 flex flex-wrap items-center gap-3">
+    <a href={`${base}#projects`} class="rounded-lg bg-[--color-accent-strong] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[--color-accent]">{t.ctaWork}</a>
+    <a href={`${base}#about`} class="rounded-lg border border-[--color-border] px-5 py-2.5 text-sm font-medium text-[--color-fg] transition-colors hover:bg-[--color-surface]">{t.ctaAbout}</a>
+  </div>
+</section>

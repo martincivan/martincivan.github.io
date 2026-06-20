@@ -1,0 +1,54 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/ui';
+import { getLanguages, getEducation } from '../data/localized';
+import { skills } from '../data/skills';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const groupLabel = (label: string) => t.skillGroups[label] ?? label;
+const languages = getLanguages(lang);
+const education = getEducation(lang);
+---
+<div class="grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+  {skills.map((g) => (
+    <div>
+      <h3 class="font-mono text-xs uppercase tracking-wider text-[--color-accent]">{groupLabel(g.label)}</h3>
+      <ul class="mt-3 flex flex-wrap gap-1.5">
+        {g.items.map((i) => (
+          <li class="rounded-md bg-[--color-bg-soft] px-2.5 py-1 text-xs text-[--color-fg]">{i}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
+
+<div class="mt-12 grid gap-10 border-t border-[--color-border] pt-10 md:grid-cols-2">
+  <div>
+    <h3 class="font-mono text-xs uppercase tracking-wider text-[--color-faint]">{t.about.education}</h3>
+    <div class="mt-4 space-y-5">
+      {education.map((e) => (
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h4 class="font-semibold">{e.school}</h4>
+            <span class="font-mono text-xs text-[--color-faint]">{e.period}</span>
+          </div>
+          <p class="mt-1 text-sm text-[--color-accent]">{e.program}</p>
+          {e.note && <p class="mt-2 text-sm leading-relaxed text-[--color-muted]">{e.note}</p>}
+        </div>
+      ))}
+    </div>
+  </div>
+  <div>
+    <h3 class="font-mono text-xs uppercase tracking-wider text-[--color-faint]">{t.about.languagesTitle}</h3>
+    <ul class="mt-4 space-y-3">
+      {languages.map((l) => (
+        <li class="flex items-baseline justify-between border-b border-[--color-border] pb-2">
+          <span class="font-medium">{l.lang}</span>
+          <span class="font-mono text-xs text-[--color-muted]">{l.level}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>

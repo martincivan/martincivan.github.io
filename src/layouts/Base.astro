@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import type { Lang } from '../i18n/utils';
+import { alternatePath } from '../i18n/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+}
+const {
+  title = 'Martin Civáň — Platform & DevSecOps Engineer',
+  description = 'Platform and DevSecOps engineer building the cloud-native foundation behind Slovakia’s national e-government. Kubernetes, GitOps, infrastructure-as-code, and applied AI.',
+  lang = 'en',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const enHref = new URL(alternatePath(Astro.url, lang, 'en'), Astro.site);
+const skHref = new URL(alternatePath(Astro.url, lang, 'sk'), Astro.site);
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -4 110 110'%3E%3Cg transform='matrix(1,0,-0.17633,1,8.8165,0)' fill='%236366f1'%3E%3Cpath d='M16 76 V26 L41 57 L66 26 V76' fill='none' stroke='%236366f1' stroke-width='12' stroke-linecap='butt' stroke-linejoin='miter' stroke-miterlimit='6'/%3E%3Cpath d='M60 25 H97 V37 H60 Z'/%3E%3Cpath d='M60 65 H97 V77 H60 Z'/%3E%3C/g%3E%3C/svg%3E" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="sk" href={skHref} />
+    <link rel="alternate" hreflang="x-default" href={enHref} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og.png', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={new URL('/og.png', Astro.site)} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Martin Civáň — Blog" href={lang === 'sk' ? '/sk/rss.xml' : '/rss.xml'} />
+  </head>
+  <body class="bg-glow min-h-screen">
+    <Nav lang={lang} />
+    <main class="mx-auto max-w-5xl px-6">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

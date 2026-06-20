@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>MC monogram — construction guide</title><style>
+  :root{--bg:#0a0a0f;--panel:#101018;--ink:#ecedf2;--mut:#8b8b99;--faint:#56566a;
+        --grid:#1c1c28;--blue:#6366f1;--phi:#c084fc;--line:#2a2a38;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .sheet{width:1400px;margin:0 auto;padding:54px 56px 64px}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:34px}
+  .ttl{font-size:30px;font-weight:700;letter-spacing:-.02em}
+  .ttl .g{color:var(--blue)}
+  .sub{color:var(--mut);font-size:14px;margin-top:6px;font-family:ui-monospace,monospace}
+  .meta{text-align:right;color:var(--faint);font-size:12px;font-family:ui-monospace,monospace;line-height:1.7}
+  .meta b{color:var(--mut);font-weight:600}
+  h2{font-size:12px;font-family:ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 16px;font-weight:600}
+  .cols{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:start}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .step .n{font-family:ui-monospace,monospace;font-size:12px;color:var(--blue);font-weight:700}
+  .step .t{font-size:13.5px;color:var(--ink);margin:4px 0 12px;line-height:1.45;font-weight:600}
+  .step .t span{color:var(--mut);font-weight:400}
+  .row{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;margin-top:30px;align-items:start}
+  .ratios{list-style:none;margin:0;padding:0;font-family:ui-monospace,monospace;font-size:13.5px}
+  .ratios li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);color:var(--mut)}
+  .ratios li:last-child{border-bottom:0}
+  .ratios b{color:var(--ink);font-weight:600}
+  .ratios .v{color:var(--phi)}
+  .usage{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .u{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .u .lab{font-size:11px;font-family:ui-monospace,monospace;color:var(--faint);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+  .swatch{display:flex;align-items:center;gap:10px;font-family:ui-monospace,monospace;font-size:12px;color:var(--mut);margin:7px 0}
+  .dot{width:18px;height:18px;border-radius:5px;border:1px solid rgba(255,255,255,.12)}
+  .mins{display:flex;align-items:flex-end;gap:18px}
+  .mins figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .mins figcaption{font-family:ui-monospace,monospace;font-size:10px;color:var(--faint)}
+  .dont{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--mut);margin:8px 0}
+  .x{color:#f0676b;font-weight:700}.ok{color:#5ec98a;font-weight:700}
+  svg{display:block}
+  text{font-family:ui-monospace,monospace}
+  .foot{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;color:var(--faint);font-size:12px;font-family:ui-monospace,monospace;display:flex;justify-content:space-between}
+</style></head>
+<body><div class="sheet">
+
+  <div class="head">
+    <div>
+      <div class="ttl">M<span class="g">C</span> monogram — construction guide</div>
+      <div class="sub">Martin Civáň · personal brand · φ-constructed fused ligature</div>
+    </div>
+    <div class="meta"><b>grid</b> 100 units &nbsp; <b>φ</b> 1.618<br><b>cap-height</b> 50 &nbsp; <b>weight</b> 12 &nbsp; <b>slant</b> 10°<br><b>colour</b> #6366f1 / #08080a / #ecedf2</div>
+  </div>
+
+  <div class="cols">
+    <div class="panel">
+      <h2>1 · Geometry on the grid</h2>
+      <svg id="grid" viewBox="0 0 132 104" width="100%"></svg>
+    </div>
+    <div>
+      <div class="panel" style="padding-bottom:14px">
+        <h2>The golden ratio in the mark</h2>
+        <ul class="ratios">
+          <li><span><b>bounding box</b> W : H</span><span>81 : 50 = <span class="v">φ</span></span></li>
+          <li><span><b>M width</b> : C extension</span><span>50 : 31 = <span class="v">φ</span></span></li>
+          <li><span><b>V-valley</b> from cap (golden section)</span><span>31 : 19 = <span class="v">φ</span></span></li>
+          <li><span><b>stroke weight</b> = H / φ³</span><span>50 / 4.24 = <span class="v">12</span></span></li>
+          <li><span><b>M</b> is a true square</span><span>50 × 50</span></li>
+        </ul>
+      </div>
+      <p style="color:var(--mut);font-size:13px;line-height:1.6;margin:18px 4px 0">
+        Everything derives from one number — the cap-height <b style="color:var(--ink)">H = 50</b>.
+        The width is <b style="color:var(--ink)">H·φ</b>, the C extends the square M by <b style="color:var(--ink)">H/φ</b>,
+        the inner V sits on the golden section, and the stroke is <b style="color:var(--ink)">H/φ³</b>.
+        Define H, and the whole mark falls out. The 10° lean is the only non-derived, purely
+        aesthetic move — applied last, as a shear.
+      </p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:38px">2 · How to draw it by hand</h2>
+  <div class="steps" id="steps"></div>
+
+  <div class="usage">
+    <div class="u">
+      <div class="lab">Clear space &amp; min size</div>
+      <div class="mins" id="mins"></div>
+      <p style="color:var(--mut);font-size:12px;margin:14px 0 0;line-height:1.5">Keep clear space ≥ the stroke weight on all sides. Legible to <b style="color:var(--ink)">16px</b>; below that use the M alone.</p>
+    </div>
+    <div class="u">
+      <div class="lab">Colour</div>
+      <div class="swatch"><span class="dot" style="background:#6366f1"></span> Indigo · #6366f1 · primary</div>
+      <div class="swatch"><span class="dot" style="background:#08080a"></span> Ink · #08080a · on light</div>
+      <div class="swatch"><span class="dot" style="background:#ecedf2"></span> Paper · #ecedf2 · on dark</div>
+      <p style="color:var(--mut);font-size:12px;margin:12px 0 0;line-height:1.5">Always one flat colour. No gradients, no outline, no fill+stroke mixing.</p>
+    </div>
+    <div class="u">
+      <div class="lab">Do / Don't</div>
+      <div class="dont"><span class="ok">✓</span> keep the 10° lean &amp; weight 12</div>
+      <div class="dont"><span class="ok">✓</span> scale uniformly</div>
+      <div class="dont"><span class="x">✗</span> re-slant, condense or embolden</div>
+      <div class="dont"><span class="x">✗</span> round the corners or add a tile</div>
+      <div class="dont"><span class="x">✗</span> recolour with a gradient</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>martincivan.github.io · /public/brand</span><span>v1 · φ-constructed</span></div>
+</div>
+
+<script>
+const BLUE='#6366f1', PHI='#c084fc', INK='#ecedf2', MUT='#8b8b99', GRID='#23232f', FAINT='#56566a';
+// ---- mark drawing (upright, color c, weight w=12) ----
+function markUpright(c){return `
+  <path d="M16 76 V26 L41 57 L66 26 V76" fill="none" stroke="${c}" stroke-width="12" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+  <path d="M60 25 H97 V37 H60 Z" fill="${c}"/>
+  <path d="M60 65 H97 V77 H60 Z" fill="${c}"/>`;}
+function markSlanted(c){return `<g transform="matrix(1,0,-0.17633,1,8.8165,0)">${markUpright(c)}</g>`;}
+
+// ---- main construction diagram ----
+(function(){
+  let g='';
+  // faint grid every 10
+  for(let x=0;x<=120;x+=10){g+=`<line x1="${x}" y1="0" x2="${x}" y2="100" stroke="${GRID}" stroke-width="0.4"/>`;}
+  for(let y=0;y<=100;y+=10){g+=`<line x1="0" y1="${y}" x2="120" y2="${y}" stroke="${GRID}" stroke-width="0.4"/>`;}
+  // golden bounding box 16,26 -> 97,76
+  g+=`<rect x="16" y="26" width="81" height="50" fill="none" stroke="${BLUE}" stroke-width="0.8" stroke-dasharray="2.5 2"/>`;
+  // golden section guides
+  g+=`<line x1="66" y1="20" x2="66" y2="82" stroke="${PHI}" stroke-width="0.7" stroke-dasharray="2 2"/>`;
+  g+=`<line x1="10" y1="57" x2="103" y2="57" stroke="${PHI}" stroke-width="0.7" stroke-dasharray="2 2"/>`;
+  // the mark (upright, white) with key node dots
+  g+=markUpright(INK);
+  const nodes=[[16,26],[16,76],[41,57],[66,26],[66,76],[97,25],[97,77]];
+  nodes.forEach(([x,y])=>{g+=`<circle cx="${x}" cy="${y}" r="1.5" fill="${BLUE}"/>`;});
+  // dimension labels
+  const tx=(x,y,t,col=MUT,s=4)=>`<text x="${x}" y="${y}" fill="${col}" font-size="${s}" text-anchor="middle">${t}</text>`;
+  g+=tx(41,90,'M width = 50 (= H)',MUT,4);
+  g+=tx(81,90,'C ext = 31 (H/φ)',PHI,4);
+  g+=tx(8,51,'H',MUT,5);
+  g+=`<text x="100" y="40" fill="${BLUE}" font-size="4">x=97</text>`;
+  g+=`<text x="68" y="23" fill="${PHI}" font-size="4">φ split x=66</text>`;
+  g+=`<text x="104" y="56" fill="${PHI}" font-size="4">y=57</text>`;
+  g+=tx(41,52,'valley',FAINT,3.4);
+  document.getElementById('grid').innerHTML=g;
+})();
+
+// ---- 4 hand-draw steps ----
+function stepSVG(draw){return `<svg viewBox="0 0 120 96" width="100%">${draw}</svg>`;}
+const faint='#3a3a4a';
+function box(){let s='';for(let x=0;x<=120;x+=10)s+=`<line x1="${x}" y1="0" x2="${x}" y2="96" stroke="#1a1a24" stroke-width="0.4"/>`;for(let y=0;y<=90;y+=10)s+=`<line x1="0" y1="${y}" x2="120" y2="${y}" stroke="#1a1a24" stroke-width="0.4"/>`;return s;}
+const steps=[
+ {n:'01', t:'Square the M. <span>Rule a 50×50 box. Drop two vertical stems — left edge (x16) and right edge (x66).</span>',
+  draw:box()+`<rect x="16" y="26" width="50" height="50" fill="none" stroke="${BLUE}" stroke-width="0.8" stroke-dasharray="2.5 2"/>
+   <line x1="16" y1="26" x2="16" y2="76" stroke="${INK}" stroke-width="4"/>
+   <line x1="66" y1="26" x2="66" y2="76" stroke="${INK}" stroke-width="4"/>`},
+ {n:'02', t:'Cut the V. <span>Find the golden section of the height (≈0.62 down → y57). Join both stems to that point.</span>',
+  draw:box()+`<line x1="10" y1="57" x2="72" y2="57" stroke="${PHI}" stroke-width="0.7" stroke-dasharray="2 2"/>
+   <path d="M16 76 V26 L41 57 L66 26 V76" fill="none" stroke="${INK}" stroke-width="4" stroke-linejoin="miter"/>
+   <circle cx="41" cy="57" r="1.6" fill="${BLUE}"/>`},
+ {n:'03', t:'Grow the C. <span>From the right stem, run two legs to the right — length 31 (H/φ), ending at x97. Same weight.</span>',
+  draw:box()+`<path d="M16 76 V26 L41 57 L66 26 V76" fill="none" stroke="${INK}" stroke-width="4" stroke-linejoin="miter"/>
+   <line x1="63" y1="31" x2="97" y2="31" stroke="${INK}" stroke-width="4"/>
+   <line x1="63" y1="71" x2="97" y2="71" stroke="${INK}" stroke-width="4"/>
+   <line x1="97" y1="20" x2="97" y2="82" stroke="${BLUE}" stroke-width="0.7" stroke-dasharray="2 2"/>`},
+ {n:'04', t:'Lean it. <span>Shear the finished mark 10° to the left. That forward tilt is the only purely aesthetic step.</span>',
+  draw:box()+markSlanted(INK)+`<text x="60" y="92" fill="${MUT}" font-size="4.5" text-anchor="middle">shear −10° · done</text>`},
+];
+document.getElementById('steps').innerHTML=steps.map(s=>`
+  <div class="step"><div class="n">${s.n}</div><div class="t">${s.t}</div>${stepSVG(s.draw)}</div>`).join('');
+
+// ---- min sizes ----
+function mk(h,c){const w=Math.round(h*110/74);return `<svg width="${w}" height="${h}" viewBox="-2 14 110 74" fill="none">${markSlanted(c)}</svg>`;}
+document.getElementById('mins').innerHTML=`
+  <figure>${mk(16,INK)}<figcaption>16px min</figcaption></figure>
+  <figure>${mk(28,INK)}<figcaption>28px nav</figcaption></figure>
+  <figure>${mk(48,INK)}<figcaption>48px</figcaption></figure>`;
+</script>
+</body></html>
