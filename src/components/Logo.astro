@@ -1,16 +1,21 @@
 ---
-// MC monogram — gradient squircle with knocked-out letterforms.
-interface Props { size?: number; knockout?: string; class?: string }
-const { size = 30, knockout = '#08080a', class: cls } = Astro.props;
+// MC monogram — φ-constructed, fused ligature (the M's right stem doubles as the
+// C's spine). Geometry on a 100-unit grid:
+//   • M cap-height 50 (y 26→76); M is a 50×50 square (stems at x16 / x66)
+//   • M : C split sits on the golden section (x66) → C legs run x66→x97,
+//     giving an 81×50 golden bounding box (W : H = φ)
+//   • stroke weight 12  (= cap-height / φ³)
+//   • inner V valley at y57  (= the golden section of the cap-height)
+//   • 10° forward shear, baked into a portable matrix() transform
+// Single colour, inherits `currentColor` by default. See public/brand/.
+interface Props { size?: number; color?: string; class?: string }
+const { size = 28, color = 'currentColor', class: cls } = Astro.props;
+const w = Math.round((size * 110) / 74); // viewBox aspect 110:74
 ---
-<svg width={size} height={size} viewBox="0 0 100 100" class={cls} aria-hidden="true" role="img">
-  <defs>
-    <linearGradient id="mc-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#818cf8" />
-      <stop offset="1" stop-color="#c084fc" />
-    </linearGradient>
-  </defs>
-  <rect x="4" y="4" width="92" height="92" rx="27" fill="url(#mc-grad)" />
-  <path d="M25 69 V35 L42 55 L59 35 V69" fill="none" stroke={knockout} stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M80 43 A14.5 14.5 0 1 0 80 57" fill="none" stroke={knockout} stroke-width="9" stroke-linecap="round" />
+<svg width={w} height={size} viewBox="-2 14 110 74" fill="none" class={cls} aria-label="MC monogram" role="img">
+  <g transform="matrix(1,0,-0.17633,1,8.8165,0)">
+    <path d="M16 76 V26 L41 57 L66 26 V76" fill="none" stroke={color} stroke-width="12" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6" />
+    <path d="M60 25 H97 V37 H60 Z" fill={color} />
+    <path d="M60 65 H97 V77 H60 Z" fill={color} />
+  </g>
 </svg>

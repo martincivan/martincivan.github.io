@@ -48,6 +48,11 @@ body {
   color: #fff;
 }
 
+/* Nav links + scrollspy active state */
+.nav-link { color: var(--color-muted); }
+.nav-link:hover { color: var(--color-fg); background-color: color-mix(in oklab, var(--color-surface) 60%, transparent); }
+.nav-link.nav-active { color: var(--color-fg); background-color: var(--color-surface); }
+
 /* Gradient text — reliable across browsers (Tailwind v4's from-[--var]
    shorthand doesn't resolve CSS vars in gradient stops). */
 .text-gradient {

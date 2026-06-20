@@ -1,0 +1,26 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const pillars = t.home.pillars;
+---
+<div class="grid gap-10 lg:grid-cols-5">
+  <div class="space-y-4 text-[--color-muted] lg:col-span-3">
+    {t.about.bio.map((para) => <p class="leading-relaxed">{para}</p>)}
+    <p class="text-sm text-[--color-faint]">{t.about.beyond}</p>
+  </div>
+  <div class="lg:col-span-2">
+    <p class="mb-4 font-mono text-xs uppercase tracking-wider text-[--color-faint]">{t.sections.whatIDo}</p>
+    <div class="space-y-3">
+      {pillars.map((p) => (
+        <article class="rounded-xl border border-[--color-border] bg-[--color-surface]/40 p-4">
+          <p class="font-mono text-[11px] uppercase tracking-wider text-[--color-accent]">{p.tag}</p>
+          <h3 class="mt-1 text-sm font-semibold">{p.title}</h3>
+        </article>
+      ))}
+    </div>
+  </div>
+</div>

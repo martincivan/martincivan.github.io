@@ -19,6 +19,14 @@ export interface Dict {
   };
   projects: { kicker: string; h1: string; intro: string };
   blog: { kicker: string; h1: string; intro: string; empty: string; all: string; min: string; readMin: string };
+  sections: {
+    whatIDo: string;
+    about: { eyebrow: string; title: string };
+    experience: { eyebrow: string; title: string };
+    skills: { eyebrow: string; title: string; lead: string };
+    projects: { eyebrow: string; title: string };
+    contact: { eyebrow: string; title: string; lead: string };
+  };
   skillGroups: Record<string, string>;
 }
 
@@ -65,6 +73,14 @@ export const ui: Record<Lang, Dict> = {
       intro: 'Occasional writing about the systems I build and the lessons that don’t fit in a commit message.',
       empty: 'No posts yet — coming soon.', all: '← all posts', min: 'min', readMin: 'min read',
     },
+    sections: {
+      whatIDo: 'What I do',
+      about: { eyebrow: 'About', title: 'Who I am' },
+      experience: { eyebrow: 'Experience', title: 'Where I’ve worked' },
+      skills: { eyebrow: 'Skills', title: 'What I work with', lead: 'TL;DR — whatever the job needs. But if I get to choose: Python.' },
+      projects: { eyebrow: 'Projects', title: 'Selected work' },
+      contact: { eyebrow: 'Contact', title: 'Let’s talk', lead: 'Building something ambitious — or hiring for it? I’m always up for an interesting problem.' },
+    },
     skillGroups: {},
   },
 
@@ -109,6 +125,14 @@ export const ui: Record<Lang, Dict> = {
       kicker: 'Blog', h1: 'Poznámky o platform engineeringu, DevOps a AI.',
       intro: 'Občasné písanie o systémoch, ktoré stavám, a o ponaučeniach, ktoré sa nezmestia do commit message.',
       empty: 'Zatiaľ žiadne príspevky — už čoskoro.', all: '← všetky príspevky', min: 'min', readMin: 'min čítania',
+    },
+    sections: {
+      whatIDo: 'Čo robím',
+      about: { eyebrow: 'O mne', title: 'Kto som' },
+      experience: { eyebrow: 'Skúsenosti', title: 'Kde som pôsobil' },
+      skills: { eyebrow: 'Zručnosti', title: 'S čím pracujem', lead: 'TL;DR — čokoľvek, čo treba. Ale ak si môžem vybrať: Python.' },
+      projects: { eyebrow: 'Projekty', title: 'Vybrané práce' },
+      contact: { eyebrow: 'Kontakt', title: 'Ozvime sa', lead: 'Staviate niečo ambiciózne — alebo na to hľadáte človeka? Vždy si rád dám zaujímavý problém.' },
     },
     skillGroups: {
       'Platform & Infrastructure': 'Platforma & Infraštruktúra',

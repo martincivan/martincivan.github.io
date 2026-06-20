@@ -9,23 +9,23 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const { pathname } = Astro.url;
 
-const links = [
-  { href: localePath('/', lang), label: t.nav.home, match: '/' },
-  { href: localePath('/about/', lang), label: t.nav.about, match: '/about' },
-  { href: localePath('/projects/', lang), label: t.nav.projects, match: '/projects' },
-  { href: localePath('/blog/', lang), label: t.nav.blog, match: '/blog' },
-];
-
-// strip locale prefix for active-state matching
+const base = localePath('/', lang);
 const rel = lang === 'sk' ? pathname.replace(/^\/sk/, '') || '/' : pathname;
-const isActive = (m: string) => (m === '/' ? rel === '/' : rel.startsWith(m));
+const isBlog = rel.startsWith('/blog');
+
+const links = [
+  { href: base, label: t.nav.home, section: 'home', active: !isBlog },
+  { href: `${base}#about`, label: t.nav.about, section: 'about', active: false },
+  { href: `${base}#projects`, label: t.nav.projects, section: 'projects', active: false },
+  { href: localePath('/blog/', lang), label: t.nav.blog, section: 'blog', active: isBlog },
+];
 
 const otherLang: Lang = lang === 'en' ? 'sk' : 'en';
 const switchHref = alternatePath(Astro.url, lang, otherLang);
 ---
 <header class="sticky top-0 z-50 border-b border-[--color-border] bg-[--color-bg]/80 backdrop-blur-md">
   <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-    <a href={localePath('/', lang)} class="group flex items-center gap-2.5 font-mono text-sm tracking-tight">
+    <a href={base} class="group flex items-center gap-2.5 font-mono text-sm tracking-tight">
       <Logo size={28} class="transition-transform group-hover:scale-105" />
       <span class="font-semibold">martin<span class="text-[--color-muted]">civan</span></span>
     </a>
@@ -35,12 +35,9 @@ const switchHref = alternatePath(Astro.url, lang, otherLang);
           <li>
             <a
               href={l.href}
-              class:list={[
-                'rounded-md px-3 py-1.5 transition-colors',
-                isActive(l.match)
-                  ? 'text-[--color-fg] bg-[--color-surface]'
-                  : 'text-[--color-muted] hover:text-[--color-fg] hover:bg-[--color-surface]/60',
-              ]}
+              data-section={l.section}
+              class="nav-link rounded-md px-3 py-1.5 transition-colors"
+              class:list={[{ 'nav-active': l.active }]}
             >{l.label}</a>
           </li>
         ))}
@@ -49,3 +46,34 @@ const switchHref = alternatePath(Astro.url, lang, otherLang);
     </div>
   </nav>
 </header>
+
+<script>
+  // Scrollspy — only on the single-page layout (where #about exists).
+  if (document.getElementById('about')) {
+    const navLinks = Array.from(document.querySelectorAll<HTMLElement>('.nav-link[data-section]'));
+    const spied = ['home', 'about', 'projects'];
+    const targets = spied
+      .map((key) => ({ key, el: key === 'home' ? null : document.getElementById(key) }))
+      .filter((s) => s.key === 'home' || s.el);
+
+    const onScroll = () => {
+      const y = window.scrollY + 120; // sticky-nav offset
+      let active = 'home';
+      for (const s of targets) {
+        if (s.el && s.el.offsetTop <= y) active = s.key;
+      }
+      // near the bottom, force the last section active
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
+        active = targets[targets.length - 1].key;
+      }
+      for (const l of navLinks) {
+        if (spied.includes(l.dataset.section!)) {
+          l.classList.toggle('nav-active', l.dataset.section === active);
+        }
+      }
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>
