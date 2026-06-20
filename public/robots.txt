@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://martincivan.github.io/sitemap-index.xml

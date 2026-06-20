@@ -1,1 +1,18 @@
+# build output
+dist/
 _site/
+
+# dependencies
+node_modules/
+
+# astro
+.astro/
+
+# environment
+.env
+.env.production
+
+# editor / OS
+.DS_Store
+.idea/
+*.iml

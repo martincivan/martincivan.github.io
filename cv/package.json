@@ -1,0 +1,12 @@
+{
+  "name": "cv-generator",
+  "private": true,
+  "type": "module",
+  "description": "Tailored CV generator — renders a one-page PDF from the website's data, per job listing.",
+  "scripts": {
+    "cv": "node generate.ts"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.10.0"
+  }
+}

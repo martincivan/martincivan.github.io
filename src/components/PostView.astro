@@ -1,0 +1,43 @@
+---
+import { render } from 'astro:content';
+import type { Lang } from '../i18n/utils';
+import { localePath } from '../i18n/utils';
+import { useTranslations } from '../i18n/ui';
+import { readingTime, formatDate, type Post } from '../utils/posts';
+
+interface Props { post: Post; lang: Lang }
+const { post, lang } = Astro.props;
+const t = useTranslations(lang).blog;
+const { Content } = await render(post);
+const locale = lang === 'sk' ? 'sk-SK' : 'en-GB';
+---
+<article class="py-16">
+  <a href={localePath('/blog/', lang)} class="font-mono text-sm text-[--color-muted] transition-colors hover:text-[--color-fg]">{t.all}</a>
+  <header class="mt-6 border-b border-[--color-border] pb-8">
+    <h1 class="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{post.data.title}</h1>
+    <p class="mt-4 font-mono text-sm text-[--color-faint]">
+      {formatDate(post.data.date, locale)} · {readingTime(post.body)} {t.readMin}
+    </p>
+    <ul class="mt-3 flex flex-wrap gap-1.5">
+      {post.data.tags.map((tag) => (
+        <li class="rounded-md border border-[--color-border] px-2 py-0.5 font-mono text-[11px] text-[--color-faint]">#{tag}</li>
+      ))}
+    </ul>
+  </header>
+
+  <div class="prose mt-10 max-w-2xl"><Content /></div>
+
+  {post.data.images && post.data.images.length > 0 && (
+    <div class="mt-12">
+      <h2 class="mb-5 font-mono text-sm uppercase tracking-wider text-[--color-muted]">{lang === 'sk' ? 'Galéria' : 'Gallery'}</h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {post.data.images.map((img) => (
+          <figure class="overflow-hidden rounded-[--radius-card] border border-[--color-border]">
+            <img src={img.src} alt={img.alt ?? ''} loading="lazy" class="aspect-video w-full object-cover" />
+            {img.alt && <figcaption class="px-4 py-2 text-xs text-[--color-muted]">{img.alt}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    </div>
+  )}
+</article>

@@ -1,0 +1,50 @@
+---
+import type { Lang } from '../i18n/utils';
+import { localePath, alternatePath } from '../i18n/utils';
+import { useTranslations } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const { pathname } = Astro.url;
+
+const links = [
+  { href: localePath('/', lang), label: t.nav.home, match: '/' },
+  { href: localePath('/about/', lang), label: t.nav.about, match: '/about' },
+  { href: localePath('/projects/', lang), label: t.nav.projects, match: '/projects' },
+  { href: localePath('/blog/', lang), label: t.nav.blog, match: '/blog' },
+];
+
+// strip locale prefix for active-state matching
+const rel = lang === 'sk' ? pathname.replace(/^\/sk/, '') || '/' : pathname;
+const isActive = (m: string) => (m === '/' ? rel === '/' : rel.startsWith(m));
+
+const otherLang: Lang = lang === 'en' ? 'sk' : 'en';
+const switchHref = alternatePath(Astro.url, lang, otherLang);
+---
+<header class="sticky top-0 z-50 border-b border-[--color-border] bg-[--color-bg]/80 backdrop-blur-md">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <a href={localePath('/', lang)} class="group flex items-center gap-2 font-mono text-sm tracking-tight">
+      <span class="inline-block h-2.5 w-2.5 rounded-full bg-[--color-accent] shadow-[0_0_12px_var(--color-accent)]"></span>
+      <span class="font-semibold">martin<span class="text-[--color-muted]">civan</span></span>
+    </a>
+    <div class="flex items-center gap-1 text-sm">
+      <ul class="flex items-center gap-1">
+        {links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class:list={[
+                'rounded-md px-3 py-1.5 transition-colors',
+                isActive(l.match)
+                  ? 'text-[--color-fg] bg-[--color-surface]'
+                  : 'text-[--color-muted] hover:text-[--color-fg] hover:bg-[--color-surface]/60',
+              ]}
+            >{l.label}</a>
+          </li>
+        ))}
+      </ul>
+      <a href={switchHref} class="ml-2 rounded-md border border-[--color-border] px-2.5 py-1.5 font-mono text-xs uppercase text-[--color-muted] transition-colors hover:text-[--color-fg] hover:border-[--color-accent]/40" hreflang={otherLang}>{otherLang}</a>
+    </div>
+  </nav>
+</header>

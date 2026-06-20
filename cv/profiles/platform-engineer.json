@@ -1,0 +1,10 @@
+{
+  "targetRole": "Senior Platform / DevSecOps Engineer",
+  "summary": "Platform & DevSecOps engineer who designs and runs Kubernetes/OpenShift at scale on sovereign infrastructure. I provision clusters fully as code, operate a large GitOps platform on ArgoCD, and bake supply-chain security into CI/CD — backed by years of full-stack delivery and engineering leadership.",
+  "emphasize": ["Kubernetes", "OpenShift / OKD", "Terraform / OpenTofu", "ArgoCD (GitOps)", "Helm", "GitLab CI/CD", "Go", "Cilium", "Vault", "Prometheus"],
+  "skillGroups": ["Platform & Infrastructure", "Cloud & Observability", "Languages", "Data & Messaging"],
+  "roles": ["NASES", "QualityUnit", "Lapz", "DXC Technology"],
+  "maxBulletsPerRole": 4,
+  "projects": ["NASES — National e-Government Platform", "Medical Navigator", "Lapz — F1 AR for Apple Vision Pro"],
+  "accent": "#4f46e5"
+}

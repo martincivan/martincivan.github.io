@@ -1,0 +1,12 @@
+{
+  "_comment": "Copy this file to <job-name>.json and edit. All fields are optional except targetRole. Omitted list fields fall back to: all skill groups / all roles / featured projects, in their data.ts order.",
+  "targetRole": "The exact job title you're applying for",
+  "summary": "2-3 sentence pitch tailored to this listing. Omit to use the default summary from src/data/profile.ts.",
+  "emphasize": ["Skill names to highlight (must match items in src/data/skills.ts) — these render in the accent colour"],
+  "skillGroups": ["Which skill-group labels to include, in order. Omit for all. Labels: Platform & Infrastructure | Cloud & Observability | Languages | Web & Frameworks | Data & Messaging | AI / ML"],
+  "roles": ["Company names to include, in order (NASES | Lapz | QualityUnit | DXC Technology). Omit for all."],
+  "maxBulletsPerRole": 4,
+  "projects": ["Project names to include, in order. Omit to use featured projects. See names in src/data/projects.ts."],
+  "showProjects": true,
+  "accent": "#4f46e5"
+}
