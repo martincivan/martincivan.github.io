@@ -11,7 +11,7 @@ export const profile = {
   // Default summary used by the website and as the CV fallback when a
   // job-specific profile doesn't override it.
   summary:
-    'Platform & DevSecOps engineer who builds and runs the cloud-native foundation behind Slovakia’s national e-government. I provision clusters as code, design the GitOps and security underneath, and have a track record of leading and shipping products end to end — from native apps to applied AI.',
+    'Platform & DevSecOps engineer and product builder. I build and run the cloud-native foundation behind Slovakia’s national e-government — provisioning clusters as code and designing the GitOps and security underneath — and have a track record of taking products from idea to working reality and scaling them, across web apps and applied AI.',
 };
 
 export type Profile = typeof profile;

@@ -2,6 +2,7 @@
 import type { Lang } from '../i18n/utils';
 import { localePath, alternatePath } from '../i18n/utils';
 import { useTranslations } from '../i18n/ui';
+import Logo from './Logo.astro';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -24,8 +25,8 @@ const switchHref = alternatePath(Astro.url, lang, otherLang);
 ---
 <header class="sticky top-0 z-50 border-b border-[--color-border] bg-[--color-bg]/80 backdrop-blur-md">
   <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-    <a href={localePath('/', lang)} class="group flex items-center gap-2 font-mono text-sm tracking-tight">
-      <span class="inline-block h-2.5 w-2.5 rounded-full bg-[--color-accent] shadow-[0_0_12px_var(--color-accent)]"></span>
+    <a href={localePath('/', lang)} class="group flex items-center gap-2.5 font-mono text-sm tracking-tight">
+      <Logo size={28} class="transition-transform group-hover:scale-105" />
       <span class="font-semibold">martin<span class="text-[--color-muted]">civan</span></span>
     </a>
     <div class="flex items-center gap-1 text-sm">

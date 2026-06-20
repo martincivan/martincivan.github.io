@@ -27,14 +27,14 @@ export const ui: Record<Lang, Dict> = {
     nav: { home: 'Home', about: 'About', projects: 'Projects', blog: 'Blog' },
     footer: { tagline: 'Bratislava, Slovakia' },
     home: {
-      kicker: 'Platform & DevSecOps Engineer · Technical founder',
-      h1a: 'I build and run the cloud-native platform behind',
-      h1accent: 'Slovakia’s national e-government.',
-      lead: 'From bare-metal and OpenShift up through GitOps, security and observability — and, on the side, shipping products and applied AI. Currently DevSecOps engineer at NASES and building Logram.ai.',
+      kicker: 'Platform & DevSecOps Engineer · Technical founder · infra → product → AI',
+      h1a: 'Whatever the technology,',
+      h1accent: 'I make it work.',
+      lead: 'I work across the whole stack — infrastructure, web apps, and applied AI — equally at home on a mature product used by thousands or a blank repo. What I enjoy most is the early, uncertain part: researching the unknowns, proving out an approach, and turning a fuzzy idea into something that works. Right now that’s the platform behind Slovakia’s national e-government at NASES, and Logram.ai on the side.',
       ctaWork: 'View selected work', ctaAbout: 'About & CV',
       pillars: [
         { tag: 'Platform & Cloud-Native', title: 'Infrastructure behind a nation', body: 'I design and run the Kubernetes platform under slovensko.sk — Slovakia’s national e-government. Automated OpenShift provisioning on Oracle PCA and bare-metal, a 40+ component GitOps stack on ArgoCD, supply-chain-secured CI/CD, and real network engineering across F5, Fortinet and Cilium.', stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Cilium', 'Go'] },
-        { tag: 'Product & Architecture', title: 'Shipping, end to end', body: 'Years architecting and leading LiveAgent (helpdesk SaaS at scale), co-founder and technical lead of Lapz. I’ve owned products from data model to deployment — backend, frontend, mobile, and the infrastructure underneath.', stack: ['TypeScript', 'PHP', 'Python', 'Swift', 'AWS', 'PostgreSQL'] },
+        { tag: 'Product & Architecture', title: 'From idea to scale', body: 'Seven years architecting and helping lead LiveAgent (helpdesk SaaS at scale), co-founder and technical lead of Lapz. I take products from blank repo to working reality — and have kept one growing for years — across data model, backend, frontend, mobile and the infrastructure underneath.', stack: ['TypeScript', 'PHP', 'Python', 'Swift', 'AWS', 'PostgreSQL'] },
         { tag: 'Applied AI / ML', title: 'From MRI to vector graphics', body: 'Master’s thesis on 3D deep learning for subcortical brain MRI segmentation, benchmarked against clinical tooling. Today I’m building Logram.ai and fine-tuning OmniSVG for AI-native vector generation.', stack: ['PyTorch', '3D FCN', 'Fine-tuning', 'OmniSVG', 'Gemini'] },
       ],
       selectedTitle: 'Selected work', selectedAll: 'all projects →',
@@ -46,7 +46,7 @@ export const ui: Record<Lang, Dict> = {
     },
     about: {
       kicker: 'About',
-      h1: 'Platform engineer who likes to ship — from kernel-level networking to native apps and applied AI.',
+      h1: 'Platform engineer who loves to explore and build — from kernel-level networking to web apps and applied AI.',
       bio: [
         'I’m Martin, a Bratislava-based engineer. By day I design and run the Kubernetes platform behind slovensko.sk, Slovakia’s national e-government — provisioning clusters as code, building the GitOps and security underneath, and dragging critical infrastructure into a modern, automated way of working.',
         'Before that I spent years leading and building product: architecting a help-desk SaaS at scale, and co-founding Lapz, a Vision Pro app Forbes called “the best reason yet to buy a Vision Pro.” On the side I build products and stay close to AI — from a deep-learning master’s thesis in medical imaging to fine-tuning generative models for Logram.ai today.',
@@ -72,14 +72,14 @@ export const ui: Record<Lang, Dict> = {
     nav: { home: 'Domov', about: 'O mne', projects: 'Projekty', blog: 'Blog' },
     footer: { tagline: 'Bratislava, Slovensko' },
     home: {
-      kicker: 'Platform & DevSecOps inžinier · Technický spoluzakladateľ',
-      h1a: 'Staviam a prevádzkujem cloud-native platformu, na ktorej stojí',
-      h1accent: 'slovenský e-Government.',
-      lead: 'Od holého železa a OpenShiftu cez GitOps, bezpečnosť až po observability — a popri tom stavám produkty a aplikovanú AI. Aktuálne DevSecOps inžinier v NASES a budujem Logram.ai.',
+      kicker: 'Platform & DevSecOps inžinier · Technický spoluzakladateľ · infra → produkt → AI',
+      h1a: 'Nech je technológia akákoľvek,',
+      h1accent: 'rozbehnem to.',
+      lead: 'Pracujem naprieč celým stackom — infraštruktúra, webové aplikácie a aplikovaná AI — rovnako doma na zrelom produkte pre tisíce používateľov ako na prázdnom repozitári. Najviac ma baví tá skorá, neistá časť: skúmať neznáme, overiť prístup a premeniť nejasný nápad na niečo, čo funguje. Práve teraz je to platforma pod slovenským e-Governmentom v NASES a Logram.ai popri tom.',
       ctaWork: 'Pozri vybrané práce', ctaAbout: 'O mne & CV',
       pillars: [
         { tag: 'Platforma & Cloud-Native', title: 'Infraštruktúra pod štátom', body: 'Navrhujem a prevádzkujem Kubernetes platformu pod slovensko.sk — portálom slovenského e-Governmentu. Automatizované nasadzovanie OpenShiftu na Oracle PCA aj holé železo, GitOps stack so 40+ komponentmi nad ArgoCD, CI/CD so zabezpečeným dodávateľským reťazcom a reálny network engineering naprieč F5, Fortinet a Cilium.', stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Cilium', 'Go'] },
-        { tag: 'Produkt & Architektúra', title: 'Doručené, od začiatku po koniec', body: 'Roky architektúry a vedenia LiveAgentu (helpdesk SaaS vo veľkom), spoluzakladateľ a technický líder Lapz. Vlastnil som produkty od dátového modelu po nasadenie — backend, frontend, mobil aj infraštruktúru pod tým.', stack: ['TypeScript', 'PHP', 'Python', 'Swift', 'AWS', 'PostgreSQL'] },
+        { tag: 'Produkt & Architektúra', title: 'Od nápadu po škálu', body: 'Sedem rokov architektúry a spoluvedenia LiveAgentu (helpdesk SaaS vo veľkom), spoluzakladateľ a technický líder Lapz. Produkty beriem od prázdneho repozitára k fungujúcej realite — a jeden som roky rozvíjal ďalej — naprieč dátovým modelom, backendom, frontendom, mobilom aj infraštruktúrou pod tým.', stack: ['TypeScript', 'PHP', 'Python', 'Swift', 'AWS', 'PostgreSQL'] },
         { tag: 'Aplikovaná AI / ML', title: 'Od MRI po vektorovú grafiku', body: 'Diplomová práca o 3D hlbokom učení na segmentáciu subkortikálnych štruktúr mozgu z MRI, porovnaná s klinickými nástrojmi. Dnes budujem Logram.ai a fine-tunujem OmniSVG na AI generovanie vektorovej grafiky.', stack: ['PyTorch', '3D FCN', 'Fine-tuning', 'OmniSVG', 'Gemini'] },
       ],
       selectedTitle: 'Vybrané práce', selectedAll: 'všetky projekty →',
@@ -91,7 +91,7 @@ export const ui: Record<Lang, Dict> = {
     },
     about: {
       kicker: 'O mne',
-      h1: 'Inžinier, ktorý rád doručuje — od sieťovania na úrovni kernelu cez natívne appky až po aplikovanú AI.',
+      h1: 'Inžinier, ktorý rád skúma a stavia — od sieťovania na úrovni kernelu cez webové aplikácie až po aplikovanú AI.',
       bio: [
         'Som Martin, inžinier z Bratislavy. Cez deň navrhujem a prevádzkujem Kubernetes platformu pod slovensko.sk, portálom slovenského e-Governmentu — nasadzujem klastre ako kód, staviam GitOps a bezpečnosť pod tým a ťahám kritickú infraštruktúru do moderného, automatizovaného sveta.',
         'Predtým som roky viedol a staval produkty: architektúra helpdesk SaaS vo veľkom a spoluzaloženie Lapz, aplikácie pre Vision Pro, ktorú Forbes nazval „najlepším dôvodom kúpiť si Vision Pro". Popri tom stavám produkty a držím sa blízko AI — od diplomovej práce o hlbokom učení v medicínskom zobrazovaní po fine-tuning generatívnych modelov pre Logram.ai.',
