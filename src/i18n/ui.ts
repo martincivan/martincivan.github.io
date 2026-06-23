@@ -7,7 +7,7 @@ export interface Dict {
   nav: { home: string; about: string; projects: string; blog: string };
   footer: { tagline: string };
   home: {
-    kicker: string; h1a: string; h1accent: string; lead: string;
+    roles: string[]; h1a: string; h1accent: string; lead: string;
     ctaWork: string; ctaAbout: string;
     pillars: Pillar[];
     selectedTitle: string; selectedAll: string; featured: Featured[];
@@ -35,10 +35,10 @@ export const ui: Record<Lang, Dict> = {
     nav: { home: 'Home', about: 'About', projects: 'Projects', blog: 'Blog' },
     footer: { tagline: 'Bratislava, Slovakia' },
     home: {
-      kicker: 'Platform & DevSecOps Engineer · Technical founder · infra → product → AI',
+      roles: ['Platform Engineer', 'DevOps Engineer', 'Cloud Engineer', 'Infrastructure Engineer', 'Site Reliability Engineer', 'Software Engineer', 'Backend Engineer', 'Full-Stack Engineer', 'AI Engineer', 'ML Engineer', 'Network Engineer', 'Security Engineer', 'Frontend Engineer', 'Mobile Engineer', 'Solutions Architect', 'Systems Engineer'],
       h1a: 'Whatever the technology,',
       h1accent: 'I make it work.',
-      lead: 'I work across the whole stack — infrastructure, web apps, and applied AI — equally at home on a mature product used by thousands or a blank repo. What I enjoy most is the early, uncertain part: researching the unknowns, proving out an approach, and turning a fuzzy idea into something that works. Right now that’s the platform behind Slovakia’s national e-government at NASES, and Logram.ai on the side.',
+      lead: 'I work across the whole stack — infrastructure, web apps, and applied AI — I am equally at home on a mature product used by thousands or a blank repo. What I enjoy most is the early, uncertain part: researching the unknowns, proving out an approach, and turning a fuzzy idea into something that works. Right now that’s the platform behind Slovakia’s national e-government at NASES, and Logram.ai on the side.',
       ctaWork: 'View selected work', ctaAbout: 'About & CV',
       pillars: [
         { tag: 'Platform & Cloud-Native', title: 'Infrastructure behind a nation', body: 'I design and run the Kubernetes platform under slovensko.sk — Slovakia’s national e-government. Automated OpenShift provisioning on Oracle PCA and bare-metal, a 40+ component GitOps stack on ArgoCD, supply-chain-secured CI/CD, and real network engineering across F5, Fortinet and Cilium.', stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Cilium', 'Go'] },
@@ -88,7 +88,7 @@ export const ui: Record<Lang, Dict> = {
     nav: { home: 'Domov', about: 'O mne', projects: 'Projekty', blog: 'Blog' },
     footer: { tagline: 'Bratislava, Slovensko' },
     home: {
-      kicker: 'Platform & DevSecOps inžinier · Technický spoluzakladateľ · infra → produkt → AI',
+      roles: ['Platform inžinier', 'DevOps inžinier', 'Cloud inžinier', 'Infraštruktúrny inžinier', 'SRE inžinier', 'Softvérový inžinier', 'Backend inžinier', 'Full-stack inžinier', 'AI inžinier', 'ML inžinier', 'Sieťový inžinier', 'Security inžinier', 'Frontend inžinier', 'Mobilný inžinier', 'Solutions architect', 'Systémový inžinier'],
       h1a: 'Nech je technológia akákoľvek,',
       h1accent: 'rozbehnem to.',
       lead: 'Pracujem naprieč celým stackom — infraštruktúra, webové aplikácie a aplikovaná AI — rovnako doma na zrelom produkte pre tisíce používateľov ako na prázdnom repozitári. Najviac ma baví tá skorá, neistá časť: skúmať neznáme, overiť prístup a premeniť nejasný nápad na niečo, čo funguje. Práve teraz je to platforma pod slovenským e-Governmentom v NASES a Logram.ai popri tom.',

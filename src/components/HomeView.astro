@@ -9,7 +9,12 @@ const t = useTranslations(lang).home;
 const base = localePath('/', lang);
 ---
 <section class="flex min-h-[88vh] flex-col justify-center py-20">
-  <p class="mb-5 font-mono text-sm text-[--color-accent]">{t.kicker}</p>
+  <div class="roles-marquee mb-5 max-w-2xl overflow-hidden font-mono text-sm text-[--color-accent]" aria-label={t.roles.join(', ')}>
+    <div class="roles-track" aria-hidden="true">
+      <span class="roles-seq">{t.roles.join(' · ')} · </span>
+      <span class="roles-seq">{t.roles.join(' · ')} · </span>
+    </div>
+  </div>
   <h1 class="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
     {t.h1a}
     <span class="text-gradient">{t.h1accent}</span>
@@ -20,3 +25,29 @@ const base = localePath('/', lang);
     <a href={`${base}#about`} class="rounded-lg border border-[--color-border] px-5 py-2.5 text-sm font-medium text-[--color-fg] transition-colors hover:bg-[--color-surface]">{t.ctaAbout}</a>
   </div>
 </section>
+
+<style>
+  /* Roles scroll continuously and fade in/out at both edges to imply the list keeps going. */
+  .roles-marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 88%, transparent);
+  }
+  .roles-track {
+    display: flex;
+    width: max-content;
+    animation: roles-scroll 100s linear infinite;
+  }
+  .roles-seq {
+    white-space: nowrap;
+  }
+  .roles-marquee:hover .roles-track {
+    animation-play-state: paused;
+  }
+  @keyframes roles-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .roles-track { animation: none; }
+  }
+</style>
