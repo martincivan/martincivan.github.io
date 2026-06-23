@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/ui';
 
@@ -7,20 +8,109 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const pillars = t.home.pillars;
 ---
-<div class="grid gap-10 lg:grid-cols-5">
-  <div class="space-y-4 text-[--color-muted] lg:col-span-3">
+<div class="space-y-14">
+  <div class="max-w-3xl space-y-4 text-[--color-muted]">
     {t.about.bio.map((para) => <p class="leading-relaxed">{para}</p>)}
-    <p class="text-sm text-[--color-faint]">{t.about.beyond}</p>
+    <p class="border-l-2 border-[--color-border] pl-4 text-sm leading-relaxed text-[--color-faint]">{t.about.beyond}</p>
   </div>
-  <div class="lg:col-span-2">
-    <p class="mb-4 font-mono text-xs uppercase tracking-wider text-[--color-faint]">{t.sections.whatIDo}</p>
-    <div class="space-y-3">
+
+  <div>
+    <p class="mb-5 font-mono text-xs uppercase tracking-wider text-[--color-faint]">{t.sections.whatIDo}</p>
+    <div class="grid gap-4 lg:grid-cols-3">
       {pillars.map((p) => (
-        <article class="rounded-xl border border-[--color-border] bg-[--color-surface]/40 p-4">
+        <article class="pillar flex flex-col rounded-xl border border-[--color-border] bg-[--color-surface]/40 p-5 transition-colors hover:border-[color:color-mix(in_oklab,var(--color-accent)_45%,transparent)]">
           <p class="font-mono text-[11px] uppercase tracking-wider text-[--color-accent]">{p.tag}</p>
-          <h3 class="mt-1 text-sm font-semibold">{p.title}</h3>
+          <h3 class="mt-1.5 text-base font-semibold text-[--color-fg]">{p.title}</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-[--color-muted]">{p.body}</p>
+
+          <div class="mt-auto space-y-3.5 pt-5">
+            {p.groups.map((g, gi) => (
+              <div>
+                <p class="mb-1.5 font-mono text-[10px] uppercase tracking-wider text-[--color-faint]">{g.label}</p>
+                <ul class="flex flex-wrap items-center gap-2">
+                  {g.tech.map((tech, ti) => (
+                    tech.icon ? (
+                      <li class="tech group/tech" style={`--d:${gi * 60 + ti * 35}ms`}>
+                        <span class="tech-chip inline-flex h-7 items-center overflow-hidden rounded-md border border-[--color-border] bg-[--color-bg]/60">
+                          <span class="tech-icon flex h-7 w-7 shrink-0 items-center justify-center">
+                            <Icon name={tech.icon} class="h-[18px] w-[18px]" />
+                          </span>
+                          <span class="tech-name max-w-0 whitespace-nowrap font-mono text-[11px] text-[--color-fg] opacity-0">{tech.name}</span>
+                        </span>
+                      </li>
+                    ) : (
+                      <li class="tech" style={`--d:${gi * 60 + ti * 35}ms`}>
+                        <span class="inline-flex h-7 items-center rounded-md border border-[--color-border] bg-[--color-bg]/60 px-2 font-mono text-[11px] text-[--color-faint]">{tech.name}</span>
+                      </li>
+                    )
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </article>
       ))}
     </div>
   </div>
 </div>
+
+<style>
+  /* Logos sit greyscale + dimmed, then bloom to full brand colour on hover. */
+  .tech-icon {
+    filter: grayscale(1);
+    opacity: 0.55;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+  }
+  .group\/tech:hover .tech-icon {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  /* The name stays collapsed, then slides open beside the icon on hover — no overlap, no tooltip. */
+  .tech-chip {
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .group\/tech:hover .tech-chip {
+    border-color: color-mix(in oklab, var(--color-accent) 50%, transparent);
+  }
+  .tech-name {
+    transition: max-width 0.24s ease, opacity 0.22s ease, padding 0.24s ease;
+  }
+  .group\/tech:hover .tech-name {
+    max-width: 11rem;
+    opacity: 1;
+    padding: 0 0.5rem 0 0.25rem;
+  }
+
+  /* Staggered reveal once the card scrolls into view. */
+  .tech {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .pillar.in-view .tech {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.45s ease var(--d), transform 0.45s ease var(--d);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tech { opacity: 1; transform: none; }
+    .pillar.in-view .tech { transition: none; }
+    .tech-name { transition: opacity 0.15s ease; }
+  }
+</style>
+
+<script>
+  const cards = document.querySelectorAll('.pillar');
+  if (cards.length) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.25 });
+    cards.forEach((c) => io.observe(c));
+  }
+</script>
