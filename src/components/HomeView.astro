@@ -2,27 +2,33 @@
 import type { Lang } from '../i18n/utils';
 import { localePath } from '../i18n/utils';
 import { useTranslations } from '../i18n/ui';
+import HeroGraphic from './HeroGraphic.astro';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang).home;
 const base = localePath('/', lang);
 ---
-<section class="flex min-h-[88vh] flex-col justify-center py-20">
-  <div class="roles-marquee mb-5 max-w-2xl overflow-hidden font-mono text-sm text-[--color-accent]" aria-label={t.roles.join(', ')}>
-    <div class="roles-track" aria-hidden="true">
-      <span class="roles-seq">{t.roles.join(' · ')} · </span>
-      <span class="roles-seq">{t.roles.join(' · ')} · </span>
+<section class="grid min-h-[84vh] items-center gap-10 py-20 lg:grid-cols-[1.35fr_1fr]">
+  <div>
+    <div class="roles-marquee mb-5 max-w-2xl overflow-hidden font-mono text-sm text-accent" aria-label={t.roles.join(', ')}>
+      <div class="roles-track" aria-hidden="true">
+        <span class="roles-seq">{t.roles.join(' · ')} · </span>
+        <span class="roles-seq">{t.roles.join(' · ')} · </span>
+      </div>
+    </div>
+    <h1 class="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
+      {t.h1a}
+      <span class="text-gradient">{t.h1accent}</span>
+    </h1>
+    <p class="mt-7 max-w-2xl text-lg leading-relaxed text-muted">{t.lead}</p>
+    <div class="mt-10 flex flex-wrap items-center gap-3">
+      <a href={`${base}#projects`} class="group inline-flex items-center gap-2 rounded-lg bg-accent-strong px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent-strong/20 transition-colors hover:bg-accent">{t.ctaWork} <span class="transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
+      <a href={`${base}#about`} class="rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-fg transition-colors hover:border-accent/40 hover:bg-surface">{t.ctaAbout}</a>
     </div>
   </div>
-  <h1 class="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
-    {t.h1a}
-    <span class="text-gradient">{t.h1accent}</span>
-  </h1>
-  <p class="mt-7 max-w-2xl text-lg leading-relaxed text-[--color-muted]">{t.lead}</p>
-  <div class="mt-10 flex flex-wrap items-center gap-3">
-    <a href={`${base}#projects`} class="rounded-lg bg-[--color-accent-strong] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[--color-accent]">{t.ctaWork}</a>
-    <a href={`${base}#about`} class="rounded-lg border border-[--color-border] px-5 py-2.5 text-sm font-medium text-[--color-fg] transition-colors hover:bg-[--color-surface]">{t.ctaAbout}</a>
+  <div class="relative hidden justify-self-center lg:block">
+    <HeroGraphic class="h-[400px] w-[400px]" />
   </div>
 </section>
 

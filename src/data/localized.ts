@@ -1,8 +1,15 @@
 import type { Lang } from '../i18n/utils';
+import type { Work } from './work';
 import { work } from './work';
 import { workSk } from './work.sk';
 
-export const getWork = (lang: Lang) => (lang === 'sk' ? workSk : work);
+// The Slovak timeline mirrors the English one entry-for-entry, so the purely
+// visual metadata (icon + accent hue) lives only on the English data and is
+// merged into the Slovak entries by index here.
+export const getWork = (lang: Lang): Work[] =>
+  lang === 'sk'
+    ? workSk.map((w, i) => ({ icon: work[i]?.icon, accent: work[i]?.accent, ...w }))
+    : work;
 
 export const getLanguages = (lang: Lang) =>
   lang === 'sk'

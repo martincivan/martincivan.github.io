@@ -12,13 +12,13 @@ const socials = [
   { href: 'mailto:martin.civan5@gmail.com', label: 'Email' },
 ];
 ---
-<footer class="mt-24 border-t border-[--color-border]">
-  <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-[--color-muted] sm:flex-row">
+<footer class="mt-24 border-t border-border">
+  <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-muted sm:flex-row">
     <p>© 2026 Martin Civáň · {t.footer.tagline}</p>
     <ul class="flex gap-5">
       {socials.map((s) => (
         <li>
-          <a href={s.href} class="transition-colors hover:text-[--color-fg]" target="_blank" rel="noopener">{s.label}</a>
+          <a href={s.href} class="transition-colors hover:text-fg" target="_blank" rel="noopener">{s.label}</a>
         </li>
       ))}
     </ul>

@@ -1,0 +1,78 @@
+---
+// Abstract "distributed-systems constellation" — a hub node feeding a mesh of
+// services across the cluster. Hand-authored SVG, CSS-animated pulses. Purely
+// decorative; hidden from assistive tech and disabled under reduced-motion.
+interface Props { class?: string }
+const { class: cls } = Astro.props;
+
+// Satellite nodes around a central hub (viewBox 400×400, hub at 200,200).
+const hub = { x: 200, y: 200 };
+const nodes = [
+  { x: 92,  y: 96,  r: 7,  c: 'var(--color-accent)',   d: '0s'   },
+  { x: 320, y: 80,  r: 9,  c: 'var(--color-accent-2)', d: '0.9s' },
+  { x: 348, y: 232, r: 6,  c: 'var(--color-accent-3)', d: '1.8s' },
+  { x: 268, y: 336, r: 8,  c: 'var(--color-accent)',   d: '0.5s' },
+  { x: 96,  y: 312, r: 7,  c: 'var(--color-accent-3)', d: '1.3s' },
+  { x: 48,  y: 200, r: 5,  c: 'var(--color-accent-2)', d: '2.2s' },
+];
+// A couple of node-to-node edges (beyond the hub spokes) for mesh texture.
+const meshEdges = [ [0, 1], [3, 4], [2, 3] ];
+---
+<svg viewBox="0 0 400 400" class={cls} role="presentation" aria-hidden="true" fill="none">
+  <defs>
+    <radialGradient id="hub-fill" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--color-accent)" />
+      <stop offset="100%" stop-color="var(--color-accent-strong)" />
+    </radialGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="var(--color-accent-2)" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+
+  <!-- orbital rings -->
+  <circle cx="200" cy="200" r="150" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 7" opacity="0.7" />
+  <circle cx="200" cy="200" r="104" stroke="var(--color-border)" stroke-width="1" opacity="0.5" />
+
+  <!-- hub → satellite spokes -->
+  {nodes.map((n) => (
+    <line x1={hub.x} y1={hub.y} x2={n.x} y2={n.y} stroke="url(#edge)" stroke-width="1.25" />
+  ))}
+  <!-- mesh edges between satellites -->
+  {meshEdges.map(([a, b]) => (
+    <line x1={nodes[a].x} y1={nodes[a].y} x2={nodes[b].x} y2={nodes[b].y} stroke="var(--color-border)" stroke-width="1" opacity="0.8" />
+  ))}
+
+  <!-- satellite nodes with pulsing halo -->
+  {nodes.map((n) => (
+    <g style={`--c:${n.c}`}>
+      <circle class="pulse" cx={n.x} cy={n.y} r={n.r} fill={n.c} opacity="0.18" style={`animation-delay:${n.d}`} />
+      <circle cx={n.x} cy={n.y} r={n.r} fill={n.c} />
+    </g>
+  ))}
+
+  <!-- hub -->
+  <circle class="pulse-hub" cx={hub.x} cy={hub.y} r="22" fill="var(--color-accent)" opacity="0.12" />
+  <circle cx={hub.x} cy={hub.y} r="13" fill="url(#hub-fill)" />
+  <circle cx={hub.x} cy={hub.y} r="13" stroke="var(--color-accent)" stroke-width="1" opacity="0.6" />
+</svg>
+
+<style>
+  .pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: node-pulse 3.6s ease-in-out infinite;
+  }
+  .pulse-hub {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: node-pulse 4s ease-in-out infinite;
+  }
+  @keyframes node-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.18; }
+    50%      { transform: scale(2.4); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse, .pulse-hub { animation: none; }
+  }
+</style>

@@ -6,8 +6,8 @@ const socials = [
 ];
 ---
 <div class="flex flex-wrap gap-3">
-  <a href="mailto:martin.civan5@gmail.com" class="rounded-lg bg-[--color-accent-strong] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[--color-accent]">martin.civan5@gmail.com</a>
+  <a href="mailto:martin.civan5@gmail.com" class="rounded-lg bg-accent-strong px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent">martin.civan5@gmail.com</a>
   {socials.slice(0, 2).map((s) => (
-    <a href={s.href} target="_blank" rel="noopener" class="rounded-lg border border-[--color-border] px-5 py-2.5 text-sm font-medium transition-colors hover:bg-[--color-surface]">{s.label}</a>
+    <a href={s.href} target="_blank" rel="noopener" class="rounded-lg border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface">{s.label}</a>
   ))}
 </div>

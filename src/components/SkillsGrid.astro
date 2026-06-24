@@ -11,19 +11,31 @@ const t = useTranslations(lang);
 const pillars = t.home.pillars;
 const languages = getLanguages(lang);
 const education = getEducation(lang);
+
+// Visual identity per pillar (same order in both locales).
+const pillarMeta = [
+  { icon: 'lucide:server',     accent: '#818cf8' },
+  { icon: 'lucide:blocks',     accent: '#c084fc' },
+  { icon: 'lucide:brain-circuit', accent: '#22d3ee' },
+];
 ---
-<div class="grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
-  {pillars.map((p) => (
-    <div class="tech-pool">
-      <h3 class="font-mono text-xs uppercase tracking-wider text-[--color-accent]">{p.tag}</h3>
+<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  {pillars.map((p, pi) => (
+    <div class="tech-pool card relative overflow-hidden p-5" style={`--p:${pillarMeta[pi]?.accent ?? 'var(--color-accent)'}`}>
+      <div class="flex items-center gap-3">
+        <span class="icon-tile h-9 w-9 shrink-0" aria-hidden="true">
+          <Icon name={pillarMeta[pi]?.icon ?? 'lucide:layers'} class="h-[18px] w-[18px]" />
+        </span>
+        <h3 class="font-mono text-xs font-medium uppercase tracking-wider" style={`color:${pillarMeta[pi]?.accent ?? 'var(--color-accent)'}`}>{p.tag}</h3>
+      </div>
       <ul class="mt-4 flex flex-wrap items-center gap-2">
         {p.tech.map((tech, ti) => (
           <li class="tech group/tech relative h-7 w-7" style={`--d:${ti * 45}ms`}>
-            <span class="tech-chip absolute left-0 top-0 inline-flex h-7 items-center overflow-hidden rounded-md border border-[--color-border]">
+            <span class="tech-chip absolute left-0 top-0 inline-flex h-7 items-center overflow-hidden rounded-md border border-border">
               <span class:list={["tech-icon flex h-7 w-7 shrink-0 items-center justify-center", `is-${iconTone(tech.icon)}`]}>
                 <Icon name={tech.icon} class="h-[18px] w-[18px]" />
               </span>
-              <span class="tech-name max-w-0 whitespace-nowrap font-mono text-[11px] text-[--color-fg] opacity-0">{tech.name}</span>
+              <span class="tech-name max-w-0 whitespace-nowrap font-mono text-[11px] text-fg opacity-0">{tech.name}</span>
             </span>
           </li>
         ))}
@@ -32,29 +44,29 @@ const education = getEducation(lang);
   ))}
 </div>
 
-<div class="mt-12 grid gap-10 border-t border-[--color-border] pt-10 md:grid-cols-2">
+<div class="mt-12 grid gap-10 border-t border-border pt-10 md:grid-cols-2">
   <div>
-    <h3 class="font-mono text-xs uppercase tracking-wider text-[--color-faint]">{t.about.education}</h3>
+    <h3 class="font-mono text-xs uppercase tracking-wider text-faint">{t.about.education}</h3>
     <div class="mt-4 space-y-5">
       {education.map((e) => (
         <div>
           <div class="flex flex-wrap items-baseline justify-between gap-2">
             <h4 class="font-semibold">{e.school}</h4>
-            <span class="font-mono text-xs text-[--color-faint]">{e.period}</span>
+            <span class="font-mono text-xs text-faint">{e.period}</span>
           </div>
-          <p class="mt-1 text-sm text-[--color-accent]">{e.program}</p>
-          {e.note && <p class="mt-2 text-sm leading-relaxed text-[--color-muted]">{e.note}</p>}
+          <p class="mt-1 text-sm text-accent">{e.program}</p>
+          {e.note && <p class="mt-2 text-sm leading-relaxed text-muted">{e.note}</p>}
         </div>
       ))}
     </div>
   </div>
   <div>
-    <h3 class="font-mono text-xs uppercase tracking-wider text-[--color-faint]">{t.about.languagesTitle}</h3>
+    <h3 class="font-mono text-xs uppercase tracking-wider text-faint">{t.about.languagesTitle}</h3>
     <ul class="mt-4 space-y-3">
       {languages.map((l) => (
-        <li class="flex items-baseline justify-between border-b border-[--color-border] pb-2">
+        <li class="flex items-baseline justify-between border-b border-border pb-2">
           <span class="font-medium">{l.lang}</span>
-          <span class="font-mono text-xs text-[--color-muted]">{l.level}</span>
+          <span class="font-mono text-xs text-muted">{l.level}</span>
         </li>
       ))}
     </ul>

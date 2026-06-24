@@ -6,7 +6,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
-<div class="max-w-3xl space-y-4 text-[--color-muted]">
+<div class="max-w-3xl space-y-4 text-muted">
   {t.about.bio.map((para) => <p class="leading-relaxed">{para}</p>)}
-  <p class="border-l-2 border-[--color-border] pl-4 text-sm leading-relaxed text-[--color-faint]">{t.about.beyond}</p>
+  <p class="border-l-2 border-border pl-4 text-sm leading-relaxed text-faint">{t.about.beyond}</p>
 </div>

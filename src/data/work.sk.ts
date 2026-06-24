@@ -36,6 +36,11 @@ export const workSk: Work[] = [
       href: 'https://www.forbes.com/sites/barrycollins/2024/10/02/this-incredible-f1-app-is-the-best-reason-yet-to-buy-a-vision-pro/',
       label: 'Článok vo Forbes',
     },
+    feature: {
+      source: 'Forbes',
+      quote: 'Najlepší dôvod, prečo si kúpiť Vision Pro.',
+      href: 'https://www.forbes.com/sites/barrycollins/2024/10/02/this-incredible-f1-app-is-the-best-reason-yet-to-buy-a-vision-pro/',
+    },
   },
   {
     name: 'Medical Navigator',

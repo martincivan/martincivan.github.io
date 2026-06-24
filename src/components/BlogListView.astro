@@ -11,29 +11,29 @@ const posts = await getPosts(lang);
 const locale = lang === 'sk' ? 'sk-SK' : 'en-GB';
 ---
 <section class="py-16">
-  <p class="font-mono text-sm text-[--color-accent]">{t.kicker}</p>
+  <p class="font-mono text-sm text-accent">{t.kicker}</p>
   <h1 class="mt-4 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{t.h1}</h1>
-  <p class="mt-4 max-w-2xl text-[--color-muted]">{t.intro}</p>
+  <p class="mt-4 max-w-2xl text-muted">{t.intro}</p>
 </section>
 
 <section class="pb-12">
   {posts.length === 0 ? (
-    <p class="text-[--color-muted]">{t.empty}</p>
+    <p class="text-muted">{t.empty}</p>
   ) : (
-    <ul class="divide-y divide-[--color-border] border-y border-[--color-border]">
+    <ul class="divide-y divide-border border-y border-border">
       {posts.map((post) => (
         <li>
           <a href={localePath(`/blog/${post.id}/`, lang)} class="group flex flex-col gap-1 py-6 transition-colors sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
             <div class="min-w-0">
-              <h2 class="font-semibold transition-colors group-hover:text-[--color-accent]">{post.data.title}</h2>
-              {post.data.description && <p class="mt-1 text-sm text-[--color-muted]">{post.data.description}</p>}
+              <h2 class="font-semibold transition-colors group-hover:text-accent">{post.data.title}</h2>
+              {post.data.description && <p class="mt-1 text-sm text-muted">{post.data.description}</p>}
               <ul class="mt-2 flex flex-wrap gap-1.5">
                 {post.data.tags.map((tag) => (
-                  <li class="rounded-md border border-[--color-border] px-2 py-0.5 font-mono text-[11px] text-[--color-faint]">#{tag}</li>
+                  <li class="rounded-md border border-border px-2 py-0.5 font-mono text-[11px] text-faint">#{tag}</li>
                 ))}
               </ul>
             </div>
-            <span class="shrink-0 whitespace-nowrap font-mono text-xs text-[--color-faint]">
+            <span class="shrink-0 whitespace-nowrap font-mono text-xs text-faint">
               {formatDate(post.data.date, locale)} · {readingTime(post.body)} {t.min}
             </span>
           </a>
