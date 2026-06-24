@@ -24,7 +24,7 @@ export const experience: Role[] = [
       'Authored the organisation’s central GitLab CI/CD component catalog with SAST, dependency, container and secret scanning, cosign image signing and SCA — supply-chain-secured pipelines reused across teams.',
       'Wrote production Go (custom cert-manager DNS01 webhooks) and handled network engineering across F5 BIG-IP, Fortinet and Cilium BGP.',
     ],
-    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Go', 'Cilium', 'Vault', 'Kafka'],
+    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Go', 'Java', 'Spring', 'Gradle', 'Cilium', 'Vault', 'Keycloak', 'Kafka', 'Oracle', 'PostgreSQL', 'Prometheus', 'Grafana'],
   },
   {
     company: 'Lapz',
@@ -39,7 +39,7 @@ export const experience: Role[] = [
       'Led a small cross-functional team (UI/UX, 3D, engineering) from concept to a shipped, critically-acclaimed product.',
       'Sunset after an F1 cease-and-desist and Apple discontinuing the Vision Pro.',
     ],
-    stack: ['Swift', 'visionOS', 'RealityKit', 'Real-time data'],
+    stack: ['Swift', 'Python', 'visionOS', 'RealityKit', 'Real-time data'],
   },
   {
     company: 'QualityUnit',
@@ -54,7 +54,7 @@ export const experience: Role[] = [
       'Part of the leadership team for two years — mentored developers and ran hiring interviews.',
       'Worked across the stack and the platform: PHP, JavaScript, Java, Python on MySQL, ElasticSearch and the ELK stack, with Salt, Terraform, AWS (S3, KMS, DynamoDB, SQS) and GitHub Actions.',
     ],
-    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'ElasticSearch', 'AWS', 'Terraform'],
+    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
   },
   {
     company: 'DXC Technology',

@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/ui';
+import { iconTone } from '../data/techIcons';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -23,30 +24,19 @@ const pillars = t.home.pillars;
           <h3 class="mt-1.5 text-base font-semibold text-[--color-fg]">{p.title}</h3>
           <p class="mt-2.5 text-sm leading-relaxed text-[--color-muted]">{p.body}</p>
 
-          <div class="mt-auto space-y-3.5 pt-5">
-            {p.groups.map((g, gi) => (
-              <div>
-                <p class="mb-1.5 font-mono text-[10px] uppercase tracking-wider text-[--color-faint]">{g.label}</p>
-                <ul class="flex flex-wrap items-center gap-2">
-                  {g.tech.map((tech, ti) => (
-                    tech.icon ? (
-                      <li class="tech group/tech" style={`--d:${gi * 60 + ti * 35}ms`}>
-                        <span class="tech-chip inline-flex h-7 items-center overflow-hidden rounded-md border border-[--color-border] bg-[--color-bg]/60">
-                          <span class="tech-icon flex h-7 w-7 shrink-0 items-center justify-center">
-                            <Icon name={tech.icon} class="h-[18px] w-[18px]" />
-                          </span>
-                          <span class="tech-name max-w-0 whitespace-nowrap font-mono text-[11px] text-[--color-fg] opacity-0">{tech.name}</span>
-                        </span>
-                      </li>
-                    ) : (
-                      <li class="tech" style={`--d:${gi * 60 + ti * 35}ms`}>
-                        <span class="inline-flex h-7 items-center rounded-md border border-[--color-border] bg-[--color-bg]/60 px-2 font-mono text-[11px] text-[--color-faint]">{tech.name}</span>
-                      </li>
-                    )
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div class="mt-auto pt-6">
+            <ul class="flex flex-wrap items-center gap-2">
+              {p.tech.map((tech, ti) => (
+                <li class="tech group/tech relative h-7 w-7" style={`--d:${ti * 45}ms`}>
+                  <span class="tech-chip absolute left-0 top-0 inline-flex h-7 items-center overflow-hidden rounded-md border border-[--color-border]">
+                    <span class:list={["tech-icon flex h-7 w-7 shrink-0 items-center justify-center", `is-${iconTone(tech.icon)}`]}>
+                      <Icon name={tech.icon} class="h-[18px] w-[18px]" />
+                    </span>
+                    <span class="tech-name max-w-0 whitespace-nowrap font-mono text-[11px] text-[--color-fg] opacity-0">{tech.name}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </article>
       ))}
@@ -55,23 +45,43 @@ const pillars = t.home.pillars;
 </div>
 
 <style>
-  /* Logos sit greyscale + dimmed, then bloom to full brand colour on hover. */
+  /* Rich logos keep their inner structure at rest (greyscale + lifted brightness so even
+     darker brand colours read on the dark background) and bloom to full colour on hover.
+     Flat/monochrome logos have no inner colour detail, so they render as a light silhouette
+     (brightness(0) flattens to black, invert() lifts it to grey) and just brighten on hover. */
   .tech-icon {
-    filter: grayscale(1);
-    opacity: 0.55;
+    opacity: 0.9;
     transition: filter 0.2s ease, opacity 0.2s ease;
   }
+  .tech-icon.is-rich {
+    filter: grayscale(1) brightness(1.4);
+  }
+  .tech-icon.is-flat {
+    filter: grayscale(1) brightness(0) invert(0.72);
+  }
   .group\/tech:hover .tech-icon {
-    filter: grayscale(0);
     opacity: 1;
   }
+  .group\/tech:hover .tech-icon.is-rich {
+    filter: none;
+  }
+  .group\/tech:hover .tech-icon.is-flat {
+    filter: grayscale(1) brightness(0) invert(0.92);
+  }
 
-  /* The name stays collapsed, then slides open beside the icon on hover — no overlap, no tooltip. */
+  /* The name stays collapsed, then slides open beside the icon on hover. The chip is
+     absolutely positioned, so it expands over its neighbours instead of reflowing the
+     row — this avoids the hovered item wrapping out from under the cursor. */
   .tech-chip {
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+    z-index: 1;
+    /* Opaque fill so the expanded name is never see-through over neighbouring icons. */
+    background-color: var(--color-surface);
+    transition: border-color 0.2s ease;
   }
   .group\/tech:hover .tech-chip {
+    z-index: 10;
     border-color: color-mix(in oklab, var(--color-accent) 50%, transparent);
+    box-shadow: 0 4px 14px -4px rgb(0 0 0 / 0.6);
   }
   .tech-name {
     transition: max-width 0.24s ease, opacity 0.22s ease, padding 0.24s ease;

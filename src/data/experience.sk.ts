@@ -15,7 +15,7 @@ export const experienceSk: Role[] = [
       'Vytvoril som centrálny katalóg GitLab CI/CD komponentov pre celú organizáciu so SAST, dependency, container a secret scanningom, cosign podpisovaním images a SCA — pipeliny so zabezpečeným dodávateľským reťazcom, znovupoužívané naprieč tímami.',
       'Písal som produkčný Go (vlastné cert-manager DNS01 webhooky) a riešil network engineering naprieč F5 BIG-IP, Fortinet a Cilium BGP.',
     ],
-    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Go', 'Cilium', 'Vault', 'Kafka'],
+    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Go', 'Java', 'Spring', 'Gradle', 'Cilium', 'Vault', 'Keycloak', 'Kafka', 'Oracle', 'PostgreSQL', 'Prometheus', 'Grafana'],
   },
   {
     company: 'Lapz',
@@ -30,7 +30,7 @@ export const experienceSk: Role[] = [
       'Viedol som malý cross-funkčný tím (UI/UX, 3D, vývoj) od konceptu po doručený, kriticky uznávaný produkt.',
       'Ukončené po cease-and-desist od F1 a po tom, čo Apple zrušil Vision Pro.',
     ],
-    stack: ['Swift', 'visionOS', 'RealityKit', 'Real-time dáta'],
+    stack: ['Swift', 'Python', 'visionOS', 'RealityKit', 'Real-time dáta'],
   },
   {
     company: 'QualityUnit',
@@ -45,7 +45,7 @@ export const experienceSk: Role[] = [
       'Dva roky súčasťou vedenia tímu — mentoroval som vývojárov a viedol prijímacie pohovory.',
       'Pracoval som naprieč celým stackom aj platformou: PHP, JavaScript, Java, Python nad MySQL, ElasticSearch a ELK stackom, so Salt, Terraform, AWS (S3, KMS, DynamoDB, SQS) a GitHub Actions.',
     ],
-    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'ElasticSearch', 'AWS', 'Terraform'],
+    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
   },
   {
     company: 'DXC Technology',
