@@ -1,12 +1,8 @@
 import type { Lang } from '../i18n/utils';
-import { experience } from './experience';
-import { experienceSk } from './experience.sk';
-import { projects, type ProjectCategory } from './projects';
-import { projectsSk } from './projects.sk';
-import { languages as languagesEn, education as educationEn } from './skills';
+import { work } from './work';
+import { workSk } from './work.sk';
 
-export const getExperience = (lang: Lang) => (lang === 'sk' ? experienceSk : experience);
-export const getProjects = (lang: Lang) => (lang === 'sk' ? projectsSk : projects);
+export const getWork = (lang: Lang) => (lang === 'sk' ? workSk : work);
 
 export const getLanguages = (lang: Lang) =>
   lang === 'sk'
@@ -15,7 +11,11 @@ export const getLanguages = (lang: Lang) =>
         { lang: 'Angličtina', level: 'Pokročilá (C1)' },
         { lang: 'Nemčina', level: 'Základná (A2)' },
       ]
-    : languagesEn;
+    : [
+        { lang: 'Slovak', level: 'Native (C2)' },
+        { lang: 'English', level: 'Advanced (C1)' },
+        { lang: 'German', level: 'Elementary (A2)' },
+      ];
 
 export const getEducation = (lang: Lang) =>
   lang === 'sk'
@@ -27,22 +27,14 @@ export const getEducation = (lang: Lang) =>
           note: 'Diplomová práca: „Segmentácia volumetrických dát mozgu s využitím hlbokého učenia" — 3D plne konvolučné siete na segmentáciu subkortikálnych štruktúr mozgu z MRI, porovnané s klinickými nástrojmi (FreeSurfer / FSL).',
         },
       ]
-    : educationEn;
-
-export const categoryLabel: Record<Lang, Record<ProjectCategory, string>> = {
-  en: {
-    'Platform & Infrastructure': 'Platform & Infrastructure',
-    'Products': 'Products',
-    'AI / ML': 'AI / ML',
-    'Demos & Experiments': 'Demos & Experiments',
-  },
-  sk: {
-    'Platform & Infrastructure': 'Platforma & Infraštruktúra',
-    'Products': 'Produkty',
-    'AI / ML': 'AI / ML',
-    'Demos & Experiments': 'Demá & Experimenty',
-  },
-};
+    : [
+        {
+          school: 'Slovak University of Technology — FIIT',
+          program: 'Ing. (MSc), Intelligent Software Systems',
+          period: '2016 — 2022',
+          note: 'Master’s thesis: “Brain volumetric segmentation using deep learning” — 3D fully-convolutional networks for subcortical brain MRI segmentation, benchmarked against clinical tools (FreeSurfer / FSL).',
+        },
+      ];
 
 export const statusLabel: Record<Lang, Record<string, string>> = {
   en: { current: 'Current', shipped: 'Shipped', sunset: 'Sunset', unlaunched: 'Unlaunched', demo: 'Demo' },

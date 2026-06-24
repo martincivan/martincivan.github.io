@@ -4,9 +4,8 @@ import { useTranslations } from '../../i18n/ui';
 import HomeView from '../../components/HomeView.astro';
 import Section from '../../components/Section.astro';
 import AboutIntro from '../../components/AboutIntro.astro';
-import ExperienceList from '../../components/ExperienceList.astro';
+import WorkTimeline from '../../components/WorkTimeline.astro';
 import SkillsGrid from '../../components/SkillsGrid.astro';
-import ProjectsGrid from '../../components/ProjectsGrid.astro';
 import Contact from '../../components/Contact.astro';
 
 const lang = 'sk' as const;
@@ -18,14 +17,11 @@ const t = useTranslations(lang);
   <Section id="about" index="01" eyebrow={s.about.eyebrow} title={s.about.title}>
     <AboutIntro lang={lang} />
   </Section>
-  <Section id="experience" index="02" eyebrow={s.experience.eyebrow} title={s.experience.title}>
-    <ExperienceList lang={lang} />
+  <Section id="projects" index="02" eyebrow={s.projects.eyebrow} title={s.projects.title} lead={t.projects.intro}>
+    <WorkTimeline lang={lang} />
   </Section>
   <Section id="skills" index="03" eyebrow={s.skills.eyebrow} title={s.skills.title} lead={s.skills.lead}>
     <SkillsGrid lang={lang} />
-  </Section>
-  <Section id="projects" index="04" eyebrow={s.projects.eyebrow} title={s.projects.title} lead={t.projects.intro}>
-    <ProjectsGrid lang={lang} />
   </Section>
   <Section id="contact" eyebrow={s.contact.eyebrow} title={s.contact.title} lead={s.contact.lead}>
     <Contact />

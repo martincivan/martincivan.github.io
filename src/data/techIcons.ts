@@ -16,6 +16,11 @@ export const techIcons: Record<string, string> = {
   PHP: 'logos:php',
   JavaScript: 'logos:javascript',
   Java: 'logos:java',
+  TypeScript: 'logos:typescript-icon',
+  'Next.js': 'logos:nextjs-icon',
+  'Drupal 11': 'logos:drupal-icon',
+  'three.js': 'logos:threejs',
+  Bun: 'logos:bun',
   Spring: 'logos:spring-icon',
   Gradle: 'logos:gradle',
   Oracle: 'logos:oracle',
@@ -52,6 +57,7 @@ const FLAT_ICONS = new Set([
   'logos:pandas-icon',
   'logos:aws',
   'logos:astro-icon',
+  'logos:threejs',
 ]);
 
 export const iconTone = (icon: string): 'flat' | 'rich' =>
