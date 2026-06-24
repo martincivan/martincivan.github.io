@@ -63,7 +63,7 @@ export const work: Work[] = [
   {
     name: 'ViaJet',
     kind: 'Co-founded',
-    period: '2025',
+    period: '2025 — present',
     status: 'current',
     summary:
       'A B2B2C private-jet charter marketplace — charter companies publish empty-leg flights, customers search, compare and book. The app is essentially complete; launch is gated on the business and regulatory side of charter operations.',

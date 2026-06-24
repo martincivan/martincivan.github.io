@@ -49,7 +49,7 @@ export const workSk: Work[] = [
   {
     name: 'ViaJet',
     kind: 'Spoluzaložené',
-    period: '2025',
+    period: '2025 — súčasnosť',
     status: 'current',
     summary:
       'B2B2C marketplace na charter súkromných lietadiel — charterové firmy publikujú empty-leg lety, zákazníci hľadajú, porovnávajú a rezervujú. Aplikácia je v podstate hotová; spustenie čaká na biznisovú a regulačnú stránku charterovej prevádzky.',
