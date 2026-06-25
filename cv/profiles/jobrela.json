@@ -1,0 +1,10 @@
+{
+  "targetRole": "Platform & DevSecOps Engineer · Technical Founder",
+  "summary": "Senior engineer who builds and runs cloud-native platforms and takes products from idea to working reality. Today I design and operate the Kubernetes/OpenShift foundation behind Slovakia’s national e-government — provisioning clusters as code and owning the GitOps and supply-chain security underneath. Backed by years of full-stack delivery and engineering leadership on a SaaS used by tens of thousands of companies, plus a continuing thread in applied AI — from a deep-learning master’s thesis to fine-tuning generative models.",
+  "emphasize": ["Kubernetes", "OpenShift / OKD", "Terraform / OpenTofu", "ArgoCD (GitOps)", "GitLab CI/CD", "Go", "Python", "TypeScript / JavaScript", "Vault", "Prometheus"],
+  "skillGroups": ["Platform & Infrastructure", "Cloud & Observability", "Languages", "Web & Frameworks", "Data & Messaging", "AI / ML"],
+  "roles": ["NASES", "Lapz", "QualityUnit", "DXC Technology"],
+  "maxBulletsPerRole": 3,
+  "projects": ["NASES — National e-Government Platform", "Lapz — F1 AR for Apple Vision Pro", "Medical Navigator", "Logram.ai"],
+  "accent": "#4f46e5"
+}

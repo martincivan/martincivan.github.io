@@ -10,9 +10,7 @@ import { fileURLToPath } from 'node:url';
 import process from 'node:process';
 
 import { profile as identity } from '../src/data/profile.ts';
-import { experience } from '../src/data/experience.ts';
-import { skills, languages, education } from '../src/data/skills.ts';
-import { projects } from '../src/data/projects.ts';
+import { experience, skills, languages, education, projects } from './cv-data.ts';
 import { renderCv, type CvModel } from './template.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

@@ -2,9 +2,7 @@
 // Light / ATS-friendly by design — this is for recruiters and PDF, not the dark website.
 
 import type { Profile } from '../src/data/profile.ts';
-import type { Role } from '../src/data/experience.ts';
-import type { SkillGroup } from '../src/data/skills.ts';
-import type { Project } from '../src/data/projects.ts';
+import type { Role, SkillGroup, Project } from './cv-data.ts';
 
 export interface CvModel {
   profile: Profile;
@@ -80,8 +78,8 @@ export function renderCv(m: CvModel): string {
 <body>
 <div class="page">
   <header class="head">
-    <div class="name">${esc(p.name)} ${p.credential ? `<small>${esc(p.credential)}</small>` : ''}</div>
     <div class="role-title">${esc(m.targetRole)}</div>
+    <div class="name">${esc(p.name)} ${p.credential ? `<small>${esc(p.credential)}</small>` : ''}</div>
     <div class="contact">
       <span>${esc(p.email)}</span><span>${esc(p.phone)}</span><span>${esc(p.location)}</span>
       <span>${esc(p.github)}</span><span>${esc(p.linkedin)}</span>
