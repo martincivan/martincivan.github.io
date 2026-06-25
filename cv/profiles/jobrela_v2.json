@@ -1,0 +1,31 @@
+{
+  "_listing": "Jobrela — Java Architect, GIS project (remote, contract, MEDIOR, 550 EUR/day, 3 days/week, ~3.5 months). Architecture review/optimization of a Java/Spring microservices system; event-driven (Kafka, outbox); Oracle/PostgreSQL; decouple legacy Oracle/JDBC; cloud-native/Kubernetes; code reviews & technical leadership. GIS a plus.",
+  "targetRole": "Senior Backend / Solution Architect — Java · Microservices · Event-Driven",
+  "summary": "Backend and solution architect who reviews, challenges and hardens microservices systems. Deep in Java/Spring Boot, event-driven data flows (Kafka, outbox) and relational data (Oracle, PostgreSQL), all on cloud-native Kubernetes. Today I run Java/Spring services and their Oracle/PostgreSQL/Kafka backbone on Slovakia’s national e-government platform; before that I spent six years driving software-architecture decisions, code and solution reviews, and technical mentoring on a help-desk SaaS used by tens of thousands of companies. Strong full-stack judgement without needing to code day-to-day — comfortable as the technical authority and sparring partner for engineering teams.",
+  "emphasize": ["Java", "Spring", "Apache Kafka", "PostgreSQL", "Oracle Cloud / PCA", "Kubernetes", "OpenShift / OKD"],
+  "skillGroups": ["Languages", "Web & Frameworks", "Data & Messaging", "Platform & Infrastructure", "Cloud & Observability"],
+  "roles": ["NASES", "Lapz", "QualityUnit"],
+  "maxBulletsPerRole": 3,
+  "roleOverrides": {
+    "NASES": {
+      "title": "Platform & Backend Engineer (Java · Spring)",
+      "summary": "The cloud-native foundation behind slovensko.sk — and the Java/Spring services, Oracle/PostgreSQL data and Kafka event flows that run on it.",
+      "bullets": [
+        "Run Java/Spring (Boot) services in a microservices environment on OpenShift, with the Gradle builds, CI/CD and supply-chain scanning behind them.",
+        "Operate the relational and streaming backbone — Oracle and PostgreSQL (CloudNativePG) plus Strimzi Kafka — and help modernise legacy Oracle/JDBC workloads toward cloud-native, event-driven flows.",
+        "Set platform-wide architecture and standards on self-managing ArgoCD GitOps, with end-to-end observability (Prometheus / Grafana / Loki / Tempo)."
+      ]
+    },
+    "QualityUnit": {
+      "title": "Full-Stack Engineer & Tech Lead (LiveAgent)",
+      "summary": "Help-desk SaaS used by tens of thousands of companies — software architecture, full-stack delivery and the platform underneath.",
+      "bullets": [
+        "Drove key software-architecture decisions across a large, high-traffic codebase (Java, PHP, JavaScript, Python) — weighing scalability, resilience and quality.",
+        "Technical authority for two years: ran code and solution reviews, mentored developers and conducted hiring interviews.",
+        "Worked across the data and messaging layer — MySQL/MariaDB, ElasticSearch, Redis — on AWS, with Terraform and GitHub Actions."
+      ]
+    }
+  },
+  "projects": ["NASES — National e-Government Platform", "Medical Navigator", "Lapz — F1 AR for Apple Vision Pro"],
+  "accent": "#4f46e5"
+}

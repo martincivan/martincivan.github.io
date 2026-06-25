@@ -36,6 +36,9 @@ interface JobProfile {
   projects?: string[];
   showProjects?: boolean;
   accent?: string;
+  // Per-listing reframing: override a role's title/summary/bullets without
+  // touching the shared data (so other profiles are unaffected). Keyed by company.
+  roleOverrides?: Record<string, { title?: string; summary?: string; bullets?: string[] }>;
 }
 
 let job: JobProfile = {};
@@ -58,10 +61,15 @@ const orderBy = <T>(items: T[], names: string[] | undefined, key: (t: T) => stri
 
 // ---- build model ---------------------------------------------------------
 const maxBullets = job.maxBulletsPerRole ?? 4;
-const selectedRoles = orderBy(experience, job.roles, (r) => r.company).map((r) => ({
-  ...r,
-  bullets: r.highlights.slice(0, maxBullets),
-}));
+const selectedRoles = orderBy(experience, job.roles, (r) => r.company).map((r) => {
+  const ov = job.roleOverrides?.[r.company];
+  return {
+    ...r,
+    title: ov?.title ?? r.title,
+    summary: ov?.summary ?? r.summary,
+    bullets: (ov?.bullets ?? r.highlights).slice(0, maxBullets),
+  };
+});
 
 const selectedSkills = orderBy(skills, job.skillGroups, (g) => g.label);
 
