@@ -11,6 +11,7 @@ export const workSk: Work[] = [
     summary:
       'Cloud-native základ pod slovensko.sk: multi-cluster OpenShift nasadený ako kód naprieč Oracle Private Cloud Appliances a holým železom, riadený cez samo-spravujúce ArgoCD, s kompletnou observability, správou tajomstiev, identitou a politikami na suverénnej infraštruktúre.',
     stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Go', 'Java', 'Spring', 'Cilium', 'Vault', 'Keycloak', 'Kafka', 'Oracle', 'PostgreSQL', 'Prometheus', 'Grafana'],
+    link: { href: 'https://www.nases.gov.sk/', label: 'nases.gov.sk' },
   },
   {
     name: 'Logram.ai',
@@ -32,10 +33,7 @@ export const workSk: Work[] = [
     summary:
       'Priestorová aplikácia k Formule 1, natívne vo Swifte pre visionOS. Vlastnil som celú real-time telemetriu — načítavanie, spracovanie a prehrávanie dát poháňajúce priestorovú vizualizáciu. Forbes ju označil za „najlepší dôvod kúpiť si Vision Pro". Ukončená po cease-and-desist od F1 a po zrušení Vision Pro Applom.',
     stack: ['Swift', 'Python', 'visionOS', 'RealityKit'],
-    link: {
-      href: 'https://www.forbes.com/sites/barrycollins/2024/10/02/this-incredible-f1-app-is-the-best-reason-yet-to-buy-a-vision-pro/',
-      label: 'Článok vo Forbes',
-    },
+    link: { href: 'https://lapz.io/', label: 'lapz.io' },
     feature: {
       source: 'Forbes',
       quote: 'Najlepší dôvod, prečo si kúpiť Vision Pro.',
@@ -47,9 +45,11 @@ export const workSk: Work[] = [
     kind: 'Kontrakt',
     period: '2026',
     status: 'shipped',
+    href: 'https://www.medicalnavigator.com/',
     summary:
       'Viacjazyčný katalóg zdravotníckych zariadení — vyhľadávanie lekárov/kliník s fasetovým filtrovaním, rankingom a cenami — postavený na Drupal 11 a nasadený na AWS ECS Fargate za ALB cez multi-account Terraform riadený GitHub Actions.',
     stack: ['Drupal 11', 'PHP', 'AWS ECS', 'Terraform'],
+    link: { href: 'https://www.medicalnavigator.com/', label: 'medicalnavigator.com' },
   },
   {
     name: 'ViaJet',
@@ -88,6 +88,7 @@ export const workSk: Work[] = [
     summary:
       'Pomáhal som viesť vývoj LiveAgentu, helpdesk SaaS používaného desiatkami tisíc firiem — naprieč feature prácou, architektúrou a DevOps pod tým. Dva roky súčasťou vedenia tímu — mentoroval som vývojárov a viedol prijímacie pohovory.',
     stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
+    link: { href: 'https://www.liveagent.com/', label: 'liveagent.com' },
   },
   {
     name: 'Segmentácia MRI mozgu',

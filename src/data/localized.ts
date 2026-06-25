@@ -4,11 +4,11 @@ import { work } from './work';
 import { workSk } from './work.sk';
 
 // The Slovak timeline mirrors the English one entry-for-entry, so the purely
-// visual metadata (icon + accent hue) lives only on the English data and is
-// merged into the Slovak entries by index here.
+// visual metadata (logo + icon) lives only on the English data and is merged
+// into the Slovak entries by index here.
 export const getWork = (lang: Lang): Work[] =>
   lang === 'sk'
-    ? workSk.map((w, i) => ({ icon: work[i]?.icon, accent: work[i]?.accent, ...w }))
+    ? workSk.map((w, i) => ({ logo: work[i]?.logo, icon: work[i]?.icon, ...w }))
     : work;
 
 export const getLanguages = (lang: Lang) =>
