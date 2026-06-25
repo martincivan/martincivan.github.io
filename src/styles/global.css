@@ -1,25 +1,29 @@
 @import "tailwindcss";
 
 /* ----------------------------------------------------------------------------
-   Design tokens — dark-first, "engineering + AI" aesthetic.
-   Neutral zinc canvas with an electric indigo→violet accent.
+   Design tokens — "Editorial Technical".
+   Warm near-black ink, warm off-white type, one signal-amber accent.
+   Bricolage Grotesque for display, Geist for body, IBM Plex Mono for code.
 ---------------------------------------------------------------------------- */
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", "Cascadia Code", monospace;
+  --font-display: "Bricolage Grotesque Variable", "Geist Variable", ui-sans-serif, system-ui, sans-serif;
 
-  --color-bg: #08080a;
-  --color-bg-soft: #0e0e12;
-  --color-surface: #141418;
-  --color-border: #26262e;
-  --color-fg: #ecedf2;
-  --color-muted: #9a9aa6;
-  --color-faint: #6b6b76;
+  --color-bg: #0a0908;
+  --color-bg-soft: #131110;
+  --color-surface: #1a1715;
+  --color-border: #2c2722;
+  --color-fg: #ededeb;
+  --color-muted: #a39e95;
+  --color-faint: #716c63;
 
-  --color-accent: #818cf8;
-  --color-accent-strong: #6366f1;
-  --color-accent-2: #c084fc;
-  --color-accent-3: #22d3ee;
+  /* Single accent — signal amber, with a deeper tone for solids/hover and a
+     lighter gold purely for the display gradient. */
+  --color-accent: #f5a524;
+  --color-accent-strong: #e8920c;
+  --color-accent-2: #fbc04a;
+  --color-accent-3: #f5a524;
 
   --radius-card: 1rem;
 }
@@ -37,16 +41,21 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Ambient gradient glow + faint engineering dot-grid behind the page.
-   Layered radials (indigo / violet / cyan) give the canvas depth and a hint
-   of colour without lifting the overall darkness. The grid reads as
-   "infrastructure" and fades out before it becomes busy. */
+/* Display face for headings — Bricolage Grotesque gives the type real
+   character and is the main thing that pulls the site away from a generic
+   system-font look. */
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* One restrained warm wash from the top, plus a faint engineering dot-grid.
+   Single amber source — no rainbow mesh — keeps the canvas calm and warm. */
 .bg-glow {
   position: relative;
   background:
-    radial-gradient(58rem 40rem at 50% -12%, color-mix(in oklab, var(--color-accent) 20%, transparent), transparent 68%),
-    radial-gradient(42rem 32rem at 92% 4%, color-mix(in oklab, var(--color-accent-2) 14%, transparent), transparent 66%),
-    radial-gradient(40rem 34rem at 4% 30%, color-mix(in oklab, var(--color-accent-3) 9%, transparent), transparent 64%);
+    radial-gradient(60rem 38rem at 50% -14%, color-mix(in oklab, var(--color-accent) 12%, transparent), transparent 64%);
 }
 .bg-glow::before {
   content: "";

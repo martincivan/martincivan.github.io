@@ -10,12 +10,15 @@ const work = getWork(lang);
 
 // Status is the one place colour carries meaning: green = live, blue = delivered,
 // amber = wound down, neutral = prototype. Everything else uses the brand indigo.
+// Functional status colours, kept distinct from the amber brand accent so amber
+// stays unique to the brand: green = live, blue = delivered, slate = wound down,
+// neutral = prototype.
 const statusColor: Record<string, string> = {
-  current: '#34d399',
+  current: '#4ade80',
   shipped: '#60a5fa',
-  sunset: '#fbbf24',
-  unlaunched: '#c084fc',
-  demo: '#8b8b96',
+  sunset: '#9ca3af',
+  unlaunched: '#e8920c',
+  demo: '#8b867c',
 };
 ---
 <div class="space-y-4">
