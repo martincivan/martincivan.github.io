@@ -31,9 +31,9 @@ export const experience: Role[] = [
       'Provision OpenShift/OKD clusters fully as code (Terraform + GitLab CI) across three Oracle Private Cloud Appliances and bare-metal Dell hardware via the Agent-Based Installer and iDRAC.',
       'Run a 40+ component GitOps platform on self-managing ArgoCD: Vault, Keycloak, Strimzi Kafka, CloudNativePG and Oracle/MariaDB operators, Rook-Ceph/ODF storage, Cilium eBPF CNI with BGP, cert-manager, and a full Prometheus/Grafana/Loki/Tempo observability stack.',
       'Authored the organisation’s central GitLab CI/CD component catalog with SAST, dependency, container and secret scanning, cosign image signing and SCA — supply-chain-secured pipelines reused across teams.',
-      'Wrote production Go (custom cert-manager DNS01 webhooks) and handled network engineering across F5 BIG-IP, Fortinet and Cilium BGP.',
+      'Built custom cert-manager DNS01 webhook integrations and handled network engineering across F5 BIG-IP, Fortinet and Cilium BGP.',
     ],
-    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Go', 'Java', 'Spring', 'Gradle', 'Cilium', 'Vault', 'Keycloak', 'Kafka', 'Oracle', 'PostgreSQL', 'Prometheus', 'Grafana'],
+    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Java', 'Spring', 'Gradle', 'Cilium', 'Vault', 'Keycloak', 'Kafka', 'Oracle', 'PostgreSQL', 'Prometheus', 'Grafana'],
   },
   {
     company: 'Lapz',
@@ -105,7 +105,7 @@ export const skills: SkillGroup[] = [
   },
   {
     label: 'AI / ML',
-    items: ['PyTorch', 'Deep learning', '3D CNNs / segmentation', 'Model fine-tuning', 'OmniSVG'],
+    items: ['Generative AI / LLMs', 'Model fine-tuning', 'Agentic development', 'Claude Code', 'Cursor', 'Windsurf', 'OmniSVG', 'PyTorch', 'Deep learning', '3D CNNs / segmentation'],
   },
 ];
 
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     featured: true,
     blurb:
       'The cloud-native foundation under slovensko.sk: multi-cluster OpenShift provisioned as code across Oracle Private Cloud Appliances and bare-metal, GitOps-driven via self-managing ArgoCD, with end-to-end observability, secrets, identity and policy on sovereign infrastructure.',
-    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'Cilium', 'Vault', 'Go'],
+    stack: ['OpenShift', 'Terraform', 'ArgoCD', 'Cilium', 'Vault'],
   },
   {
     name: 'Lapz — F1 AR for Apple Vision Pro',

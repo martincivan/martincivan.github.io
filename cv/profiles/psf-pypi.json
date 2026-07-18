@@ -1,0 +1,31 @@
+{
+  "_listing": "PSF — Sustainability Engineer, PyPI (global remote, contract 1yr, mid-level, $75K–180K). Build features in Warehouse (PyPI codebase) for financial sustainability: billing, access control, storage/CDN. Req: Python web frameworks, HTML/CSS/JS, testing. Desired: PostgreSQL, Pyramid, Python 3.14+, pytest, object storage, OSS community. Plays to Martin's Python + full-stack + object storage + software supply-chain security + founder/product-revenue sense. Generate with --out to keep the PDF neutrally named.",
+  "targetRole": "Python & Full-Stack Engineer · Infrastructure, Security & Product",
+  "summary": "Python-first full-stack engineer who ships user-facing features and owns the infrastructure and security beneath them. I build in Python across the stack (PostgreSQL, REST/JS frontends), run object storage and identity/access control at scale, and authored a software supply-chain security pipeline — SAST, dependency and artifact scanning, signed builds. I’ve also co-founded and shipped products, so I weigh engineering against revenue, community and sustainability, not just code. Today I build and operate the platform behind Slovakia’s national e-government; before that I shipped features full-stack on a SaaS used by tens of thousands of companies.",
+  "emphasize": ["Python", "PostgreSQL", "FastAPI", "TypeScript / JavaScript", "React", "Keycloak", "AWS"],
+  "skillGroups": ["Languages", "Web & Frameworks", "Data & Messaging", "Platform & Infrastructure", "Cloud & Observability"],
+  "roles": ["NASES", "QualityUnit", "Lapz"],
+  "maxBulletsPerRole": 3,
+  "roleOverrides": {
+    "NASES": {
+      "title": "DevSecOps & Platform Engineer",
+      "summary": "The cloud-native platform behind slovensko.sk — object storage, identity and access control, and software supply-chain security on sovereign infrastructure.",
+      "bullets": [
+        "Authored the central CI/CD software supply-chain security pipeline — SAST, dependency/container/secret scanning and cosign-signed artifacts — securing the chain end to end.",
+        "Run object storage and the data layer at scale — Rook-Ceph/ODF object storage and PostgreSQL (CloudNativePG) — with single sign-on and RBAC via Keycloak (OIDC).",
+        "Write production Python and Go automation across the platform, with full observability and GitOps delivery."
+      ]
+    },
+    "QualityUnit": {
+      "title": "Full-Stack Engineer & Tech Lead (LiveAgent)",
+      "summary": "Help-desk SaaS used by tens of thousands of companies — shipping user-facing features full-stack, plus architecture and operations.",
+      "bullets": [
+        "Built and shipped user-facing features full-stack — Python, PHP and JavaScript — on a high-traffic product.",
+        "Ran code reviews and drove architecture decisions; mentored engineers and conducted hiring for two years.",
+        "Worked across the data layer — MySQL/MariaDB, ElasticSearch, Redis — on AWS."
+      ]
+    }
+  },
+  "projects": ["NASES — National e-Government Platform", "Medical Navigator", "ViaJet"],
+  "accent": "#4f46e5"
+}

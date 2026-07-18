@@ -23,6 +23,11 @@ const args = Object.fromEntries(
   }),
 );
 const profileName = (args.profile as string) || 'default';
+// Output basename. Defaults to a neutral, company-free name so the file you upload
+// never reveals it was tailored; override with --out=<name> if needed. The file
+// lands in out/<profile>/ — the per-position subdirectory keeps applications tidy,
+// and the listing name stays in the (private) directory, not on the PDF.
+const outName = (args.out as string) || 'martin-civan-cv';
 const wantPdf = args['no-pdf'] !== true;
 
 // ---- load profile --------------------------------------------------------
@@ -36,6 +41,9 @@ interface JobProfile {
   projects?: string[];
   showProjects?: boolean;
   accent?: string;
+  // Path to a headshot (relative to cv/), embedded into the HTML as a data URI.
+  // Per-profile on purpose: some markets expect a photo, others discourage it.
+  photo?: string;
   // Per-listing reframing: override a role's title/summary/bullets without
   // touching the shared data (so other profiles are unaffected). Keyed by company.
   roleOverrides?: Record<string, { title?: string; summary?: string; bullets?: string[] }>;
@@ -71,13 +79,34 @@ const selectedRoles = orderBy(experience, job.roles, (r) => r.company).map((r) =
   };
 });
 
-const selectedSkills = orderBy(skills, job.skillGroups, (g) => g.label);
+// Emphasized skills lead their group — a recruiter scanning for the listing's
+// keywords shouldn't have to hunt for them mid-list. Non-emphasized items keep
+// their data order (sort is stable).
+const emphasizeRank = (item: string) => {
+  const i = (job.emphasize ?? []).findIndex((e) => e.toLowerCase() === item.toLowerCase());
+  return i === -1 ? Number.MAX_SAFE_INTEGER : i;
+};
+const selectedSkills = orderBy(skills, job.skillGroups, (g) => g.label).map((g) => ({
+  ...g,
+  items: [...g.items].sort((a, b) => emphasizeRank(a) - emphasizeRank(b)),
+}));
 
 const showProjects = job.showProjects ?? true;
 const defaultProjects = projects.filter((p) => p.featured);
 const selectedProjects = showProjects
   ? (job.projects ? orderBy(projects, job.projects, (p) => p.name) : defaultProjects).slice(0, 5)
   : [];
+
+let photo: string | undefined;
+if (job.photo) {
+  const photoPath = resolve(__dirname, job.photo);
+  if (!existsSync(photoPath)) {
+    console.error(`✗ Photo not found: ${photoPath}`);
+    process.exit(1);
+  }
+  const mime = photoPath.endsWith('.png') ? 'image/png' : 'image/jpeg';
+  photo = `data:${mime};base64,${readFileSync(photoPath).toString('base64')}`;
+}
 
 const model: CvModel = {
   profile: identity,
@@ -90,13 +119,14 @@ const model: CvModel = {
   roles: selectedRoles,
   projects: selectedProjects,
   accent: job.accent ?? '#4f46e5',
+  photo,
 };
 
 // ---- render --------------------------------------------------------------
-const outDir = resolve(__dirname, 'out');
+const outDir = resolve(__dirname, 'out', profileName);
 mkdirSync(outDir, { recursive: true });
 const html = renderCv(model);
-const htmlPath = resolve(outDir, `${profileName}.html`);
+const htmlPath = resolve(outDir, `${outName}.html`);
 writeFileSync(htmlPath, html);
 console.log(`✓ HTML  → ${htmlPath}`);
 
@@ -131,7 +161,7 @@ const browser = await puppeteer.launch({
 });
 const page = await browser.newPage();
 await page.setContent(html, { waitUntil: 'networkidle0' });
-const pdfPath = resolve(outDir, `${profileName}.pdf`);
+const pdfPath = resolve(outDir, `${outName}.pdf`);
 await page.pdf({ path: pdfPath, format: 'A4', printBackground: true, preferCSSPageSize: true });
 await browser.close();
 console.log(`✓ PDF   → ${pdfPath}`);

@@ -1,0 +1,31 @@
+{
+  "_listing": "Wikimedia Foundation — Senior Site Reliability Engineer (remote, ~$117K–181K). Primary target: Wikimedia Enterprise SRE (#7946461). Wants: IaC (Terraform/Ansible), GitLab + ArgoCD GitOps, canary/blue-green, SLOs/SLIs/error budgets, Prometheus/OpenTelemetry observability, Python/Go, AWS/GCP, automation/toil reduction, incident response, mentoring. Nice: Kafka. Also fits Data Persistence (#7972965 — Ceph/CloudNativePG/MariaDB/caching) and Infrastructure Foundations (#7921820 — supply-chain & infra security).",
+  "targetRole": "Senior Site Reliability / Platform Engineer",
+  "summary": "Platform and reliability engineer who provisions infrastructure as code and operates large, critical systems on GitOps. I run the cloud-native platform behind Slovakia’s national e-government — multi-cluster OpenShift provisioned with Terraform, a 40+ component GitOps platform on self-managing ArgoCD, and full observability on Prometheus, Grafana, Loki, Tempo and OpenTelemetry — writing Go and Python to automate away toil. Before that I helped operate a help-desk SaaS used by tens of thousands of companies on AWS. Comfortable owning reliability end to end: automation, incident response, progressive delivery, and mentoring across distributed teams.",
+  "emphasize": ["Kubernetes", "OpenShift / OKD", "Terraform / OpenTofu", "ArgoCD (GitOps)", "GitLab CI/CD", "Prometheus", "Grafana", "Loki / Tempo", "OpenTelemetry", "AWS", "Python"],
+  "skillGroups": ["Platform & Infrastructure", "Cloud & Observability", "Languages", "Data & Messaging"],
+  "roles": ["NASES", "QualityUnit", "Lapz"],
+  "maxBulletsPerRole": 3,
+  "roleOverrides": {
+    "NASES": {
+      "title": "DevSecOps & Platform / Reliability Engineer",
+      "summary": "The cloud-native, GitOps-driven platform behind slovensko.sk — provisioned as code, observed end to end, and operated for reliability on sovereign infrastructure.",
+      "bullets": [
+        "Provision OpenShift/OKD clusters fully as code (Terraform + GitLab CI) across Oracle Private Cloud Appliances and bare-metal — repeatable, automated, and low-toil.",
+        "Operate a 40+ component GitOps platform on self-managing ArgoCD with full observability — Prometheus, Grafana, Loki, Tempo, OpenTelemetry — and progressive, automated delivery.",
+        "Authored the central GitLab CI/CD security catalog (SAST, dependency/container/secret scanning, cosign signing) and write production Go (cert-manager webhooks) and Python automation."
+      ]
+    },
+    "QualityUnit": {
+      "title": "Full-Stack Engineer & Tech Lead (LiveAgent)",
+      "summary": "Help-desk SaaS used by tens of thousands of companies — feature work, architecture and the operations and DevOps underneath.",
+      "bullets": [
+        "Helped operate a high-traffic production system end to end: troubleshooting, performance, and the full operational lifecycle.",
+        "Built and ran the platform on AWS (S3, KMS, DynamoDB, SQS) with Terraform, Salt and GitHub Actions — across MySQL, ElasticSearch/ELK and Redis.",
+        "Technical lead for two years — mentored engineers and ran hiring interviews."
+      ]
+    }
+  },
+  "projects": ["NASES — National e-Government Platform", "Medical Navigator", "Lapz — F1 AR for Apple Vision Pro"],
+  "accent": "#4f46e5"
+}

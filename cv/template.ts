@@ -15,6 +15,8 @@ export interface CvModel {
   roles: (Role & { bullets: string[] })[];
   projects: Project[];
   accent: string;
+  /** Optional headshot as a data URI — photos are a per-profile choice (some markets expect them, others discourage them). */
+  photo?: string;
 }
 
 const esc = (s: string) =>
@@ -39,7 +41,9 @@ export function renderCv(m: CvModel): string {
   html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); font-size: 9.4px; line-height: 1.42; }
   .page { width: 210mm; min-height: 297mm; padding: 13mm 14mm; }
-  .head { border-bottom: 2px solid var(--accent); padding-bottom: 9px; margin-bottom: 12px; }
+  .head { border-bottom: 2px solid var(--accent); padding-bottom: 9px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+  .head .id { min-width: 0; }
+  .photo { flex: 0 0 auto; width: 74px; height: 74px; border-radius: 8px; object-fit: cover; border: 1px solid var(--line); }
   .name { font-size: 23px; font-weight: 700; letter-spacing: -0.01em; }
   .name small { font-size: 13px; font-weight: 600; color: var(--muted); }
   .role-title { font-size: 11px; font-weight: 600; color: var(--accent); margin-top: 2px; letter-spacing: 0.01em; }
@@ -78,12 +82,15 @@ export function renderCv(m: CvModel): string {
 <body>
 <div class="page">
   <header class="head">
-    <div class="role-title">${esc(m.targetRole)}</div>
-    <div class="name">${esc(p.name)} ${p.credential ? `<small>${esc(p.credential)}</small>` : ''}</div>
-    <div class="contact">
-      <span>${esc(p.email)}</span><span>${esc(p.phone)}</span><span>${esc(p.location)}</span>
-      <span>${esc(p.github)}</span><span>${esc(p.linkedin)}</span>
+    <div class="id">
+      <div class="role-title">${esc(m.targetRole)}</div>
+      <div class="name">${esc(p.name)} ${p.credential ? `<small>${esc(p.credential)}</small>` : ''}</div>
+      <div class="contact">
+        <span>${esc(p.email)}</span><span>${esc(p.phone)}</span><span>${esc(p.location)}</span>
+        <span>${esc(p.website)}</span><span>${esc(p.github)}</span><span>${esc(p.linkedin)}</span>
+      </div>
     </div>
+    ${m.photo ? `<img class="photo" src="${m.photo}" alt="">` : ''}
   </header>
 
   <div class="cols">

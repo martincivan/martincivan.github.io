@@ -1,0 +1,31 @@
+{
+  "_listing": "Kalepa — Staff Backend Engineer, Core Product (Europe, remote, full-time, $100K–185K + equity). AI for insurance. Must: 8+ yrs, Python, system design, serverless AWS (Lambda/EC2) + async workflows, PostgreSQL, ownership. Nice: LLM/generative AI, distributed systems. Designs services/data models/pipelines/evaluation loops. Plays to Martin's Python backend + distributed systems + applied-AI/genAI (OmniSVG fine-tuning, DL thesis) + founder ownership. First role where the AI thread is a core asset. Generate with --out to keep the PDF neutrally named.",
+  "targetRole": "Backend Engineer · Python, Distributed Systems & Applied AI",
+  "summary": "Backend engineer and technical founder who designs distributed Python services and the data and AI underneath them. I build and operate Python systems at national scale — PostgreSQL data, Kafka-based asynchronous workflows, system design and reliability end to end — and work hands-on with applied AI, fine-tuning generative models and training deep-learning pipelines with real evaluation loops. Nine years across high-traffic SaaS, co-founded products, and critical national infrastructure have given me a strong ownership mindset and the habit of communicating proactively. I’m happiest taking an ambiguous problem from design to a working, scaled system.",
+  "emphasize": ["Python", "PostgreSQL", "AWS", "Apache Kafka", "PyTorch", "Model fine-tuning", "Deep learning"],
+  "skillGroups": ["Languages", "AI / ML", "Data & Messaging", "Cloud & Observability", "Platform & Infrastructure"],
+  "roles": ["NASES", "Lapz", "QualityUnit"],
+  "maxBulletsPerRole": 3,
+  "roleOverrides": {
+    "NASES": {
+      "title": "Platform & Backend Engineer",
+      "summary": "The distributed, cloud-native platform behind slovensko.sk — Python and Go services, PostgreSQL data and Kafka event flows at national scale.",
+      "bullets": [
+        "Build and operate distributed Python and Go services on Kubernetes at national scale, with PostgreSQL data and Kafka-based asynchronous, event-driven workflows.",
+        "Own system design and reliability end to end — infrastructure as code, GitOps delivery, and full observability across the platform.",
+        "Authored the software supply-chain security pipeline — scanning and signed artifacts."
+      ]
+    },
+    "QualityUnit": {
+      "title": "Backend Engineer & Tech Lead (LiveAgent)",
+      "summary": "Help-desk SaaS used by tens of thousands of companies — backend at scale, architecture, and the cloud underneath.",
+      "bullets": [
+        "Drove software-architecture decisions and built backend features in Python (and PHP, Java) on a high-traffic system.",
+        "Built asynchronous, queue-driven workflows on AWS — S3, KMS, DynamoDB, SQS — with data on MySQL, ElasticSearch and Redis.",
+        "Technical lead for two years: code reviews, mentoring and hiring — strong ownership and proactive communication."
+      ]
+    }
+  },
+  "projects": ["NASES — National e-Government Platform", "Logram.ai", "Brain MRI Segmentation"],
+  "accent": "#4f46e5"
+}

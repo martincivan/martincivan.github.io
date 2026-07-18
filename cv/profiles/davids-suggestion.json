@@ -1,0 +1,39 @@
+{
+  "_listing": "Role via David's suggestion (2026-07-18). Company/listing unknown; known keywords: Java, Spring, microservices, Kubernetes, AI. Positioning: Kubernetes + microservices are the strongest true suits (NASES national-scale platform); Java/Spring framed honestly — deploys/operates Spring microservices and their CI/CD at NASES and debugs/fixes bugs directly in the Spring code; QualityUnit adds 6 years of Java-ecosystem work. AI angle per Martin: GenAI/LLM only (Logram.ai / OmniSVG fine-tuning), thesis omitted. Generated PDF keeps the neutral name.",
+  "targetRole": "Senior Software Engineer · Java, Spring Microservices, Kubernetes & AI",
+  "summary": "Senior engineer with nine years across high-traffic SaaS, co-founded products and critical national infrastructure. Today I run the Kubernetes platform behind Slovakia’s national e-government — deploying, operating and debugging Java/Spring microservices at national scale and owning their CI/CD end to end. On the generative-AI side I build Logram.ai with a small team, fine-tuning generative models for controllable vector output.",
+  "emphasize": ["Java", "Spring", "Kubernetes", "OpenShift / OKD", "Apache Kafka", "Generative AI / LLMs", "Model fine-tuning", "Agentic development"],
+  "skillGroups": ["Languages", "Web & Frameworks", "Platform & Infrastructure", "Data & Messaging", "AI / ML"],
+  "roles": ["NASES", "Lapz", "QualityUnit"],
+  "maxBulletsPerRole": 3,
+  "roleOverrides": {
+    "NASES": {
+      "title": "DevSecOps & Platform Engineer",
+      "summary": "The Kubernetes platform behind slovensko.sk, Slovakia’s national e-government — a fleet of Java/Spring microservices operated at national scale.",
+      "bullets": [
+        "Deploy and operate Java/Spring microservices on OpenShift/Kubernetes — GitOps delivery via ArgoCD, Kafka event flows, and full Prometheus/Grafana/Loki observability.",
+        "Own the services’ delivery end to end: authored the central GitLab CI/CD component catalog (Gradle builds, SAST, dependency/container/secret scanning, signed images) reused across teams.",
+        "Debug production incidents down to the code level, diagnosing and fixing bugs directly in the Spring services."
+      ]
+    },
+    "Lapz": {
+      "bullets": [
+        "Owned all real-time telemetry: data loading, handling and playback driving the spatial visualisation.",
+        "Led a small cross-functional team (UI/UX, 3D, engineering) from concept to a shipped product.",
+        "Sunset after an F1 cease-and-desist and Apple discontinuing the Vision Pro."
+      ]
+    },
+    "QualityUnit": {
+      "title": "Full-Stack Engineer & Tech Lead (LiveAgent)",
+      "summary": "Help-desk SaaS used by tens of thousands of companies — six years across backend architecture, features and the platform underneath.",
+      "bullets": [
+        "Drove key software-architecture decisions on a high-traffic, service-oriented SaaS — Java, PHP and JavaScript over MySQL, ElasticSearch and Redis.",
+        "Built asynchronous, queue-driven workflows on AWS (SQS, S3, KMS, DynamoDB) for reliable background processing.",
+        "Two years on the leadership team: mentored developers, ran code reviews and hiring interviews."
+      ]
+    }
+  },
+  "projects": ["NASES — National e-Government Platform", "Logram.ai", "ViaJet"],
+  "photo": "photo.jpg",
+  "accent": "#4f46e5"
+}
