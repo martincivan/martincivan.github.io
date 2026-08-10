@@ -1,0 +1,62 @@
+{
+  "_comment": "Bluesecor — Kubernetes Platform Operations & Maintenance Expert (Belgium). Also serves the Linux Engineer (Belgium) listing.",
+  "targetRole": "Kubernetes Platform Engineer",
+  "summary": "Platform engineer running the multi-cluster Kubernetes estate behind Slovakia's national e-government. Day to day that means cluster upgrades and patching, node lifecycle, CNI and storage, certificate and secret rotation, RBAC and network policy, backup and restore, and the monitoring on top of it. I came up as a developer, so the operational work is automated as code with Terraform, Helm, Argo CD and GitLab CI rather than done by hand, and I write the missing tooling myself when there isn't any.",
+  "emphasize": ["Kubernetes", "Rancher / RKE2", "Cilium CNI (eBPF, BGP)", "Velero / OADP backup & restore", "Harbor & Quay registries", "Prometheus", "Grafana", "Zabbix"],
+  "skills": [
+    {
+      "label": "Kubernetes & Platform",
+      "items": ["Kubernetes", "OpenShift / OKD", "Rancher / RKE2", "Helm", "Argo CD (GitOps)", "Operators & CRDs", "Cluster upgrades & patching", "Node lifecycle (join, drain, cordon)"]
+    },
+    {
+      "label": "Cluster Components",
+      "items": ["Cilium CNI (eBPF, BGP)", "Ingress (NGINX, HAProxy)", "CoreDNS", "cert-manager", "Rook-Ceph / ODF (CSI)", "Harbor & Quay registries", "Velero / OADP backup & restore", "Strimzi Kafka, CloudNativePG"]
+    },
+    {
+      "label": "Monitoring & Operations",
+      "items": ["Prometheus", "Grafana", "Zabbix", "Loki / Tempo", "Alertmanager", "Incident response & RCA", "Capacity & performance review", "Configuration drift"]
+    },
+    {
+      "label": "Security & Compliance",
+      "items": ["RBAC audits", "Kubernetes network policy", "HashiCorp Vault", "Keycloak / IAM", "Container & dependency scanning", "cosign image signing", "Certificate & secret rotation", "Fortinet, F5 BIG-IP"]
+    },
+    {
+      "label": "Linux & Automation",
+      "items": ["Linux (RHEL, CoreOS, Debian)", "System hardening", "Bare-metal provisioning (iDRAC)", "Terraform / OpenTofu", "GitLab CI", "Bash", "Python", "Go"]
+    }
+  ],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and operate the multi-cluster Kubernetes platform behind slovensko.sk — OpenShift/OKD as the primary distribution plus a Rancher cluster alongside it — provisioned entirely as code with Terraform across three Oracle Private Cloud Appliances and bare-metal Dell hardware.",
+        "Own day-to-day cluster operations: version upgrades and patching, node join/drain/cordon, certificate rotation through cert-manager, secrets administration in Vault, RBAC reviews and Cilium network policy.",
+        "Run a 40+ component GitOps platform on self-managing Argo CD: Cilium eBPF CNI with BGP, ingress, Rook-Ceph/ODF storage, CloudNativePG and Strimzi Kafka operators, and Velero/OADP backup and restore.",
+        "Monitor the estate end to end with Prometheus, Grafana, Loki/Tempo and Zabbix, and handle the operational follow-through: alert triage, troubleshooting, root-cause analysis and capacity review.",
+        "Authored the organisation's central GitLab CI/CD component catalog — SAST, dependency, container and secret scanning plus cosign image signing — with images served from Harbor and Quay and the pipelines reused across teams."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Ran the production Linux infrastructure on AWS with Terraform behind a help-desk SaaS used by tens of thousands of companies: MariaDB, Redis, ElasticSearch, queues and background workers.",
+        "Six years of development on the product itself in PHP, Java, Python and JavaScript; two years on the leadership team, mentoring engineers and running hiring."
+      ]
+    },
+    {
+      "name": "Medical Navigator",
+      "bullets": [
+        "Built the infrastructure and CI/CD for a multilingual healthcare directory: GitHub Actions pipelines and a multi-account Terraform setup deploying containers to AWS ECS Fargate behind an ALB."
+      ]
+    },
+    {
+      "name": "DXC Technology",
+      "bullets": [
+        "Delivered an internal race-organisation web application end to end on a two-person team — a Python (Flask) API behind an Angular frontend, containerised with Docker and deployed to Azure."
+      ]
+    }
+  ],
+  "projects": ["Lapz", "Logram.ai"],
+  "photo": "photo.jpg",
+  "accent": "#2b5a8c"
+}
