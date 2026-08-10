@@ -1,12 +1,12 @@
 {
-  "_comment": "Copy this file to <job-name>.json and edit. All fields are optional except targetRole. Omitted list fields fall back to: all skill groups / all roles / featured projects, in their data.ts order.",
+  "_comment": "Copy to <company-role>.json and edit. Only targetRole is really required. 'experience'/'projects' entries reference names in ../src/data/work.ts (matched case-insensitively, prefix or substring — so 'LiveAgent' or 'NASES' is enough). Bullets live here (the site data is kept terse); this is where each application's tailoring goes.",
   "targetRole": "The exact job title you're applying for",
   "summary": "2-3 sentence pitch tailored to this listing. Omit to use the default summary from src/data/profile.ts.",
-  "emphasize": ["Skill names to highlight (must match items in src/data/skills.ts) — these render in the accent colour"],
-  "skillGroups": ["Which skill-group labels to include, in order. Omit for all. Labels: Platform & Infrastructure | Cloud & Observability | Languages | Web & Frameworks | Data & Messaging | AI / ML"],
-  "roles": ["Company names to include, in order (NASES | Lapz | QualityUnit | DXC Technology). Omit for all."],
-  "maxBulletsPerRole": 4,
-  "projects": ["Project names to include, in order. Omit to use featured projects. See names in src/data/projects.ts."],
-  "showProjects": true,
+  "emphasize": ["Skill names to render in the accent colour — must match tech names in src/i18n/ui.ts pillars, e.g. Kubernetes, PostgreSQL, PyTorch"],
+  "skillGroups": ["Which skill pillars to include, in order. Omit for all. Tags: Platform & Cloud-Native | Product & Architecture | Applied AI / ML"],
+  "experience": [
+    { "name": "work.ts entry name (e.g. NASES)", "bullets": ["Tailored bullet 1", "Tailored bullet 2"] }
+  ],
+  "projects": ["work.ts entry names for the compact Selected Projects strip. Omit for none."],
   "accent": "#4f46e5"
 }

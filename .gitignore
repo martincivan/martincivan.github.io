@@ -16,3 +16,7 @@ node_modules/
 .DS_Store
 .idea/
 *.iml
+
+# job-search working notes: salary ceilings and per-employer verdicts.
+# This repo is public — see applications/README.md.
+applications/

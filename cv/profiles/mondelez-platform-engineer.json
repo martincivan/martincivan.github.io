@@ -1,0 +1,38 @@
+{
+  "targetRole": "Platform Engineer",
+  "summary": "Platform & DevSecOps engineer who designs and runs Kubernetes/OpenShift at scale, provisions everything as code, and operates large GitOps and CI/CD pipelines with security baked in. I run the cloud-native platform behind Slovakia's national e-government today, and have operated AWS infrastructure at SaaS scale — comfortable owning reliability, observability and developer experience across an enterprise estate.",
+  "emphasize": ["Kubernetes", "AWS", "Terraform", "Argo CD", "Helm", "GitLab CI", "GitHub Actions", "OpenShift", "Vault", "Prometheus", "OpenTelemetry"],
+  "skillGroups": ["Platform & Cloud-Native", "Product & Architecture"],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and operate multi-cluster Kubernetes/OpenShift, provisioned fully as code with Terraform/OpenTofu across cloud and bare-metal.",
+        "Run a large GitOps platform on self-managing Argo CD, with Helm-packaged workloads across the whole estate.",
+        "Own end-to-end observability (Prometheus, Grafana, OpenTelemetry), secrets (Vault), identity (Keycloak) and network policy (Cilium).",
+        "Bake supply-chain security and policy gates into GitLab CI/CD so issues are caught before release."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Operated the AWS + Terraform infrastructure and scaling behind a SaaS used by tens of thousands of companies — caching (Redis), search (ElasticSearch), messaging and workers.",
+        "Helped lead development across feature work, architecture and the DevOps underneath, on the leadership team for two years."
+      ]
+    },
+    {
+      "name": "Medical Navigator",
+      "bullets": [
+        "Deployed a multilingual platform to AWS ECS Fargate behind an ALB, via a multi-account Terraform setup driven entirely by GitHub Actions."
+      ]
+    },
+    {
+      "name": "DXC Technology",
+      "bullets": [
+        "Built and shipped an internal web app end to end on a two-person team — build through containerised deployment (Docker, Azure)."
+      ]
+    }
+  ],
+  "projects": ["Lapz", "Logram.ai"],
+  "accent": "#4f46e5"
+}

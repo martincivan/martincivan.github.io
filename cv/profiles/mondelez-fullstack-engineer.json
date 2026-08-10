@@ -1,0 +1,39 @@
+{
+  "targetRole": "Full-stack Engineer",
+  "summary": "Full-stack engineer who ships production code from frontend to infrastructure. I helped architect a multi-tenant SaaS used by tens of thousands of companies, today design and run the distributed platform behind Slovakia's national e-government, and build my own products end to end. Comfortable owning a feature from UI through API, data model and the AWS/Kubernetes it runs on — with observability baked in.",
+  "emphasize": ["TypeScript", "Node.js", "React", "Python", "PostgreSQL", "Redis", "Kafka", "AWS", "Kubernetes", "GitHub Actions", "OpenTelemetry"],
+  "skillGroups": ["Product & Architecture", "Platform & Cloud-Native", "Applied AI / ML"],
+  "experience": [
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Helped lead development of a multi-tenant help-desk SaaS serving tens of thousands of companies — full stack plus the DevOps underneath.",
+        "Worked caching and queues (Redis), search at scale (ElasticSearch) and the AWS/Terraform infra it all ran on.",
+        "On the leadership team for two years — set architecture, mentored engineers and ran hiring.",
+        "Owned features from design through production and on-call."
+      ]
+    },
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and operate multi-cluster Kubernetes/OpenShift on sovereign infra, provisioned as code (Terraform) and driven by GitOps (Argo CD).",
+        "Own the distributed backbone — Kafka messaging, workers and retries — with multi-tenant isolation, secrets (Vault) and identity (Keycloak).",
+        "Built end-to-end observability (Prometheus, Grafana, OpenTelemetry) so failures surface before users feel them."
+      ]
+    },
+    {
+      "name": "Medical Navigator",
+      "bullets": [
+        "Built a multilingual healthcare directory — faceted search, ranking, pricing — and shipped it to AWS ECS Fargate via multi-account Terraform driven by GitHub Actions."
+      ]
+    },
+    {
+      "name": "Logram.ai",
+      "bullets": [
+        "Co-founder (equity); currently researching custom AI model fine-tuning — training generative models for controllable vector output."
+      ]
+    }
+  ],
+  "projects": ["Lapz", "ViaJet"],
+  "accent": "#0ea5a4"
+}
