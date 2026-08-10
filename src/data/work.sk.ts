@@ -87,7 +87,7 @@ export const workSk: Work[] = [
     href: 'https://www.liveagent.com/',
     summary:
       'Pomáhal som viesť vývoj LiveAgentu, helpdesk SaaS používaného desiatkami tisíc firiem — naprieč feature prácou, architektúrou a DevOps pod tým. Dva roky súčasťou vedenia tímu — mentoroval som vývojárov a viedol prijímacie pohovory.',
-    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
+    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'EKS', 'ArgoCD', 'Terraform'],
     link: { href: 'https://www.liveagent.com/', label: 'liveagent.com' },
   },
   {

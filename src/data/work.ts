@@ -116,7 +116,7 @@ export const work: Work[] = [
     href: 'https://www.liveagent.com/',
     summary:
       'Helped lead development of LiveAgent, a help-desk SaaS used by tens of thousands of companies — across feature work, architecture and the DevOps underneath it. Part of the leadership team for two years, mentoring developers and running hiring.',
-    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
+    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'EKS', 'ArgoCD', 'Terraform'],
     logo: '/logos/liveagent.png',
     icon: 'lucide:headset',
     link: { href: 'https://www.liveagent.com/', label: 'liveagent.com' },

@@ -1,12 +1,12 @@
 {
   "_comment": "Bluesecor — Kubernetes Platform Operations & Maintenance Expert (Belgium). Also serves the Linux Engineer (Belgium) listing.",
   "targetRole": "Kubernetes Platform Engineer",
-  "summary": "Platform engineer running the multi-cluster Kubernetes estate behind Slovakia's national e-government. Day to day that means cluster upgrades and patching, node lifecycle, CNI and storage, certificate and secret rotation, RBAC and network policy, backup and restore, and the monitoring on top of it. I came up as a software developer — nine years across product and platform — and still write code daily in Python, Java, PHP and TypeScript, so the operational side gets automated as code with Terraform, Helm, Argo CD and GitLab CI rather than done by hand, and I write the missing tooling myself.",
+  "summary": "Platform engineer running the multi-cluster Kubernetes estate behind Slovakia's national e-government, after years of Argo CD-managed EKS on AWS before it. Day to day that means cluster upgrades and patching, node lifecycle, CNI and storage, certificate and secret rotation, RBAC and network policy, backup and restore, and the monitoring on top of it. I came up as a software developer — nine years across product and platform — and still write code daily in Python, Java, PHP and TypeScript, so the operational side gets automated as code with Terraform, Helm, Argo CD and GitLab CI rather than done by hand, and I write the missing tooling myself.",
   "emphasize": ["Kubernetes", "Rancher / RKE2", "Cilium CNI (eBPF, BGP)", "Velero / OADP backup & restore", "Harbor & Quay registries", "Prometheus", "Grafana", "Zabbix"],
   "skills": [
     {
       "label": "Kubernetes & Platform",
-      "items": ["Kubernetes", "OpenShift / OKD", "Rancher / RKE2", "Helm", "Argo CD (GitOps)", "Operators & CRDs", "Cluster upgrades & patching", "Node lifecycle (join, drain, cordon)"]
+      "items": ["Kubernetes", "OpenShift / OKD", "Rancher / RKE2", "AWS EKS", "Helm", "Argo CD (GitOps)", "Operators & CRDs", "Cluster upgrades & patching", "Node lifecycle (join, drain, cordon)"]
     },
     {
       "label": "Cluster Components",
@@ -39,7 +39,7 @@
     {
       "name": "LiveAgent",
       "bullets": [
-        "Ran the production Linux infrastructure on AWS with Terraform behind a help-desk SaaS used by tens of thousands of companies: MariaDB, Redis, ElasticSearch, queues and background workers.",
+        "Ran the production platform behind a help-desk SaaS used by tens of thousands of companies: Kubernetes on AWS EKS under Argo CD GitOps, provisioned with Terraform, alongside the Linux estate, MariaDB, Redis, ElasticSearch, queues and background workers.",
         "Six years of development on the product itself in PHP, Java, Python and JavaScript; two years on the leadership team, mentoring engineers and running hiring."
       ]
     },

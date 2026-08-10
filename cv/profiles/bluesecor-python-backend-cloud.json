@@ -10,7 +10,7 @@
     "PostGIS / geospatial data",
     "Kafka (Strimzi)",
     "Kubernetes / OpenShift",
-    "AWS (Lambda, API Gateway, ECS, ALB, S3)"
+    "AWS (EKS, Lambda, API Gateway, ECS, ALB)"
   ],
   "skills": [
     {
@@ -71,7 +71,7 @@
       "items": [
         "Docker",
         "Kubernetes / OpenShift",
-        "AWS (Lambda, API Gateway, ECS, ALB, S3)",
+        "AWS (EKS, Lambda, API Gateway, ECS, ALB)",
         "Azure",
         "Terraform / OpenTofu",
         "GitLab CI",
@@ -99,7 +99,7 @@
       "bullets": [
         "Six years building a help-desk SaaS used by tens of thousands of companies, moving between whatever the work needed: PHP and Java on the backend, Python for tooling, JavaScript on the frontend, on MariaDB, Redis and ElasticSearch.",
         "Drove the software-architecture decisions on the product using domain-driven design to model the ticketing and automation domains, and kept them coherent through years of refactoring.",
-        "Ran the AWS infrastructure behind it with Terraform — caching, search, queues and background workers; two years on the leadership team, mentoring engineers and running hiring."
+        "Ran the AWS infrastructure behind it with Terraform — Kubernetes on EKS under Argo CD, caching, search, queues and background workers; two years on the leadership team, mentoring engineers and running hiring."
       ]
     },
     {
