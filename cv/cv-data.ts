@@ -61,7 +61,7 @@ export const experience: Role[] = [
     highlights: [
       'Drove key software-architecture decisions and supported the full lifecycle: feature development, refactoring, testing and DevOps.',
       'Part of the leadership team for two years — mentored developers and ran hiring interviews.',
-      'Worked across the stack and the platform: PHP, JavaScript, Java, Python on MySQL, ElasticSearch and the ELK stack, running on Kubernetes (AWS EKS) under Argo CD GitOps, with Salt, Terraform, AWS (S3, KMS, DynamoDB, SQS) and GitHub Actions.',
+      'Worked across the stack and the platform: PHP, JavaScript, Java, Python on MySQL, ElasticSearch and the ELK stack, running on Kubernetes (AWS EKS) under Argo CD GitOps, with Salt, Terraform, AWS (ECS Fargate, S3, KMS, DynamoDB, SQS, Route 53) and GitHub Actions.',
     ],
     stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'EKS', 'ArgoCD', 'Terraform'],
   },
