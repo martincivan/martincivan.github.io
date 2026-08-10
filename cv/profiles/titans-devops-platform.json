@@ -1,0 +1,60 @@
+{
+  "targetRole": "DevOps / Platform Engineer",
+  "summary": "DevOps and platform engineer with 9 years in software delivery. I currently operate the Kubernetes platform and CI/CD behind Slovakia's national e-government, and before that ran AWS infrastructure for a SaaS product with tens of thousands of customers. I started as a software developer, so I'm comfortable reading and writing code, working closely with development teams and developing whatever automation is missing.",
+  "emphasize": ["GitHub Actions", "Kubernetes", "Terraform", "Docker", "Azure", "AWS"],
+  "skills": [
+    {
+      "label": "CI/CD & Automation",
+      "items": ["GitHub Actions", "GitLab CI", "Argo CD (GitOps)", "Helm", "Docker", "Git / PR workflow", "Bash", "Python"]
+    },
+    {
+      "label": "Cloud & Infrastructure",
+      "items": ["Kubernetes", "OpenShift", "Terraform", "AWS", "Azure", "Networking (DNS, VPN, firewall)", "Linux"]
+    },
+    {
+      "label": "Security & Monitoring",
+      "items": ["Vault", "Keycloak", "IAM", "Prometheus", "Grafana"]
+    },
+    {
+      "label": "Data & Messaging",
+      "items": ["Kafka", "PostgreSQL", "MySQL / MariaDB", "Elasticsearch", "Redis"]
+    },
+    {
+      "label": "Programming",
+      "items": ["Python", "Java", "PHP", "TypeScript", "JavaScript"]
+    }
+  ],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Designed the architecture of the platform and am building the internal development platform on top of it, used by teams across the organisation.",
+        "Operate multi-cluster Kubernetes/OpenShift, provisioned as code with Terraform on private cloud and bare-metal.",
+        "Build and maintain the GitLab CI/CD pipelines and GitOps deployment (Argo CD, Helm): release management, day-to-day troubleshooting, and security scanning with image signing in the shared pipelines.",
+        "Responsible for secrets management (Vault), IAM (Keycloak), networking (Cilium, F5, Fortinet) and monitoring (Prometheus, Grafana)."
+      ]
+    },
+    {
+      "name": "Medical Navigator",
+      "bullets": [
+        "Developed the application itself as well as its infrastructure and CI/CD: GitHub Actions pipelines and a multi-account Terraform setup deploying to AWS ECS Fargate."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Ran the AWS infrastructure (Terraform) behind a help-desk SaaS used by tens of thousands of companies: MySQL, Redis, Elasticsearch, messaging and background workers.",
+        "Six years of development on the product itself (PHP, Java, Python, JavaScript); two years on the leadership team."
+      ]
+    },
+    {
+      "name": "DXC Technology",
+      "bullets": [
+        "Python (Flask) and Angular on MySQL, containerised with Docker and deployed to Azure."
+      ]
+    }
+  ],
+  "projects": ["Logram.ai", "Lapz"],
+  "photo": "photo.jpg",
+  "accent": "#e8920c"
+}

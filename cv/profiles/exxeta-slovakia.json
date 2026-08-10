@@ -1,0 +1,37 @@
+{
+  "targetRole": "Senior Software / DevOps Engineer",
+  "summary": "Full-stack and platform engineer who moves comfortably across frontend, backend, DevOps and applied AI — the exact breadth a consultancy needs to put in front of clients. I helped architect a multi-tenant SaaS at scale, run the cloud-native platform behind Slovakia's national e-government, and ship my own AI-native products. AI-native in how I work day to day, and used to translating customer requirements into shipped software with agile teams.",
+  "emphasize": ["TypeScript", "React", "Java", "Spring", "Python", "Kotlin", "Kubernetes", "Docker", "AWS", "PostgreSQL", "PyTorch"],
+  "skillGroups": ["Product & Architecture", "Platform & Cloud-Native", "Applied AI / ML"],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and operate Kubernetes/OpenShift and a microservices backbone (Java/Spring, Go) on sovereign infra — provisioned as code and driven by GitOps.",
+        "Own CI/CD, secrets, identity and observability across the estate, delivering against public-sector requirements and stakeholders.",
+        "Bridge product and platform — translating requirements into architecture that ships and stays reliable."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Helped lead development of a multi-tenant SaaS across the full stack plus DevOps, for tens of thousands of client companies.",
+        "On the leadership team for two years — set architecture, mentored engineers and ran hiring in an agile setting."
+      ]
+    },
+    {
+      "name": "Logram.ai",
+      "bullets": [
+        "Co-founder (equity); researching custom AI model fine-tuning hands-on — training generative models, staying at the frontier of modern AI tooling."
+      ]
+    },
+    {
+      "name": "Medical Navigator",
+      "bullets": [
+        "Delivered a multilingual client platform end to end — Drupal/PHP, AWS ECS Fargate, Terraform, GitHub Actions."
+      ]
+    }
+  ],
+  "projects": ["Lapz", "ViaJet"],
+  "accent": "#e11d48"
+}

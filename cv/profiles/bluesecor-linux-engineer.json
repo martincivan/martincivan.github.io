@@ -1,0 +1,64 @@
+{
+  "targetRole": "Linux Engineer",
+  "summary": "Linux and platform engineer with 9 years in software delivery. I design and run the secure Linux infrastructure behind Slovakia's national e-government — RHEL-based clusters on private-cloud virtualisation and bare metal, provisioned as code, hardened, monitored and patched — and I own the security layer on top of it: secrets, identity, network segmentation and supply-chain scanning. I came up as a software developer, so I automate in Python and Bash rather than by hand.",
+  "emphasize": ["Linux", "OpenShift", "Terraform", "Python", "Vault", "Fortinet", "Prometheus"],
+  "skills": [
+    {
+      "label": "Linux & Systems",
+      "items": ["Linux (RHEL / CentOS / Debian)", "Red Hat CoreOS", "systemd", "System hardening & patching", "Bare-metal provisioning", "Storage (Ceph, NFS)", "Bash"]
+    },
+    {
+      "label": "Automation & Configuration",
+      "items": ["Terraform / OpenTofu", "Helm", "GitLab CI", "GitHub Actions", "Python", "Bash", "Git / PR workflow"]
+    },
+    {
+      "label": "Virtualisation & Containers",
+      "items": ["Oracle Private Cloud Appliance", "KVM", "OpenShift / Kubernetes", "Docker", "Argo CD (GitOps)"]
+    },
+    {
+      "label": "Security & Networking",
+      "items": ["HashiCorp Vault", "Keycloak / IAM", "Cilium network policy", "Fortinet firewalls", "F5", "DNS, VPN, TLS certificates", "Image signing & vulnerability scanning"]
+    },
+    {
+      "label": "Monitoring & Operations",
+      "items": ["Prometheus", "Grafana", "OpenTelemetry", "Elastic", "Incident response & troubleshooting"]
+    },
+    {
+      "label": "Programming",
+      "items": ["Python", "Go", "Java", "PHP", "TypeScript", "JavaScript"]
+    }
+  ],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and operate the multi-cluster Linux platform behind slovensko.sk — RHEL-family nodes (Red Hat CoreOS / OpenShift) running on Oracle Private Cloud Appliance virtualisation and bare-metal servers.",
+        "Install, configure and maintain that infrastructure entirely as code with Terraform/OpenTofu; everything else is automated in Python and Bash rather than done by hand.",
+        "Own the security layer: secrets management (Vault), identity and access (Keycloak), network policy and segmentation (Cilium, Fortinet, F5), TLS/certificates, plus image signing and vulnerability scanning enforced in the shared GitLab CI pipelines.",
+        "Run observability end to end (Prometheus, Grafana, Elastic) and handle day-to-day operations across the estate: patching, hardening, troubleshooting and incident response on sovereign, regulated national infrastructure."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Ran the Linux production infrastructure on AWS (Terraform) behind a help-desk SaaS used by tens of thousands of companies: MariaDB, Redis, Elasticsearch, messaging and background workers.",
+        "Six years of development on the product itself (PHP, Java, Python, JavaScript); two years on the leadership team, mentoring engineers and running hiring."
+      ]
+    },
+    {
+      "name": "Medical Navigator",
+      "bullets": [
+        "Built the infrastructure and CI/CD for a multilingual healthcare directory: GitHub Actions pipelines and a multi-account Terraform setup deploying containers to AWS ECS Fargate behind an ALB."
+      ]
+    },
+    {
+      "name": "DXC Technology",
+      "bullets": [
+        "Delivered an internal race-organisation web application end to end on a two-person team — Python (Flask) API and Angular frontend, containerised with Docker and deployed to Azure."
+      ]
+    }
+  ],
+  "projects": ["Lapz", "Logram.ai"],
+  "photo": "photo.jpg",
+  "accent": "#2b5a8c"
+}

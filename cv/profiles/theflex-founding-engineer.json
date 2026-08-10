@@ -1,0 +1,40 @@
+{
+  "targetRole": "Founding Software Engineer",
+  "summary": "Technical founder and full-stack engineer who turns ideas into production-ready systems with urgency and ownership. I built the real-time engine of a Forbes-featured spatial app end to end, and helped architect a multi-tenant SaaS used by tens of thousands of companies — owning systems from the UI down to the infrastructure. I make architectural calls, work AI into the product and my own workflow, and operate with the accountability a founding role demands.",
+  "emphasize": ["Python", "FastAPI", "TypeScript", "React", "Next.js", "PostgreSQL", "AWS", "Docker", "GitHub Actions", "PyTorch", "Hugging Face"],
+  "skillGroups": ["Product & Architecture", "Applied AI / ML", "Platform & Cloud-Native"],
+  "experience": [
+    {
+      "name": "Lapz",
+      "bullets": [
+        "Co-founded a spatial F1 companion app and owned all real-time telemetry end to end — loading, handling and low-latency playback driving the visualisation.",
+        "Shipped a hard real-time data pipeline under production constraints, from first principles to a launched product.",
+        "Featured by Forbes as \"the best reason yet to buy a Vision Pro\" — built with the ownership and urgency a founding role needs."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Helped lead development of a multi-tenant help-desk SaaS serving tens of thousands of companies — across the full stack and the DevOps underneath.",
+        "On the leadership team for two years: set architecture, mentored engineers and ran hiring.",
+        "Owned features from design through production and on-call — payments, queues, search and messaging at scale.",
+        "Worked the AWS/Terraform infra, caching (Redis) and search (ElasticSearch) it all ran on."
+      ]
+    },
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and run cloud-native infrastructure — Kubernetes, Terraform, GitOps, observability — so I own systems from product down to the metal.",
+        "Comfortable standing up APIs, databases and the deploy pipeline (Docker, GitHub Actions patterns) a new product needs from day one."
+      ]
+    },
+    {
+      "name": "Logram.ai",
+      "bullets": [
+        "Co-founder (equity); currently researching custom AI model fine-tuning — training OmniSVG for controllable, editable vector output.",
+        "Stay at the frontier of AI tooling and models, hands-on rather than from the sidelines."
+      ]
+    }
+  ],
+  "accent": "#f97316"
+}

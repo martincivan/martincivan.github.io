@@ -1,0 +1,61 @@
+{
+  "targetRole": "Backend Developer",
+  "summary": "Backend and full-stack engineer with 9 years of shipping products — Python and TypeScript services on PostgreSQL and Redis, REST APIs, and the React/Angular frontends in front of them. I've built real-time pipelines that ingest and replay external live data feeds, and I currently architect and run the platform behind Slovakia's national e-government, so I take API design, data modelling, monitoring and security remediation as one job rather than three.",
+  "emphasize": ["Python", "FastAPI", "React", "PostgreSQL", "Redis", "TypeScript", "JavaScript"],
+  "skills": [
+    {
+      "label": "Backend",
+      "items": ["Python (FastAPI, Flask)", "REST API design", "Node.js / TypeScript", "Java / Spring", "PHP (Symfony, Laravel)", "Authentication & OAuth (Keycloak)"]
+    },
+    {
+      "label": "Frontend",
+      "items": ["JavaScript / TypeScript", "React", "Next.js", "Angular", "HTML & CSS", "Vue.js", "Svelte"]
+    },
+    {
+      "label": "Data & Messaging",
+      "items": ["PostgreSQL", "Redis", "MySQL / MariaDB", "Elasticsearch", "Kafka", "Apache NiFi"]
+    },
+    {
+      "label": "Delivery & Infrastructure",
+      "items": ["Git", "Jest", "Docker", "GitHub Actions", "GitLab CI", "Kubernetes / OpenShift", "Terraform", "AWS", "Azure", "HashiCorp Vault", "Prometheus", "Grafana"]
+    }
+  ],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Architect the platform behind slovensko.sk and work daily with the backend teams building on it — API and service design, PostgreSQL/Oracle data layers, Kafka messaging and end-to-end monitoring.",
+        "Own secrets management (Vault), identity and OAuth (Keycloak), and the vulnerability-scanning and remediation loop enforced in the shared CI pipelines.",
+        "Build the internal developer platform (Kubernetes/OpenShift, Terraform, GitLab CI, Argo CD) used by teams across the organisation."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Six years building a help-desk SaaS used by tens of thousands of companies: backend feature work and architecture (PHP, Java, Python) plus the JavaScript frontend, on MariaDB, Redis and Elasticsearch — including diagnosing customer-reported UI bugs and performance regressions in the browser.",
+        "Ran the AWS infrastructure behind it (Terraform), including caching, search and background workers; two years on the leadership team, mentoring engineers and running hiring."
+      ]
+    },
+    {
+      "name": "Lapz",
+      "bullets": [
+        "Co-founded a spatial Formula 1 companion app for Apple Vision Pro and owned all real-time telemetry: ingesting external live data feeds and building the processing, buffering and playback pipeline that drove the visualisation (Python, Swift)."
+      ]
+    },
+    {
+      "name": "ViaJet",
+      "bullets": [
+        "Co-founded and built a B2B2C private-jet charter marketplace end to end — Python backend, PostgreSQL schema design, search with faceted filtering and the booking flow, TypeScript frontend."
+      ]
+    },
+    {
+      "name": "DXC Technology",
+      "bullets": [
+        "Delivered an internal race-organisation web application on a two-person team — Angular frontend against a Python (Flask) API on MySQL, containerised with Docker and deployed to Azure."
+      ]
+    }
+  ],
+  "projects": ["Logram.ai", "Medical Navigator"],
+  "photo": "photo.jpg",
+  "accent": "#2b5a8c"
+}
