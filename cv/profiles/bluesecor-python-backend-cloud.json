@@ -1,7 +1,7 @@
 {
   "_comment": "Bluesecor — Senior Backend Developer (Remote) and SW Engineer Python & Cloud (Belgium). One CV, both listings. Deliberately polyglot: the pitch is range and getting things working in whatever stack, with Python as the preferred one, so this stays viable for any of their development roles rather than only the Python-titled ones.",
   "targetRole": "Senior Software Engineer — Backend & Cloud",
-  "summary": "Software engineer with 9 years across the whole stack — backend services, web apps and the infrastructure under them. I've shipped production code in Python, Java, PHP, TypeScript, Go and Swift, and what I'm good at is the uncertain part: taking on a problem in a stack I haven't used yet and getting it working. Python is where I'm fastest, usually FastAPI on PostgreSQL. I also architect and run the Kubernetes platform behind Slovakia's national e-government, so API design, deployment, monitoring and security are one job to me rather than four.",
+  "summary": "Software engineer with nine years across the whole stack — backend services, web apps and the infrastructure under them. I've shipped production code in Python, Java, PHP, TypeScript, Go and Swift, and what I'm good at is the uncertain part: taking on a problem in a stack I haven't used yet and getting it working. Python is where I'm fastest, usually FastAPI on PostgreSQL. I also architect and run the Kubernetes platform behind Slovakia's national e-government, so API design, deployment, monitoring and security are one job to me rather than four.",
   "emphasize": [
     "Python",
     "FastAPI",

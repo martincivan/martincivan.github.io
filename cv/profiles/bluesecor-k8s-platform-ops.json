@@ -1,7 +1,7 @@
 {
   "_comment": "Bluesecor — Kubernetes Platform Operations & Maintenance Expert (Belgium). Also serves the Linux Engineer (Belgium) listing.",
   "targetRole": "Kubernetes Platform Engineer",
-  "summary": "Platform engineer running the multi-cluster Kubernetes estate behind Slovakia's national e-government. Day to day that means cluster upgrades and patching, node lifecycle, CNI and storage, certificate and secret rotation, RBAC and network policy, backup and restore, and the monitoring on top of it. I came up as a developer, so the operational work is automated as code with Terraform, Helm, Argo CD and GitLab CI rather than done by hand, and I write the missing tooling myself when there isn't any.",
+  "summary": "Platform engineer running the multi-cluster Kubernetes estate behind Slovakia's national e-government. Day to day that means cluster upgrades and patching, node lifecycle, CNI and storage, certificate and secret rotation, RBAC and network policy, backup and restore, and the monitoring on top of it. I came up as a software developer — nine years across product and platform — and still write code daily in Python, Java, PHP and TypeScript, so the operational side gets automated as code with Terraform, Helm, Argo CD and GitLab CI rather than done by hand, and I write the missing tooling myself.",
   "emphasize": ["Kubernetes", "Rancher / RKE2", "Cilium CNI (eBPF, BGP)", "Velero / OADP backup & restore", "Harbor & Quay registries", "Prometheus", "Grafana", "Zabbix"],
   "skills": [
     {
@@ -44,19 +44,13 @@
       ]
     },
     {
-      "name": "Medical Navigator",
+      "name": "Lapz",
       "bullets": [
-        "Built the infrastructure and CI/CD for a multilingual healthcare directory: GitHub Actions pipelines and a multi-account Terraform setup deploying containers to AWS ECS Fargate behind an ALB."
-      ]
-    },
-    {
-      "name": "DXC Technology",
-      "bullets": [
-        "Delivered an internal race-organisation web application end to end on a two-person team — a Python (Flask) API behind an Angular frontend, containerised with Docker and deployed to Azure."
+        "Co-founded a spatial Formula 1 companion app for Apple Vision Pro and owned all real-time telemetry: ingesting external live data feeds and building the processing, buffering and playback pipeline behind the visualisation."
       ]
     }
   ],
-  "projects": ["Lapz", "Logram.ai"],
+  "projects": ["Logram.ai", "Medical Navigator"],
   "photo": "photo.jpg",
   "accent": "#2b5a8c"
 }
