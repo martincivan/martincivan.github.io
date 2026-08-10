@@ -71,7 +71,7 @@ export const work: Work[] = [
     status: 'shipped',
     href: 'https://www.medicalnavigator.com/',
     summary:
-      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB, via a multi-account Terraform setup driven by GitHub Actions.',
+      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB and CloudFront, via a multi-account Terraform setup driven by GitHub Actions.',
     stack: ['Drupal 11', 'PHP', 'AWS ECS', 'Terraform'],
     logo: '/logos/mednav.svg',
     icon: 'lucide:stethoscope',

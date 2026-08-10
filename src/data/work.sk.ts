@@ -47,7 +47,7 @@ export const workSk: Work[] = [
     status: 'shipped',
     href: 'https://www.medicalnavigator.com/',
     summary:
-      'Viacjazyčný katalóg zdravotníckych zariadení — vyhľadávanie lekárov/kliník s fasetovým filtrovaním, rankingom a cenami — postavený na Drupal 11 a nasadený na AWS ECS Fargate za ALB cez multi-account Terraform riadený GitHub Actions.',
+      'Viacjazyčný katalóg zdravotníckych zariadení — vyhľadávanie lekárov/kliník s fasetovým filtrovaním, rankingom a cenami — postavený na Drupal 11 a nasadený na AWS ECS Fargate za ALB a CloudFront cez multi-account Terraform riadený GitHub Actions.',
     stack: ['Drupal 11', 'PHP', 'AWS ECS', 'Terraform'],
     link: { href: 'https://www.medicalnavigator.com/', label: 'medicalnavigator.com' },
   },

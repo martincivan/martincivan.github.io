@@ -10,7 +10,7 @@
     "PostGIS / geospatial data",
     "Kafka (Strimzi)",
     "Kubernetes / OpenShift",
-    "AWS (EKS, Lambda, API Gateway, ECS Fargate, ALB, Route 53)"
+    "AWS (Lambda, API Gateway, CloudFront, Route 53, ALB)"
   ],
   "skills": [
     {
@@ -71,7 +71,8 @@
       "items": [
         "Docker",
         "Kubernetes / OpenShift",
-        "AWS (EKS, Lambda, API Gateway, ECS Fargate, ALB, Route 53)",
+        "AWS EKS & ECS Fargate",
+        "AWS (Lambda, API Gateway, CloudFront, Route 53, ALB)",
         "Azure",
         "Terraform / OpenTofu",
         "GitLab CI",

@@ -61,7 +61,7 @@ export const experience: Role[] = [
     highlights: [
       'Drove key software-architecture decisions and supported the full lifecycle: feature development, refactoring, testing and DevOps.',
       'Part of the leadership team for two years — mentored developers and ran hiring interviews.',
-      'Worked across the stack and the platform: PHP, JavaScript, Java, Python on MySQL, ElasticSearch and the ELK stack, running on Kubernetes (AWS EKS) under Argo CD GitOps, with Salt, Terraform, AWS (ECS Fargate, S3, KMS, DynamoDB, SQS, Route 53) and GitHub Actions.',
+      'Worked across the stack and the platform: PHP, JavaScript, Java, Python on MySQL, ElasticSearch and the ELK stack, running on Kubernetes (AWS EKS) under Argo CD GitOps, with Salt, Terraform, AWS (ECS Fargate, CloudFront, Route 53, S3, KMS, DynamoDB, SQS) and GitHub Actions.',
     ],
     stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'EKS', 'ArgoCD', 'Terraform'],
   },
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     year: '2026',
     status: 'shipped',
     blurb:
-      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB, via a multi-account Terraform setup driven by GitHub Actions.',
+      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB and CloudFront, via a multi-account Terraform setup driven by GitHub Actions.',
     stack: ['Drupal 11', 'PHP', 'AWS ECS', 'Terraform'],
   },
   {
