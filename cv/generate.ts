@@ -10,7 +10,9 @@ import { fileURLToPath } from 'node:url';
 import process from 'node:process';
 
 import { profile as identity } from '../src/data/profile.ts';
-import { experience, skills, languages, education, projects } from './cv-data.ts';
+import { work } from '../src/data/work.ts';
+import { ui } from '../src/i18n/ui.ts';
+import { languages, education } from './cv-data.ts';
 import { renderCv, type CvModel } from './template.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -23,23 +25,33 @@ const args = Object.fromEntries(
   }),
 );
 const profileName = (args.profile as string) || 'default';
-// Output basename. Defaults to a neutral, company-free name so the file you upload
-// never reveals it was tailored; override with --out=<name> if needed. The file
-// lands in out/<profile>/ — the per-position subdirectory keeps applications tidy,
-// and the listing name stays in the (private) directory, not on the PDF.
-const outName = (args.out as string) || 'martin-civan-cv';
 const wantPdf = args['no-pdf'] !== true;
+// --out=<dir>       where to write output (default: ./out). Relative paths resolve
+//                   against the current working directory so a per-listing
+//                   application folder can be targeted directly.
+// --filename=<base> base name for the emitted files (default: the profile name).
+//                   e.g. --filename="Martin-Civan-CV" → Martin-Civan-CV.{html,pdf}
+const outArg = typeof args.out === 'string' ? args.out : null;
+const fileBase = typeof args.filename === 'string' ? args.filename : profileName;
 
-// ---- load profile --------------------------------------------------------
+// ---- profile schema ------------------------------------------------------
+// experience[]: which timeline entries to show as "Experience", in order, each
+//   with tailored bullets. `name` matches a work.ts entry (exact, prefix or
+//   substring, case-insensitive).
+// projects[]:   which timeline entries to show in the compact "Selected Projects"
+//   strip (name only). Omit for none.
+// skillGroups:  pillar tags to include, in order. Omit for all. Tags:
+//   "Platform & Cloud-Native" | "Product & Architecture" | "Applied AI / ML".
 interface JobProfile {
   targetRole?: string;
   summary?: string;
   emphasize?: string[];
   skillGroups?: string[];
-  roles?: string[];
-  maxBulletsPerRole?: number;
+  // Custom skill groups for this application, used verbatim instead of the site
+  // pillars — for listings where a focused, keyword-matched list beats the full stack.
+  skills?: { label: string; items: string[] }[];
+  experience?: { name: string; bullets?: string[] }[];
   projects?: string[];
-  showProjects?: boolean;
   accent?: string;
   // Path to a headshot (relative to cv/), embedded into the HTML as a data URI.
   // Per-profile on purpose: some markets expect a photo, others discourage it.
@@ -58,27 +70,41 @@ if (existsSync(profilePath)) {
   process.exit(1);
 }
 
-// ---- helpers: order/filter by a name list (case-insensitive) -------------
-const orderBy = <T>(items: T[], names: string[] | undefined, key: (t: T) => string): T[] => {
-  if (!names || names.length === 0) return items;
-  const lower = names.map((n) => n.toLowerCase());
-  return items
-    .filter((it) => lower.includes(key(it).toLowerCase()))
-    .sort((a, b) => lower.indexOf(key(a).toLowerCase()) - lower.indexOf(key(b).toLowerCase()));
+// ---- helpers -------------------------------------------------------------
+const findWork = (name: string) => {
+  const n = name.toLowerCase();
+  return (
+    work.find((w) => w.name.toLowerCase() === n) ??
+    work.find((w) => w.name.toLowerCase().startsWith(n)) ??
+    work.find((w) => w.name.toLowerCase().includes(n))
+  );
 };
 
 // ---- build model ---------------------------------------------------------
-const maxBullets = job.maxBulletsPerRole ?? 4;
-const selectedRoles = orderBy(experience, job.roles, (r) => r.company).map((r) => {
-  const ov = job.roleOverrides?.[r.company];
+const requireWork = (name: string) => {
+  const w = findWork(name);
+  if (!w) {
+    console.error(`✗ No work.ts entry matches "${name}"`);
+    process.exit(1);
+  }
+  return w;
+};
+
+const selectedExperience = (job.experience ?? []).map((e) => {
+  const w = requireWork(e.name);
   return {
-    ...r,
-    title: ov?.title ?? r.title,
-    summary: ov?.summary ?? r.summary,
-    bullets: (ov?.bullets ?? r.highlights).slice(0, maxBullets),
+    name: w.name,
+    kind: w.kind,
+    period: w.period,
+    summary: w.summary,
+    bullets: e.bullets ?? [],
+    feature: w.feature,
   };
 });
 
+// Skill groups come from the site's i18n pillars (tag → group label, tech → items).
+const pillars = ui.en.home.pillars.map((p) => ({ label: p.tag, items: p.tech.map((t) => t.name) }));
+const wantedGroups = job.skillGroups?.map((g) => g.toLowerCase());
 // Emphasized skills lead their group — a recruiter scanning for the listing's
 // keywords shouldn't have to hunt for them mid-list. Non-emphasized items keep
 // their data order (sort is stable).
@@ -86,16 +112,21 @@ const emphasizeRank = (item: string) => {
   const i = (job.emphasize ?? []).findIndex((e) => e.toLowerCase() === item.toLowerCase());
   return i === -1 ? Number.MAX_SAFE_INTEGER : i;
 };
-const selectedSkills = orderBy(skills, job.skillGroups, (g) => g.label).map((g) => ({
+const selectedSkills = (job.skills ??
+  (wantedGroups
+    ? wantedGroups
+        .map((g) => pillars.find((p) => p.label.toLowerCase() === g))
+        .filter((p): p is NonNullable<typeof p> => Boolean(p))
+    : pillars)
+).map((g) => ({
   ...g,
   items: [...g.items].sort((a, b) => emphasizeRank(a) - emphasizeRank(b)),
 }));
 
-const showProjects = job.showProjects ?? true;
-const defaultProjects = projects.filter((p) => p.featured);
-const selectedProjects = showProjects
-  ? (job.projects ? orderBy(projects, job.projects, (p) => p.name) : defaultProjects).slice(0, 5)
-  : [];
+const selectedProjects = (job.projects ?? []).map((name) => {
+  const w = requireWork(name);
+  return { name: w.name, kind: w.kind, period: w.period, summary: w.summary };
+});
 
 let photo: string | undefined;
 if (job.photo) {
@@ -116,17 +147,19 @@ const model: CvModel = {
   skills: selectedSkills,
   languages,
   education,
-  roles: selectedRoles,
+  experience: selectedExperience,
   projects: selectedProjects,
   accent: job.accent ?? '#4f46e5',
   photo,
 };
 
 // ---- render --------------------------------------------------------------
-const outDir = resolve(__dirname, 'out', profileName);
+const outDir = outArg
+  ? resolve(process.cwd(), outArg)
+  : resolve(__dirname, 'out', profileName);
 mkdirSync(outDir, { recursive: true });
 const html = renderCv(model);
-const htmlPath = resolve(outDir, `${outName}.html`);
+const htmlPath = resolve(outDir, `${fileBase}.html`);
 writeFileSync(htmlPath, html);
 console.log(`✓ HTML  → ${htmlPath}`);
 
@@ -154,14 +187,18 @@ if (!browserPath) {
 }
 
 const { default: puppeteer } = await import('puppeteer-core');
+// The PDF's Creator metadata is derived from the browser-level user agent —
+// pass the regular Chrome UA at launch so the file reads like it was printed
+// from a normal browser instead of advertising HeadlessChrome.
+const chromeUa = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36';
 const browser = await puppeteer.launch({
   executablePath: browserPath,
   headless: true,
-  args: ['--no-sandbox'],
+  args: ['--no-sandbox', `--user-agent=${chromeUa}`],
 });
 const page = await browser.newPage();
 await page.setContent(html, { waitUntil: 'networkidle0' });
-const pdfPath = resolve(outDir, `${outName}.pdf`);
+const pdfPath = resolve(outDir, `${fileBase}.pdf`);
 await page.pdf({ path: pdfPath, format: 'A4', printBackground: true, preferCSSPageSize: true });
 await browser.close();
 console.log(`✓ PDF   → ${pdfPath}`);

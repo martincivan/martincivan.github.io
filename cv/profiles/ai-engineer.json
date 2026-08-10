@@ -1,10 +1,30 @@
 {
   "targetRole": "AI / ML Engineer",
   "summary": "Engineer with hands-on deep-learning experience — a master's thesis training 3D CNNs for medical image segmentation, and current work fine-tuning generative models for production. Pairs ML with the platform skills to actually ship and operate it: Kubernetes, GPUs, pipelines and all.",
-  "emphasize": ["PyTorch", "Deep learning", "3D CNNs / segmentation", "Model fine-tuning", "OmniSVG", "Python", "Kubernetes"],
-  "skillGroups": ["AI / ML", "Languages", "Platform & Infrastructure", "Data & Messaging"],
-  "roles": ["NASES", "Lapz", "QualityUnit"],
-  "maxBulletsPerRole": 3,
-  "projects": ["Brain MRI Segmentation", "Logram.ai", "NASES — National e-Government Platform"],
+  "emphasize": ["Python", "PyTorch", "Hugging Face", "NumPy", "Pandas", "Kubernetes"],
+  "skillGroups": ["Applied AI / ML", "Product & Architecture", "Platform & Cloud-Native"],
+  "experience": [
+    {
+      "name": "Logram.ai",
+      "bullets": [
+        "Co-founded an AI-native brand & logo platform; work the generative side — fine-tuning OmniSVG for controllable, editable SVG output.",
+        "Take models from experiment to shipped product features, staying current on the latest tooling."
+      ]
+    },
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and run the Kubernetes/GPU platform and CI/CD that ML workloads deploy onto — as code, GitOps-driven, with full observability.",
+        "Own secrets, identity and multi-tenant isolation across the estate."
+      ]
+    },
+    {
+      "name": "Lapz",
+      "bullets": [
+        "Owned all real-time telemetry — loading, handling and low-latency playback — for a spatial F1 app on visionOS."
+      ]
+    }
+  ],
+  "projects": ["Brain MRI Segmentation", "treeplanner"],
   "accent": "#7c3aed"
 }
