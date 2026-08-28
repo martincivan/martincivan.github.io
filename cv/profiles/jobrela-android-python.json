@@ -4,41 +4,64 @@
   "summary": "Software engineer with nine years across mobile, backend and infrastructure. I deliver what the problem needs rather than what my own stack prefers, and I've shipped production code in Kotlin, Python, Java, PHP, TypeScript, Go and Swift — on mobile that's Kotlin with Jetpack Compose and Coroutines on Android, and native Swift on Apple platforms. Today I architect the platform behind Slovakia's national e-government, including Slovensko v mobile, the state's citizen app on Android and iOS. Before that I owned the entire live-data path of a real-time Formula 1 companion app: ingesting external live feeds and building the processing, buffering and playback behind the visualisation.",
   "emphasize": [
     "Kotlin",
+    "Python",
     "Jetpack Compose",
     "Coroutines / Flow",
     "Firebase (FCM, Crashlytics)",
-    "Python",
     "FastAPI",
     "Real-time data pipelines",
     "Mobile CI/CD"
   ],
   "skills": [
     {
-      "label": "Android & Mobile",
+      "label": "Languages",
       "items": [
         "Kotlin",
+        "Python",
+        "TypeScript / JavaScript",
+        "Java",
+        "Swift",
+        "PHP",
+        "Go",
+        "Ruby"
+      ]
+    },
+    {
+      "label": "Android & Mobile",
+      "items": [
         "Jetpack Compose",
         "Android Views",
         "Coroutines / Flow",
         "Firebase (FCM, Crashlytics)",
         "Push notifications",
+        "Mobile CI/CD",
         "Play Store releases",
-        "Consuming REST APIs",
         "Swift / visionOS"
       ]
     },
     {
       "label": "Backend & APIs",
       "items": [
-        "Python",
         "FastAPI",
-        "async / await",
+        "Flask",
+        "Spring",
+        "Node.js",
+        "Symfony / Laravel",
         "REST API design",
         "OpenAPI / Swagger",
-        "API versioning",
-        "OAuth 2.0 / OpenID Connect",
-        "Java / Spring",
-        "Node.js"
+        "async / await",
+        "pytest / TDD",
+        "Domain-Driven Design"
+      ]
+    },
+    {
+      "label": "Frontend",
+      "items": [
+        "React",
+        "Next.js",
+        "Angular",
+        "Vue.js",
+        "Svelte"
       ]
     },
     {
@@ -48,24 +71,29 @@
         "PostgreSQL",
         "SQL",
         "NoSQL (DynamoDB, Redis)",
+        "Neo4j",
         "MySQL / MariaDB",
+        "Oracle",
         "ElasticSearch",
         "Kafka",
-        "MQTT"
+        "MQTT",
+        "Azure Event Hubs"
       ]
     },
     {
-      "label": "Delivery & Cloud",
+      "label": "Cloud & Delivery",
       "items": [
         "Git",
-        "Mobile CI/CD",
+        "Docker",
+        "Kubernetes / OpenShift",
+        "AWS (Lambda, API Gateway, ECS Fargate)",
+        "Azure",
         "GitHub Actions",
         "GitLab CI",
+        "Terraform / OpenTofu",
         "Automated testing (unit, integration)",
-        "Docker",
-        "AWS",
-        "Azure",
-        "Kubernetes"
+        "OAuth 2.0 / OpenID Connect",
+        "Keycloak"
       ]
     },
     {
