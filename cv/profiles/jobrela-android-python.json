@@ -1,7 +1,7 @@
 {
   "_comment": "Jobrela — 'Android with Python', remote, 400 EUR/day, MEDIOR, football fan-engagement platform. Role field is ANDROID DEVELOPER with a Python/FastAPI real-time backend attached. Lapz leads deliberately rather than chronologically: a real-time live-sports fan app running on external live feeds is the closest match in the record, and it carries the native-mobile credibility the Android ask needs. Android sits in the LiveAgent bullets, where it actually happened.",
-  "targetRole": "Android Developer — Kotlin & Python",
-  "summary": "Mobile and backend engineer. I build native mobile apps — Kotlin with Jetpack Compose and Coroutines on Android, Swift on Apple platforms — and the Python services behind them, which is what this project needs on both sides. I've owned a real-time live-sports data path end to end: ingesting external live telemetry feeds and building the processing, buffering and playback that drove the visualisation in a Formula 1 companion app for Apple Vision Pro. My day job is architecting the platform behind Slovakia's national e-government, so CI/CD, releases, auth and monitoring are routine rather than someone else's job.",
+  "targetRole": "Software Engineer",
+  "summary": "Software engineer with nine years across mobile, backend and infrastructure. I deliver what the problem needs rather than what my own stack prefers, and I've shipped production code in Kotlin, Python, Java, PHP, TypeScript, Go and Swift — on mobile that's Kotlin with Jetpack Compose and Coroutines on Android, and native Swift on Apple platforms. Today I architect the platform behind Slovakia's national e-government, including Slovensko v mobile, the state's citizen app on Android and iOS. Before that I owned the entire live-data path of a real-time Formula 1 companion app: ingesting external live feeds and building the processing, buffering and playback behind the visualisation.",
   "emphasize": [
     "Kotlin",
     "Jetpack Compose",
@@ -96,7 +96,7 @@
     {
       "name": "NASES — National e-Government Platform",
       "bullets": [
-        "Architect the platform behind slovensko.sk: Python and Go services, REST API design, PostgreSQL and Oracle data layers, and Kafka messaging for real-time event flows.",
+        "Architect the platform behind slovensko.sk and Slovensko v mobile, the state's citizen app on Android and iOS: Python and Go services, REST API design, PostgreSQL and Oracle data layers, and Kafka messaging for real-time event flows.",
         "Own OAuth 2.0 and OpenID Connect through Keycloak, secrets in Vault, and the CI/CD pipelines teams ship through — GitLab CI, Argo CD, container builds and automated testing and scanning."
       ]
     },
