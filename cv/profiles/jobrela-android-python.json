@@ -1,107 +1,91 @@
 {
   "_comment": "Jobrela — 'Android with Python', remote, 400 EUR/day, MEDIOR, football fan-engagement platform. Role field is ANDROID DEVELOPER with a Python/FastAPI real-time backend attached. Lapz leads deliberately rather than chronologically: a real-time live-sports fan app running on external live feeds is the closest match in the record, and it carries the native-mobile credibility the Android ask needs. Android sits in the LiveAgent bullets, where it actually happened.",
   "targetRole": "Software Engineer",
-  "summary": "Software engineer with nine years across mobile, backend and infrastructure. I deliver what the problem needs rather than what my own stack prefers, and I've shipped production code in Kotlin, Python, Java, PHP, TypeScript, Go and Swift — on mobile that's Kotlin with Jetpack Compose and Coroutines on Android, and native Swift on Apple platforms. Today I architect the platform behind Slovakia's national e-government, including Slovensko v mobile, the state's citizen app on Android and iOS. Before that I owned the entire live-data path of a real-time Formula 1 companion app: ingesting external live feeds and building the processing, buffering and playback behind the visualisation.",
-  "emphasize": [
-    "Kotlin",
-    "Python",
-    "Jetpack Compose",
-    "Coroutines / Flow",
-    "Firebase (FCM, Crashlytics)",
-    "FastAPI",
-    "Real-time data pipelines",
-    "Mobile CI/CD"
-  ],
+  "summary": "Software engineer with nine years across mobile, backend and infrastructure. I deliver what the problem needs rather than what my own stack prefers, and I've shipped production code in Kotlin, Python, Java, PHP, TypeScript and Swift — on mobile that's Kotlin with Jetpack Compose and Coroutines on Android, and native Swift on Apple platforms. Today I architect the platform behind Slovakia's national e-government, including Slovensko v mobile, the state's citizen app on Android and iOS. Before that I owned the entire live-data path of a real-time Formula 1 companion app: ingesting external live feeds and building the processing, buffering and playback behind the visualisation.",
+  "emphasize": [],
   "skills": [
     {
       "label": "Languages",
       "items": [
         "Kotlin",
         "Python",
-        "TypeScript / JavaScript",
+        "TypeScript",
+        "JavaScript",
         "Java",
         "Swift",
         "PHP",
-        "Go",
-        "Ruby"
+        "SQL"
       ]
     },
     {
-      "label": "Android & Mobile",
+      "label": "Mobile",
       "items": [
+        "Android SDK",
         "Jetpack Compose",
         "Android Views",
-        "Coroutines / Flow",
-        "Firebase (FCM, Crashlytics)",
-        "Push notifications",
-        "Mobile CI/CD",
-        "Play Store releases",
-        "Swift / visionOS"
+        "Kotlin Coroutines",
+        "Flow",
+        "Firebase Cloud Messaging",
+        "Firebase Crashlytics",
+        "Gradle",
+        "visionOS",
+        "RealityKit"
       ]
     },
     {
-      "label": "Backend & APIs",
+      "label": "Frameworks & Libraries",
       "items": [
         "FastAPI",
         "Flask",
         "Spring",
         "Node.js",
-        "Symfony / Laravel",
-        "REST API design",
-        "OpenAPI / Swagger",
-        "async / await",
-        "pytest / TDD",
-        "Domain-Driven Design"
-      ]
-    },
-    {
-      "label": "Frontend",
-      "items": [
         "React",
         "Next.js",
         "Angular",
         "Vue.js",
-        "Svelte"
+        "Svelte",
+        "Symfony",
+        "Laravel"
       ]
     },
     {
-      "label": "Data & Real-time",
+      "label": "Databases & Messaging",
       "items": [
-        "Real-time data pipelines",
         "PostgreSQL",
-        "SQL",
-        "NoSQL (DynamoDB, Redis)",
-        "Neo4j",
         "MySQL / MariaDB",
         "Oracle",
-        "ElasticSearch",
-        "Kafka",
+        "Redis",
+        "Elasticsearch",
+        "DynamoDB",
+        "Neo4j",
+        "Apache Kafka",
         "MQTT",
         "Azure Event Hubs"
       ]
     },
     {
-      "label": "Cloud & Delivery",
+      "label": "Cloud, DevOps & Tools",
       "items": [
-        "Git",
-        "Docker",
-        "Kubernetes / OpenShift",
-        "AWS (Lambda, API Gateway, ECS Fargate)",
+        "AWS",
         "Azure",
-        "GitHub Actions",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
         "GitLab CI",
-        "Terraform / OpenTofu",
-        "Automated testing (unit, integration)",
-        "OAuth 2.0 / OpenID Connect",
-        "Keycloak"
+        "GitHub Actions",
+        "Git",
+        "pytest",
+        "OpenAPI / Swagger",
+        "Keycloak",
+        "OAuth 2.0 / OIDC"
       ]
     },
     {
-      "label": "Generative AI",
+      "label": "AI / ML",
       "items": [
-        "LLMs & generative AI",
-        "Model fine-tuning",
-        "PyTorch"
+        "PyTorch",
+        "Hugging Face",
+        "LLM fine-tuning"
       ]
     }
   ],
@@ -116,7 +100,7 @@
     {
       "name": "LiveAgent",
       "bullets": [
-        "Six years on a help-desk SaaS used by tens of thousands of companies, including work on its Android app in Kotlin, alongside the PHP, Java and Python backend and the JavaScript frontend.",
+        "Six years on a help-desk SaaS used by tens of thousands of companies, including its Android app in Kotlin — feature work through to signed release builds on the Play Store — alongside the PHP, Java and Python backend and the JavaScript frontend.",
         "Built and consumed the REST APIs between the product's backend and its mobile and web clients, on MariaDB, Redis and ElasticSearch.",
         "Ran the AWS infrastructure with Terraform, including Kubernetes on EKS under Argo CD; two years on the leadership team, mentoring engineers and running hiring."
       ]
@@ -124,7 +108,7 @@
     {
       "name": "NASES — National e-Government Platform",
       "bullets": [
-        "Architect the platform behind slovensko.sk and Slovensko v mobile, the state's citizen app on Android and iOS: Python and Go services, REST API design, PostgreSQL and Oracle data layers, and Kafka messaging for real-time event flows.",
+        "Architect the platform behind slovensko.sk and Slovensko v mobile, the state's citizen app on Android and iOS: Python and Java services, REST API design, PostgreSQL and Oracle data layers, and Kafka messaging for real-time event flows.",
         "Own OAuth 2.0 and OpenID Connect through Keycloak, secrets in Vault, and the CI/CD pipelines teams ship through — GitLab CI, Argo CD, container builds and automated testing and scanning."
       ]
     },
