@@ -30,8 +30,9 @@ export const experience: Role[] = [
     highlights: [
       'Provision OpenShift/OKD clusters fully as code (Terraform + GitLab CI) across three Oracle Private Cloud Appliances and bare-metal Dell hardware via the Agent-Based Installer and iDRAC.',
       'Run a 40+ component GitOps platform on self-managing ArgoCD: Vault, Keycloak, Strimzi Kafka, CloudNativePG and Oracle/MariaDB operators, Rook-Ceph/ODF storage, Cilium eBPF CNI with BGP, cert-manager, and a full Prometheus/Grafana/Loki/Tempo observability stack.',
-      'Authored the organisation’s central GitLab CI/CD component catalog with SAST, dependency, container and secret scanning, cosign image signing and SCA — supply-chain-secured pipelines reused across teams.',
+      'Contributed the performance-testing (k6) and OpenTofu components to the organisation’s central GitLab CI/CD catalog and co-maintain its CloudNativePG chart — delivering services on supply-chain-secured pipelines with SAST, dependency, container and secret scanning and cosign signing.',
       'Built custom cert-manager DNS01 webhook integrations and handled network engineering across F5 BIG-IP, Fortinet and Cilium BGP.',
+      'Migrated the eIDAS person-matching service off .NET Framework 4.8 and Windows onto .NET 10 in Linux containers (CoreWCF, EF Core), building its test suite from zero and fixing five latent production bugs it exposed.',
     ],
     stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Java', 'Spring', 'Gradle', 'Cilium', 'Vault', 'Keycloak', 'Kafka', 'Oracle', 'PostgreSQL', 'Prometheus', 'Grafana'],
   },

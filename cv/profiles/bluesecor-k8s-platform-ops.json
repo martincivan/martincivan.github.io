@@ -33,7 +33,7 @@
         "Own day-to-day cluster operations: version upgrades and patching, node join/drain/cordon, certificate rotation through cert-manager, secrets administration in Vault, RBAC reviews and Cilium network policy.",
         "Run a 40+ component GitOps platform on self-managing Argo CD: Cilium eBPF CNI with BGP, ingress, Rook-Ceph/ODF storage, CloudNativePG and Strimzi Kafka operators, and Velero/OADP backup and restore.",
         "Monitor the estate end to end with Prometheus, Grafana, Loki/Tempo and Zabbix, and handle the operational follow-through: alert triage, troubleshooting, root-cause analysis and capacity review.",
-        "Authored the organisation's central GitLab CI/CD component catalog — SAST, dependency, container and secret scanning plus cosign image signing — with images served from Harbor and Quay and the pipelines reused across teams."
+        "Contributed the performance-testing and OpenTofu components to the organisation's central GitLab CI/CD catalog, and run services on supply-chain-secured pipelines from it — SAST, dependency, container and secret scanning plus cosign image signing — with images served from Harbor and Quay."
       ]
     },
     {
