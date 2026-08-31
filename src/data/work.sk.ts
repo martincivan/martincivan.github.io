@@ -47,7 +47,7 @@ export const workSk: Work[] = [
     status: 'shipped',
     href: 'https://www.medicalnavigator.com/',
     summary:
-      'Viacjazyčný katalóg zdravotníckych zariadení — vyhľadávanie lekárov/kliník s fasetovým filtrovaním, rankingom a cenami — postavený na Drupal 11 a nasadený na AWS ECS Fargate za ALB cez multi-account Terraform riadený GitHub Actions.',
+      'Viacjazyčný katalóg zdravotníckych zariadení — vyhľadávanie lekárov/kliník s fasetovým filtrovaním, rankingom a cenami — postavený na Drupal 11 a nasadený na AWS ECS Fargate za ALB a CloudFront cez multi-account Terraform riadený GitHub Actions.',
     stack: ['Drupal 11', 'PHP', 'AWS ECS', 'Terraform'],
     link: { href: 'https://www.medicalnavigator.com/', label: 'medicalnavigator.com' },
   },
@@ -87,7 +87,7 @@ export const workSk: Work[] = [
     href: 'https://www.liveagent.com/',
     summary:
       'Pomáhal som viesť vývoj LiveAgentu, helpdesk SaaS používaného desiatkami tisíc firiem — naprieč feature prácou, architektúrou a DevOps pod tým. Dva roky súčasťou vedenia tímu — mentoroval som vývojárov a viedol prijímacie pohovory.',
-    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
+    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'EKS', 'ArgoCD', 'Terraform'],
     link: { href: 'https://www.liveagent.com/', label: 'liveagent.com' },
   },
   {

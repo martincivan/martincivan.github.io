@@ -71,7 +71,7 @@ export const work: Work[] = [
     status: 'shipped',
     href: 'https://www.medicalnavigator.com/',
     summary:
-      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB, via a multi-account Terraform setup driven by GitHub Actions.',
+      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB and CloudFront, via a multi-account Terraform setup driven by GitHub Actions.',
     stack: ['Drupal 11', 'PHP', 'AWS ECS', 'Terraform'],
     logo: '/logos/mednav.svg',
     icon: 'lucide:stethoscope',
@@ -116,7 +116,7 @@ export const work: Work[] = [
     href: 'https://www.liveagent.com/',
     summary:
       'Helped lead development of LiveAgent, a help-desk SaaS used by tens of thousands of companies — across feature work, architecture and the DevOps underneath it. Part of the leadership team for two years, mentoring developers and running hiring.',
-    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
+    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'EKS', 'ArgoCD', 'Terraform'],
     logo: '/logos/liveagent.png',
     icon: 'lucide:headset',
     link: { href: 'https://www.liveagent.com/', label: 'liveagent.com' },

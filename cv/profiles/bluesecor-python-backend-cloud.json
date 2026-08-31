@@ -1,0 +1,125 @@
+{
+  "_comment": "Bluesecor — Senior Backend Developer (Remote) and SW Engineer Python & Cloud (Belgium). One CV, both listings. Deliberately polyglot: the pitch is range and getting things working in whatever stack, with Python as the preferred one, so this stays viable for any of their development roles rather than only the Python-titled ones.",
+  "targetRole": "Senior Software Engineer — Backend & Cloud",
+  "summary": "Software engineer with nine years across the whole stack — backend services, web apps and the infrastructure under them. I've shipped production code in Python, Java, PHP, TypeScript, Go and Swift, and what I'm good at is the uncertain part: taking on a problem in a stack I haven't used yet and getting it working. Python is where I'm fastest, usually FastAPI on PostgreSQL. I also architect and run the Kubernetes platform behind Slovakia's national e-government, so API design, deployment, monitoring and security are one job to me rather than four.",
+  "emphasize": [
+    "Python",
+    "FastAPI",
+    "REST API design",
+    "PostgreSQL",
+    "PostGIS / geospatial data",
+    "Kafka (Strimzi)",
+    "Kubernetes / OpenShift",
+    "AWS (Lambda, API Gateway, CloudFront, Route 53, ALB)"
+  ],
+  "skills": [
+    {
+      "label": "Languages",
+      "items": [
+        "Python",
+        "TypeScript / JavaScript",
+        "Java",
+        "PHP",
+        "Go",
+        "Swift",
+        "Kotlin",
+        "Ruby"
+      ]
+    },
+    {
+      "label": "Backend & APIs",
+      "items": [
+        "FastAPI",
+        "Flask",
+        "Spring",
+        "Node.js",
+        "Symfony / Laravel",
+        "REST API design",
+        "Domain-Driven Design",
+        "pytest / TDD"
+      ]
+    },
+    {
+      "label": "Frontend",
+      "items": [
+        "React",
+        "Next.js",
+        "Angular",
+        "Vue.js",
+        "Svelte"
+      ]
+    },
+    {
+      "label": "Data & Messaging",
+      "items": [
+        "PostgreSQL",
+        "PostGIS / geospatial data",
+        "Oracle",
+        "MySQL / MariaDB",
+        "Redis",
+        "ElasticSearch",
+        "Neo4j",
+        "Kafka (Strimzi)",
+        "MQTT",
+        "Azure Event Hubs",
+        "Apache NiFi",
+        "Apache Spark"
+      ]
+    },
+    {
+      "label": "Cloud, Delivery & Security",
+      "items": [
+        "Docker",
+        "Kubernetes / OpenShift",
+        "AWS EKS & ECS Fargate",
+        "AWS (Lambda, API Gateway, CloudFront, Route 53, ALB)",
+        "Azure",
+        "Terraform / OpenTofu",
+        "GitLab CI",
+        "GitHub Actions",
+        "Azure DevOps",
+        "Argo CD",
+        "Prometheus",
+        "OAuth 2.0 / OpenID Connect",
+        "Keycloak",
+        "HashiCorp Vault"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Architect the platform behind slovensko.sk and work daily with the backend teams building on it: API and service design, PostgreSQL and Oracle data layers, Kafka (Strimzi) messaging and end-to-end monitoring.",
+        "Own authentication and secrets across the estate — OAuth 2.0 and OpenID Connect through Keycloak, HashiCorp Vault, TLS and certificate automation — plus the vulnerability scanning and remediation loop enforced in the shared GitLab CI pipelines.",
+        "Build and run the internal developer platform teams deploy onto — Kubernetes/OpenShift, Terraform, GitLab CI and Argo CD — writing its tooling in Go, Java and Python."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Six years building a help-desk SaaS used by tens of thousands of companies, moving between whatever the work needed: PHP and Java on the backend, Python for tooling, JavaScript on the frontend, on MariaDB, Redis and ElasticSearch.",
+        "Drove the software-architecture decisions on the product using domain-driven design to model the ticketing and automation domains, and kept them coherent through years of refactoring.",
+        "Ran the AWS infrastructure behind it with Terraform — Kubernetes on EKS under Argo CD, caching, search, queues and background workers; two years on the leadership team, mentoring engineers and running hiring."
+      ]
+    },
+    {
+      "name": "Lapz",
+      "bullets": [
+        "Co-founded a spatial Formula 1 companion app for Apple Vision Pro, learning Swift and visionOS from scratch to do it, and owned all real-time telemetry: ingesting external live data feeds and building the processing, buffering and playback pipeline behind the visualisation."
+      ]
+    },
+    {
+      "name": "ViaJet",
+      "bullets": [
+        "Co-founded and built a B2B2C private-jet charter marketplace end to end: Python and FastAPI backend, PostgreSQL schema design with geospatial queries over airports and routes, faceted search and the booking flow, with a TypeScript frontend."
+      ]
+    }
+  ],
+  "projects": [
+    "Logram.ai",
+    "Medical Navigator"
+  ],
+  "photo": "photo.jpg",
+  "accent": "#2b5a8c"
+}

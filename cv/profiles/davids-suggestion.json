@@ -12,7 +12,7 @@
       "summary": "The Kubernetes platform behind slovensko.sk, Slovakia’s national e-government — a fleet of Java/Spring microservices operated at national scale.",
       "bullets": [
         "Deploy and operate Java/Spring microservices on OpenShift/Kubernetes — GitOps delivery via ArgoCD, Kafka event flows, and full Prometheus/Grafana/Loki observability.",
-        "Own the services’ delivery end to end: authored the central GitLab CI/CD component catalog (Gradle builds, SAST, dependency/container/secret scanning, signed images) reused across teams.",
+        "Own the services’ delivery end to end — Gradle builds, SAST, dependency/container/secret scanning and cosign-signed images — on the organisation’s shared GitLab CI/CD component catalog, which I contribute components to.",
         "Debug production incidents down to the code level, diagnosing and fixing bugs directly in the Spring services."
       ]
     },

@@ -1,0 +1,128 @@
+{
+  "_comment": "Jobrela — 'Android with Python', remote, 400 EUR/day, MEDIOR, football fan-engagement platform. Role field is ANDROID DEVELOPER with a Python/FastAPI real-time backend attached. Lapz leads deliberately rather than chronologically: a real-time live-sports fan app running on external live feeds is the closest match in the record, and it carries the native-mobile credibility the Android ask needs. Android sits in the LiveAgent bullets, where it actually happened.",
+  "targetRole": "Software Engineer",
+  "summary": "Software engineer with nine years across mobile, backend and infrastructure. I deliver what the problem needs rather than what my own stack prefers, and I've shipped production code in Kotlin, Python, Java, PHP, TypeScript and Swift — on mobile that's Kotlin with Jetpack Compose and Coroutines on Android, and native Swift on Apple platforms. Today I architect the platform behind Slovakia's national e-government, including Slovensko v mobile, the state's citizen app on Android and iOS. Before that I owned the entire live-data path of a real-time Formula 1 companion app: ingesting external live feeds and building the processing, buffering and playback behind the visualisation.",
+  "emphasize": [],
+  "skills": [
+    {
+      "label": "Languages",
+      "items": [
+        "Kotlin",
+        "Python",
+        "TypeScript",
+        "JavaScript",
+        "Java",
+        "Swift",
+        "PHP",
+        "SQL"
+      ]
+    },
+    {
+      "label": "Mobile",
+      "items": [
+        "Android SDK",
+        "Jetpack Compose",
+        "Android Views",
+        "Kotlin Coroutines",
+        "Flow",
+        "Firebase Cloud Messaging",
+        "Firebase Crashlytics",
+        "Gradle",
+        "visionOS",
+        "RealityKit"
+      ]
+    },
+    {
+      "label": "Frameworks & Libraries",
+      "items": [
+        "FastAPI",
+        "Flask",
+        "Spring",
+        "Node.js",
+        "React",
+        "Next.js",
+        "Angular",
+        "Vue.js",
+        "Svelte",
+        "Symfony",
+        "Laravel"
+      ]
+    },
+    {
+      "label": "Databases & Messaging",
+      "items": [
+        "PostgreSQL",
+        "MySQL / MariaDB",
+        "Oracle",
+        "Redis",
+        "Elasticsearch",
+        "DynamoDB",
+        "Neo4j",
+        "Apache Kafka",
+        "MQTT",
+        "Azure Event Hubs"
+      ]
+    },
+    {
+      "label": "Cloud, DevOps & Tools",
+      "items": [
+        "AWS",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "GitLab CI",
+        "GitHub Actions",
+        "Git",
+        "pytest",
+        "OpenAPI / Swagger",
+        "Keycloak",
+        "OAuth 2.0 / OIDC"
+      ]
+    },
+    {
+      "label": "AI / ML",
+      "items": [
+        "PyTorch",
+        "Hugging Face",
+        "LLM fine-tuning"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "name": "Lapz",
+      "bullets": [
+        "Co-founded a real-time Formula 1 companion app for Apple Vision Pro, native in Swift, and owned the entire live-data path: ingesting external live telemetry feeds and building the processing, buffering and playback that drove the spatial visualisation.",
+        "Led a small cross-functional team (engineering, 3D, UI/UX) from concept to a shipped product, on a live-sports data source I didn't control."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Six years on a help-desk SaaS used by tens of thousands of companies, including its Android app in Kotlin — feature work through to signed release builds on the Play Store — alongside the PHP, Java and Python backend and the JavaScript frontend.",
+        "Built and consumed the REST APIs between the product's backend and its mobile and web clients, on MariaDB, Redis and ElasticSearch.",
+        "Ran the AWS infrastructure with Terraform, including Kubernetes on EKS under Argo CD; two years on the leadership team, mentoring engineers and running hiring."
+      ]
+    },
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Architect the platform behind slovensko.sk and Slovensko v mobile, the state's citizen app on Android and iOS: Python and Java services, REST API design, PostgreSQL and Oracle data layers, and Kafka messaging for real-time event flows.",
+        "Own OAuth 2.0 and OpenID Connect through Keycloak, secrets in Vault, and the CI/CD pipelines teams ship through — GitLab CI, Argo CD, container builds and automated testing and scanning."
+      ]
+    },
+    {
+      "name": "ViaJet",
+      "bullets": [
+        "Co-founded and built a B2B2C private-jet charter marketplace end to end: Python and FastAPI backend with async endpoints, PostgreSQL schema design and geospatial search, with a TypeScript frontend."
+      ]
+    }
+  ],
+  "projects": [
+    "Logram.ai",
+    "treeplanner"
+  ],
+  "photo": "photo.jpg",
+  "accent": "#4f46e5"
+}

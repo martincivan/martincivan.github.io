@@ -1,12 +1,25 @@
 {
-  "_comment": "Copy to <company-role>.json and edit. Only targetRole is really required. 'experience'/'projects' entries reference names in ../src/data/work.ts (matched case-insensitively, prefix or substring — so 'LiveAgent' or 'NASES' is enough). Bullets live here (the site data is kept terse); this is where each application's tailoring goes.",
-  "targetRole": "The exact job title you're applying for",
+  "_comment": "Copy to <company-role>.json and edit. Only targetRole is really required. 'experience'/'projects' entries reference names in ../src/data/work.ts (matched case-insensitively, prefix or substring — so 'LiveAgent' or 'NASES' is enough). Bullets live here (the site data is kept terse); this is where each application's tailoring goes. Read the 'Writing the skills section' notes in README.md before filling in 'skills'.",
+  "targetRole": "The exact job title you're applying for — or a plain one like 'Software Engineer' when the listing's own title is narrower than the pitch",
   "summary": "2-3 sentence pitch tailored to this listing. Omit to use the default summary from src/data/profile.ts.",
-  "emphasize": ["Skill names to render in the accent colour — must match tech names in src/i18n/ui.ts pillars, e.g. Kubernetes, PostgreSQL, PyTorch"],
-  "skillGroups": ["Which skill pillars to include, in order. Omit for all. Tags: Platform & Cloud-Native | Product & Architecture | Applied AI / ML"],
+  "skills": [
+    {
+      "label": "Group by KIND OF TECHNOLOGY, not by tier or by the listing's headings",
+      "items": [
+        "Conventional groups: Languages | Mobile | Frameworks & Libraries | Databases & Messaging | Cloud, DevOps & Tools | AI / ML",
+        "Name only things you USE: a library, language, database, service, tool",
+        "Never things you DO: 'REST API design', 'Push notifications', 'Play Store releases', 'Real-time data pipelines', 'Incident response', 'Domain-Driven Design' — those go in experience bullets, attached to a product",
+        "Prefer the specific artefact over the activity: 'Firebase Cloud Messaging' not 'Push notifications'",
+        "Drop a language or tool the listing has no use for, and drop it from the summary prose too so the two agree"
+      ]
+    }
+  ],
   "experience": [
     { "name": "work.ts entry name (e.g. NASES)", "bullets": ["Tailored bullet 1", "Tailored bullet 2"] }
   ],
   "projects": ["work.ts entry names for the compact Selected Projects strip. Omit for none."],
-  "accent": "#4f46e5"
+  "photo": "photo.jpg",
+  "accent": "#4f46e5",
+  "_emphasize_note": "OFF BY DEFAULT — leave 'emphasize' out. Accent-highlighting the exact chips a listing asks for tells the reader the CV was built for that one advert. Only use it when a CV is not going to a recruiter who will see another version. To use it: \"emphasize\": [\"Kotlin\", \"FastAPI\"] — strings must match a skills item exactly (case-insensitive); matched items also sort to the front of their group.",
+  "_skillGroups_note": "Alternative to 'skills': \"skillGroups\": [\"Platform & Cloud-Native\", \"Product & Architecture\", \"Applied AI / ML\"] reuses the site's own pillars from src/i18n/ui.ts verbatim, in that order. Omit both for all pillars. Custom 'skills' wins when both are set."
 }

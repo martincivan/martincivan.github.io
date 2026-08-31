@@ -1,0 +1,56 @@
+{
+  "_comment": "Bluesecor — Kubernetes Platform Operations & Maintenance Expert (Belgium). Also serves the Linux Engineer (Belgium) listing.",
+  "targetRole": "Kubernetes Platform Engineer",
+  "summary": "Platform engineer running the multi-cluster Kubernetes estate behind Slovakia's national e-government, after years of Argo CD-managed EKS on AWS before it. Day to day that means cluster upgrades and patching, node lifecycle, CNI and storage, certificate and secret rotation, RBAC and network policy, backup and restore, and the monitoring on top of it. I came up as a software developer — nine years across product and platform — and still write code daily in Python, Java, PHP and TypeScript, so the operational side gets automated as code with Terraform, Helm, Argo CD and GitLab CI rather than done by hand, and I write the missing tooling myself.",
+  "emphasize": ["Kubernetes", "Rancher / RKE2", "Cilium CNI (eBPF, BGP)", "Velero / OADP backup & restore", "Harbor & Quay registries", "Prometheus", "Grafana", "Zabbix"],
+  "skills": [
+    {
+      "label": "Kubernetes & Platform",
+      "items": ["Kubernetes", "OpenShift / OKD", "Rancher / RKE2", "AWS EKS", "Helm", "Argo CD (GitOps)", "Operators & CRDs", "Cluster upgrades & patching", "Node lifecycle (join, drain, cordon)"]
+    },
+    {
+      "label": "Cluster Components",
+      "items": ["Cilium CNI (eBPF, BGP)", "Ingress (NGINX, HAProxy)", "CoreDNS", "cert-manager", "Rook-Ceph / ODF (CSI)", "Harbor & Quay registries", "Velero / OADP backup & restore", "Strimzi Kafka, CloudNativePG"]
+    },
+    {
+      "label": "Monitoring & Operations",
+      "items": ["Prometheus", "Grafana", "Zabbix", "Loki / Tempo", "Alertmanager", "Incident response & RCA", "Capacity & performance review", "Configuration drift"]
+    },
+    {
+      "label": "Security & Compliance",
+      "items": ["RBAC audits", "Kubernetes network policy", "HashiCorp Vault", "Keycloak / IAM", "Container & dependency scanning", "cosign image signing", "Certificate & secret rotation", "Fortinet, F5 BIG-IP"]
+    },
+    {
+      "label": "Linux & Automation",
+      "items": ["Linux (RHEL, CoreOS, Debian)", "System hardening", "Bare-metal provisioning (iDRAC)", "Terraform / OpenTofu", "GitLab CI", "Bash", "Python", "Go"]
+    }
+  ],
+  "experience": [
+    {
+      "name": "NASES — National e-Government Platform",
+      "bullets": [
+        "Design and operate the multi-cluster Kubernetes platform behind slovensko.sk — OpenShift/OKD as the primary distribution plus a Rancher cluster alongside it — provisioned entirely as code with Terraform across three Oracle Private Cloud Appliances and bare-metal Dell hardware.",
+        "Own day-to-day cluster operations: version upgrades and patching, node join/drain/cordon, certificate rotation through cert-manager, secrets administration in Vault, RBAC reviews and Cilium network policy.",
+        "Run a 40+ component GitOps platform on self-managing Argo CD: Cilium eBPF CNI with BGP, ingress, Rook-Ceph/ODF storage, CloudNativePG and Strimzi Kafka operators, and Velero/OADP backup and restore.",
+        "Monitor the estate end to end with Prometheus, Grafana, Loki/Tempo and Zabbix, and handle the operational follow-through: alert triage, troubleshooting, root-cause analysis and capacity review.",
+        "Contributed the performance-testing and OpenTofu components to the organisation's central GitLab CI/CD catalog, and run services on supply-chain-secured pipelines from it — SAST, dependency, container and secret scanning plus cosign image signing — with images served from Harbor and Quay."
+      ]
+    },
+    {
+      "name": "LiveAgent",
+      "bullets": [
+        "Ran the production platform behind a help-desk SaaS used by tens of thousands of companies: Kubernetes on AWS EKS under Argo CD GitOps, provisioned with Terraform, alongside the Linux estate, MariaDB, Redis, ElasticSearch, queues and background workers.",
+        "Six years of development on the product itself in PHP, Java, Python and JavaScript; two years on the leadership team, mentoring engineers and running hiring."
+      ]
+    },
+    {
+      "name": "Lapz",
+      "bullets": [
+        "Co-founded a spatial Formula 1 companion app for Apple Vision Pro and owned all real-time telemetry: ingesting external live data feeds and building the processing, buffering and playback pipeline behind the visualisation."
+      ]
+    }
+  ],
+  "projects": ["Logram.ai", "Medical Navigator"],
+  "photo": "photo.jpg",
+  "accent": "#2b5a8c"
+}

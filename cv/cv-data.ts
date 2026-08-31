@@ -30,8 +30,9 @@ export const experience: Role[] = [
     highlights: [
       'Provision OpenShift/OKD clusters fully as code (Terraform + GitLab CI) across three Oracle Private Cloud Appliances and bare-metal Dell hardware via the Agent-Based Installer and iDRAC.',
       'Run a 40+ component GitOps platform on self-managing ArgoCD: Vault, Keycloak, Strimzi Kafka, CloudNativePG and Oracle/MariaDB operators, Rook-Ceph/ODF storage, Cilium eBPF CNI with BGP, cert-manager, and a full Prometheus/Grafana/Loki/Tempo observability stack.',
-      'Authored the organisation’s central GitLab CI/CD component catalog with SAST, dependency, container and secret scanning, cosign image signing and SCA — supply-chain-secured pipelines reused across teams.',
+      'Contributed the performance-testing (k6) and OpenTofu components to the organisation’s central GitLab CI/CD catalog and co-maintain its CloudNativePG chart — delivering services on supply-chain-secured pipelines with SAST, dependency, container and secret scanning and cosign signing.',
       'Built custom cert-manager DNS01 webhook integrations and handled network engineering across F5 BIG-IP, Fortinet and Cilium BGP.',
+      'Migrated the eIDAS person-matching service off .NET Framework 4.8 and Windows onto .NET 10 in Linux containers (CoreWCF, EF Core), building its test suite from zero and fixing five latent production bugs it exposed.',
     ],
     stack: ['OpenShift', 'Terraform', 'ArgoCD', 'GitLab CI', 'Helm', 'Java', 'Spring', 'Gradle', 'Cilium', 'Vault', 'Keycloak', 'Kafka', 'Oracle', 'PostgreSQL', 'Prometheus', 'Grafana'],
   },
@@ -61,9 +62,9 @@ export const experience: Role[] = [
     highlights: [
       'Drove key software-architecture decisions and supported the full lifecycle: feature development, refactoring, testing and DevOps.',
       'Part of the leadership team for two years — mentored developers and ran hiring interviews.',
-      'Worked across the stack and the platform: PHP, JavaScript, Java, Python on MySQL, ElasticSearch and the ELK stack, with Salt, Terraform, AWS (S3, KMS, DynamoDB, SQS) and GitHub Actions.',
+      'Worked across the stack and the platform: PHP, JavaScript, Java, Python on MySQL, ElasticSearch and the ELK stack, running on Kubernetes (AWS EKS) under Argo CD GitOps, with Salt, Terraform, AWS (ECS Fargate, CloudFront, Route 53, S3, KMS, DynamoDB, SQS) and GitHub Actions.',
     ],
-    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'Terraform'],
+    stack: ['PHP', 'JavaScript', 'Java', 'Python', 'MariaDB', 'Redis', 'ElasticSearch', 'AWS', 'EKS', 'ArgoCD', 'Terraform'],
   },
   {
     company: 'DXC Technology',
@@ -184,7 +185,7 @@ export const projects: Project[] = [
     year: '2026',
     status: 'shipped',
     blurb:
-      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB, via a multi-account Terraform setup driven by GitHub Actions.',
+      'A multilingual healthcare directory — clinic/doctor search with faceted filtering, ranking and pricing — built on Drupal 11 and deployed to AWS ECS Fargate behind an ALB and CloudFront, via a multi-account Terraform setup driven by GitHub Actions.',
     stack: ['Drupal 11', 'PHP', 'AWS ECS', 'Terraform'],
   },
   {
